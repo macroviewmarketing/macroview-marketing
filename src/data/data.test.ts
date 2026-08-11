@@ -56,16 +56,12 @@ describe("config", () => {
 });
 
 describe("sections registry", () => {
-  it("declares all 9 section ids in stable order", () => {
+  it("declares the focused portfolio sections in stable order", () => {
     expect(SECTIONS.map((s) => s.id)).toEqual([
       "hero",
-      "problem",
-      "solution",
       "portfolio",
       "results",
       "why",
-      "who",
-      "faq",
       "book",
     ]);
   });

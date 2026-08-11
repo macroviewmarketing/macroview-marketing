@@ -11,7 +11,7 @@ export const BookSection = () => (
     <div
       className="container-edge"
       style={{
-        minHeight: "100vh",
+        minHeight: "100dvh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -35,29 +35,29 @@ export const BookSection = () => (
             color: "var(--dim)",
           }}
         >
-          Ready when you are
+          Start a project
         </span>
 
         <h2
           className="font-display"
           style={{
-            fontSize: "clamp(48px, 9vw, 120px)",
+            fontSize: "clamp(48px, 8vw, 104px)",
             lineHeight: 0.9,
             letterSpacing: "0.02em",
             color: "var(--white-c)",
             margin: "32px 0 36px",
           }}
         >
-          LET'S BUILD<br />
-          YOUR CONTENT<br />
-          <span style={{ color: "var(--blue)" }}>MACHINE.</span>
+          HAVE SOMETHING<br />
+          WORTH MAKING?<br />
+          <span style={{ color: "var(--blue)" }}>LET'S TALK.</span>
         </h2>
 
         <p
           className="body-l"
           style={{ maxWidth: "60ch", margin: "0 auto 40px" }}
         >
-          One call. No obligation. We will show you exactly how we would approach your content.
+          Tell us what you are building, where you are stuck, and what a strong result looks like.
         </p>
 
         <div

@@ -5,12 +5,11 @@ import { CountUp } from "@/components/CountUp";
 export const ResultsSection = () => (
   <section id="results" style={{ background: "var(--black)" }}>
     <div className="container-edge section-pad">
-      <header className="snap-content" style={{ textAlign: "center", marginBottom: "64px" }}>
+      <header className="snap-content" style={{ textAlign: "left", marginBottom: "64px", maxWidth: "720px" }}>
         <Tag>Results</Tag>
         <h2 className="display-m" style={{ color: "var(--white-c)", marginTop: "28px" }}>
-          NUMBERS<br />
-          THAT<br />
-          <span style={{ color: "var(--blue)" }}>MATTER.</span>
+          SELECTED<br />
+          <span style={{ color: "var(--blue)" }}>OUTCOMES.</span>
         </h2>
       </header>
 

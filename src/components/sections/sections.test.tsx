@@ -25,12 +25,12 @@ describe("<HeroSection>", () => {
     expect(cta).toHaveAttribute("href", GMAIL_COMPOSE_URL);
   });
 
-  it("includes the gif media element in the hero panel", () => {
+  it("uses an efficient video asset in the hero panel", () => {
     const { container } = render(<HeroSection />);
     const media = container.querySelector(".hero-media");
     expect(media).not.toBeNull();
-    expect(media?.tagName).toBe("IMG");
-    expect(media).toHaveAttribute("src", expect.stringContaining("gif-1.gif"));
+    expect(media?.tagName).toBe("VIDEO");
+    expect(media).toHaveAttribute("src", expect.stringContaining("brand.mp4"));
   });
 
   it("does NOT render the studio-open live badge anymore", () => {
@@ -98,12 +98,12 @@ describe("<PortfolioSection>", () => {
     });
   });
 
-  it("each item embeds a <video> tag with autoplay/muted/loop", () => {
+  it("uses muted looping videos without eager autoplay", () => {
     const { container } = render(<PortfolioSection />);
     const videos = container.querySelectorAll<HTMLVideoElement>("video.portfolio-item-bg");
     expect(videos.length).toBe(6);
     videos.forEach((v) => {
-      expect(v.autoplay).toBe(true);
+      expect(v.autoplay).toBe(false);
       expect(v.loop).toBe(true);
       expect(v.muted).toBe(true);
       expect(v.playsInline).toBe(true);
@@ -167,11 +167,11 @@ describe("<WhySection>", () => {
 
   it("renders all 5 pillar titles", () => {
     render(<WhySection />);
-    expect(screen.getByText("Frame-Perfect Editing")).toBeInTheDocument();
-    expect(screen.getByText("Built for Creator Scale")).toBeInTheDocument();
-    expect(screen.getByText("Strategy-First Approach")).toBeInTheDocument();
-    expect(screen.getByText("Retention-Optimised Output")).toBeInTheDocument();
-    expect(screen.getByText("Turnaround Guarantee")).toBeInTheDocument();
+    expect(screen.getByText("Frame-perfect editing")).toBeInTheDocument();
+    expect(screen.getByText("Built for creator scale")).toBeInTheDocument();
+    expect(screen.getByText("Strategy before software")).toBeInTheDocument();
+    expect(screen.getByText("Retention-minded output")).toBeInTheDocument();
+    expect(screen.getByText("Clear turnaround times")).toBeInTheDocument();
   });
 });
 
@@ -255,7 +255,7 @@ describe("<FaqSection>", () => {
 describe("<BookSection>", () => {
   it("renders the closing headline and the discovery CTA", () => {
     render(<BookSection />);
-    expect(screen.getByText(/MACHINE\./)).toBeInTheDocument();
+    expect(screen.getByText(/LET'S TALK\./)).toBeInTheDocument();
     const cta = screen.getByRole("link", { name: /book a discovery call/i });
     expect(cta).toHaveAttribute("href", GMAIL_COMPOSE_URL);
     expect(cta).toHaveAttribute("target", "_blank");

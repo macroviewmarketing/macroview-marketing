@@ -59,7 +59,16 @@ export const HeroSection = () => (
 
 const HeroPanel = () => (
   <div className="hero-panel">
-    <img src="/video-asset/gif-1.gif" alt="" aria-hidden className="hero-media" />
+    <video
+      src="/video-asset/brand.mp4"
+      className="hero-media"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden
+    />
     <div className="hero-grid" />
     <div className="hero-orb" />
     <div className="hero-live">

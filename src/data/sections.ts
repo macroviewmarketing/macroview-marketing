@@ -2,24 +2,18 @@ import { GMAIL_COMPOSE_URL } from "./config";
 
 export const SECTIONS = [
   { id: "hero",      label: "Home" },
-  { id: "problem",   label: "Problem" },
-  { id: "solution",  label: "System" },
-  { id: "portfolio", label: "Portfolio" },
+  { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
-  { id: "why",       label: "Why MVD" },
-  { id: "who",       label: "Who" },
-  { id: "faq",       label: "FAQ" },
-  { id: "book",      label: "Book" },
+  { id: "why",       label: "About" },
+  { id: "book",      label: "Contact" },
 ] as const;
 
 export type SectionId = (typeof SECTIONS)[number]["id"];
 
 export const NAV_LINKS: { id: SectionId; label: string }[] = [
-  { id: "problem",   label: "Problem" },
-  { id: "solution",  label: "System" },
-  { id: "portfolio", label: "Portfolio" },
+  { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
-  { id: "faq",       label: "FAQ" },
+  { id: "why",       label: "About" },
 ];
 
 export type CtaBandVariant = "intro" | "pivot" | "portfolio" | "why" | "faq";

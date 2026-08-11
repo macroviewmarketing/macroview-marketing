@@ -14,12 +14,12 @@ export const PortfolioSection = () => (
           flexWrap: "wrap",
         }}
       >
-        <h2 className="display-m" style={{ color: "var(--white-c)" }}>
-          OUR WORK.
-        </h2>
-        <a href="#book" className="btn-ghost" style={{ paddingBottom: "10px" }}>
-          View All Work →
-        </a>
+        <div>
+          <span className="section-label">Selected projects</span>
+          <h2 className="display-m" style={{ color: "var(--white-c)", marginTop: "20px" }}>
+            WORK THAT<br /><span style={{ color: "var(--blue)" }}>HOLDS ATTENTION.</span>
+          </h2>
+        </div>
       </header>
 
       <div className="portfolio-grid">
@@ -33,11 +33,15 @@ export const PortfolioSection = () => (
               <video
                 className="portfolio-item-bg"
                 src={p.videoPath}
-                autoPlay
                 loop
                 muted
                 playsInline
                 preload="metadata"
+                onMouseEnter={(event) => void event.currentTarget.play()}
+                onMouseLeave={(event) => {
+                  event.currentTarget.pause();
+                  event.currentTarget.currentTime = 0;
+                }}
               />
             ) : (
               <div

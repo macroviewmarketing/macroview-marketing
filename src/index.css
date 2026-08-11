@@ -1253,6 +1253,32 @@
 .why-grid {
   grid-template-columns: 5fr 7fr;
 }
+.about-shell {
+  min-height: 80dvh;
+  display: flex;
+  align-items: center;
+}
+.about-grid {
+  width: 100%;
+  display: grid;
+  gap: 80px;
+  align-items: center;
+}
+.about-heading {
+  color: var(--white-c);
+  margin: 32px 0 28px;
+}
+.about-heading span,
+.about-number { color: var(--blue); }
+.about-copy { max-width: 52ch; margin-bottom: 20px; }
+.about-principles { display: grid; gap: 2px; }
+.about-number { font-size: 11px; letter-spacing: 0.2em; }
+.about-principle {
+  font-size: 26px;
+  color: var(--white-c);
+  letter-spacing: 0.04em;
+}
+.about-principles .pillar-row { cursor: default; }
 @media (max-width: 900px) {
   .why-grid { grid-template-columns: 1fr; gap: 48px !important; }
 }
