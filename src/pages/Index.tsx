@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { ScrollDots } from "@/components/ScrollDots";
-import { CustomCursor } from "@/components/CustomCursor";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { CtaBand } from "@/components/CtaBand";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -27,7 +26,6 @@ const Index = () => {
   return (
     <>
       <GrainOverlay />
-      <CustomCursor />
       <Navbar scrolled={scrolled} />
       <ScrollDots activeId={activeId} />
 

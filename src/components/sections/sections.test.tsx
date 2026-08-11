@@ -20,7 +20,7 @@ import { testimonials } from "@/data/testimonials";
 describe("<HeroSection>", () => {
   it("renders the headline and discovery-call CTA", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/MACHINE\./)).toBeInTheDocument();
+    expect(screen.getByText(/ENGINE\./)).toBeInTheDocument();
     const cta = screen.getByRole("link", { name: /book a discovery call/i });
     expect(cta).toHaveAttribute("href", GMAIL_COMPOSE_URL);
   });
@@ -38,11 +38,11 @@ describe("<HeroSection>", () => {
     expect(screen.queryByText(/studio open/i)).not.toBeInTheDocument();
   });
 
-  it("renders the three counter chips", () => {
+  it("renders the three-step production timeline", () => {
     render(<HeroSection />);
-    expect(screen.getByText("100+")).toBeInTheDocument();
-    expect(screen.getByText("3M+")).toBeInTheDocument();
-    expect(screen.getByText("48h")).toBeInTheDocument();
+    expect(screen.getByText("Brief")).toBeInTheDocument();
+    expect(screen.getByText("Produce")).toBeInTheDocument();
+    expect(screen.getByText("Publish")).toBeInTheDocument();
   });
 });
 

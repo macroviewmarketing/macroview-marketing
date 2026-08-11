@@ -13,12 +13,12 @@ describe("<Index> page assembly", () => {
     expect(container.querySelector(".loader")).toBeNull();
   });
 
-  it("renders the navbar, scroll dots, custom cursor, and grain overlay", () => {
+  it("renders the navigation, scroll dots, and grain overlay without a custom cursor", () => {
     const { container } = render(<Index />);
     expect(container.querySelector(".navbar")).not.toBeNull();
     expect(container.querySelector(".scroll-dots")).not.toBeNull();
-    expect(container.querySelector("#cursor-dot")).not.toBeNull();
-    expect(container.querySelector("#cursor-ring")).not.toBeNull();
+    expect(container.querySelector("#cursor-dot")).toBeNull();
+    expect(container.querySelector("#cursor-ring")).toBeNull();
     expect(container.querySelector(".grain-overlay")).not.toBeNull();
   });
 

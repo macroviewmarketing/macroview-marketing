@@ -70,6 +70,9 @@
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   body {
@@ -82,26 +85,24 @@
     color: var(--white-c);
   }
 
-  /* Hide native cursor when our custom one is on */
-  body.has-custom-cursor,
-  body.has-custom-cursor * {
-    cursor: none !important;
-  }
 }
 
 /* ============================================================
    SCROLL ROOT — single scroller on the page (no snap)
    ============================================================ */
 #snap-root {
-  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  max-width: 100vw;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 #snap-root::-webkit-scrollbar { display: none; }
 
 #snap-root > section {
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   position: relative;
 }
@@ -1284,6 +1285,135 @@
   gap: 100px;
   align-items: center;
   width: 100%;
+}
+
+/* ============================================================
+   LANDING HERO — production timeline motif
+   ============================================================ */
+.hero-shell {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-top: 132px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.hero-eyebrow-line {
+  width: 40px;
+  height: 1px;
+  background: var(--blue);
+}
+.hero-heading {
+  color: var(--white-c);
+  margin-bottom: 32px;
+  text-wrap: balance;
+}
+.hero-heading span { color: var(--blue); }
+.hero-summary {
+  max-width: 52ch;
+  margin-bottom: 40px;
+  text-wrap: pretty;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 56px;
+  border-top: 1px solid var(--border-c);
+}
+.hero-proof span {
+  position: relative;
+  padding: 18px 12px 0 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.hero-proof span::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.hero-panel {
+  border-color: var(--border-glow);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.025), 0 32px 80px rgba(0,0,0,0.28);
+}
+.hero-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,6,8,0.04) 35%, rgba(6,6,8,0.82) 100%);
+  pointer-events: none;
+}
+.hero-live,
+.hero-counter-row,
+.hero-vert-label { z-index: 2; }
+.hero-counter {
+  min-width: 92px;
+  backdrop-filter: blur(12px);
+}
+.hero-counter .num { color: var(--blue); }
+
+@media (max-width: 900px) {
+  .two-col-hero { min-width: 0; }
+  .hero-shell {
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+  .hero-panel {
+    display: block;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .hero-shell { padding-top: 104px; }
+  .hero-copy { min-width: 0; }
+  .hero-copy > * { max-width: 100%; }
+  .hero-eyebrow {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .hero-eyebrow-line { flex: 0 0 40px; margin-top: 7px; }
+  .hero-eyebrow .label-mono {
+    min-width: 0;
+    max-width: 260px;
+    line-height: 1.7;
+    letter-spacing: 0.11em;
+  }
+  .hero-heading { font-size: clamp(48px, 14vw, 56px); }
+  .hero-summary { width: 100%; max-width: 320px; }
+  .hero-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-proof span { padding-bottom: 8px; }
+  .hero-actions .btn { width: 100%; }
+  .hero-counter-row { right: 16px; bottom: 16px; left: 16px; }
+  .hero-counter { flex: 1; min-width: 0; padding: 8px 10px; }
+  .hero-vert-label { display: none; }
+  .navbar { gap: 12px; }
+  .navbar .nav-logo { font-size: 18px; gap: 7px; }
+  .navbar .nav-logo-mark { width: 24px; height: 24px; }
+  .navbar > .btn { display: none; }
+  .scroll-dots { display: none; }
 }
 @media (max-width: 900px) {
   .two-col-hero,
