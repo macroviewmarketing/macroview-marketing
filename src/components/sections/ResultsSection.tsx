@@ -15,7 +15,7 @@ export const ResultsSection = () => (
 
       <div className="results-grid">
         {caseStudies.map((cs) => (
-          <article key={cs.id} className="metric-card stagger-child">
+          <article key={cs.id} className="metric-card glass-panel stagger-child">
             <div
               className="font-display"
               style={{

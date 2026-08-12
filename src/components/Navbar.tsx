@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GMAIL_COMPOSE_URL } from "@/data/config";
 import { NAV_LINKS } from "@/data/sections";
 import { scrollToSection } from "@/hooks/useScrollDots";
@@ -39,6 +40,7 @@ export const Navbar = ({ scrolled }: NavbarProps) => {
             {l.label}
           </a>
         ))}
+        <Link to="/store" className="nav-link">Store</Link>
       </div>
 
       <a

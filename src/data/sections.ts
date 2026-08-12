@@ -2,8 +2,10 @@ import { GMAIL_COMPOSE_URL } from "./config";
 
 export const SECTIONS = [
   { id: "hero",      label: "Home" },
+  { id: "solution",  label: "Services" },
   { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
+  { id: "who",       label: "Testimonials" },
   { id: "why",       label: "About" },
   { id: "book",      label: "Contact" },
 ] as const;
@@ -11,8 +13,10 @@ export const SECTIONS = [
 export type SectionId = (typeof SECTIONS)[number]["id"];
 
 export const NAV_LINKS: { id: SectionId; label: string }[] = [
+  { id: "solution",  label: "Services" },
   { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
+  { id: "who",       label: "Testimonials" },
   { id: "why",       label: "About" },
 ];
 

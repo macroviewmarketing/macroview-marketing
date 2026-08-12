@@ -59,8 +59,10 @@ describe("sections registry", () => {
   it("declares the focused portfolio sections in stable order", () => {
     expect(SECTIONS.map((s) => s.id)).toEqual([
       "hero",
+      "solution",
       "portfolio",
       "results",
+      "who",
       "why",
       "book",
     ]);
@@ -204,8 +206,8 @@ describe("faqs", () => {
 });
 
 describe("testimonials", () => {
-  it("has 2 entries", () => {
-    expect(testimonials).toHaveLength(2);
+  it("has 4 entries", () => {
+    expect(testimonials).toHaveLength(4);
   });
 
   it("every testimonial has quote/author/role", () => {

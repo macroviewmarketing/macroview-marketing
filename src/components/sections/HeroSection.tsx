@@ -8,18 +8,19 @@ export const HeroSection = () => (
         <div className="hero-copy">
           <div className="hero-eyebrow">
             <span className="hero-eyebrow-line" />
-            <span className="label-mono">Creative operations for creator-led brands</span>
+            <span className="label-mono">Creative production for high-ticket coaches</span>
           </div>
 
           <h1 className="display-l hero-heading">
-            TURN IDEAS<br />
-            INTO A CONTENT<br />
-            <span>ENGINE.</span>
+            SHORT-FORM CONTENT<br />
+            THAT SCALES<br />
+            <span>YOUR ADS.</span>
           </h1>
 
           <p className="body-l hero-summary">
-            Strategy, editing, design, and distribution in one production system. You stay on
-            camera. We keep the content moving.
+            Macroview Digital Marketing is a creative production agency that scripts and edits
+            short-form content for high-ticket coaches — so you can scale your ads and convert at
+            volume without touching an editing timeline.
           </p>
 
           <div className="hero-actions">
@@ -39,15 +40,15 @@ export const HeroSection = () => (
                 scrollToSection("portfolio");
               }}
             >
-              See Our Work
+              View Portfolio
             </a>
           </div>
 
           <div className="hero-proof" aria-label="Studio capabilities">
-            <span>Strategy</span>
-            <span>Short-form</span>
-            <span>Long-form</span>
-            <span>Distribution</span>
+            <span>Scripting</span>
+            <span>Editing</span>
+            <span>Hook Iteration</span>
+            <span>Ad-Ready Delivery</span>
           </div>
         </div>
 
@@ -59,16 +60,14 @@ export const HeroSection = () => (
 
 const HeroPanel = () => (
   <div className="hero-panel">
-    <video
-      src="/video-asset/brand.mp4"
-      className="hero-media"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden
-    />
+    <div className="hero-placeholder glass-panel" aria-hidden>
+      <img
+        src="/Macroview%20-%20Logo.svg"
+        alt=""
+        className="hero-placeholder-mark"
+      />
+      <span className="micro-mono">Studio reel — coming soon</span>
+    </div>
     <div className="hero-grid" />
     <div className="hero-orb" />
     <div className="hero-live">

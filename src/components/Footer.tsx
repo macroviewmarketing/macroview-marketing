@@ -10,6 +10,7 @@ import {
 } from "@/data/config";
 import { NAV_LINKS } from "@/data/sections";
 import { scrollToSection } from "@/hooks/useScrollDots";
+import { SocialIcons } from "@/components/shared/SocialIcons";
 
 const formatPHT = (d: Date) =>
   new Intl.DateTimeFormat("en-US", {
@@ -105,6 +106,9 @@ export const Footer = () => {
                 >
                   LinkedIn ↗
                 </a>
+              </li>
+              <li style={{ marginTop: "4px" }}>
+                <SocialIcons />
               </li>
             </ul>
           </div>

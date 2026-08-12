@@ -29,6 +29,10 @@
     --cyan:         #00d4ff;
     --cyan-glow:    rgba(0, 212, 255, 0.15);
 
+    /* ── Glass UI accent (see macroview-hq/apps/captions) ── */
+    --glass-cyan:   #2bd4e8;
+    --glass-purple: #8a61ff;
+
     /* ── Easings ──────────────────────────────────── */
     --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-expo:     cubic-bezier(0.7, 0, 0.84, 0);
@@ -371,6 +375,107 @@
 }
 
 /* ============================================================
+   GLASS UI — frosted panel treatment
+   Reference: macroview-hq/apps/captions (CaptionSplitterClient.jsx
+   .launch-card / .glass-action / .launch-icon)
+   ============================================================ */
+.glass-panel {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(136, 168, 190, 0.25);
+  background: linear-gradient(145deg, rgba(27, 37, 47, 0.8), rgba(12, 18, 25, 0.72));
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    -1px 0 18px rgba(35, 207, 231, 0.07),
+    1px 0 18px rgba(135, 92, 255, 0.08);
+}
+
+/* Additive skin on top of the existing flat card systems */
+.service-card.glass-panel,
+.metric-card.glass-panel,
+.surface-card.glass-panel,
+.who-card.glass-panel,
+.portfolio-placeholder.glass-panel {
+  background: linear-gradient(145deg, rgba(27, 37, 47, 0.8), rgba(12, 18, 25, 0.72));
+  border-color: rgba(136, 168, 190, 0.22);
+}
+.service-card.glass-panel:hover,
+.metric-card.glass-panel:hover,
+.surface-card.glass-panel:hover,
+.who-card.glass-panel:hover {
+  background: linear-gradient(145deg, rgba(34, 46, 58, 0.86), rgba(15, 22, 30, 0.78));
+  border-color: rgba(43, 212, 232, 0.35);
+}
+
+.glass-icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--glass-cyan), var(--glass-purple));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 20px rgba(64, 100, 200, 0.18);
+  color: #071016;
+  flex-shrink: 0;
+}
+.glass-icon-chip svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+/* Reconcile with the existing .service-card .icon sizing/hover rules (higher
+   specificity here so the chip keeps its size + gradient regardless of order) */
+.service-card .icon.glass-icon-chip {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  color: #071016;
+}
+.service-card .icon.glass-icon-chip svg { width: 22px; height: 22px; }
+
+.glass-orb {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+.glass-orb-cyan   { background: var(--glass-cyan); left: -120px; bottom: -140px; }
+.glass-orb-purple { background: var(--glass-purple); right: -110px; top: -140px; }
+
+.social-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--white-c);
+  background: rgba(34, 45, 56, 0.64);
+  border: 1px solid rgba(126, 151, 169, 0.26);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: background 0.14s ease, border-color 0.14s ease, transform 0.08s ease;
+}
+.social-icon-link svg { width: 19px; height: 19px; }
+.social-icon-link:hover {
+  background: rgba(46, 59, 72, 0.85);
+  border-color: rgba(43, 212, 232, 0.4);
+}
+.social-icon-link:active { transform: scale(0.94); }
+
+/* ============================================================
    PORTFOLIO
    ============================================================ */
 .portfolio-item {
@@ -392,6 +497,19 @@
   background-size: cover;
   background-position: center;
   display: block;
+}
+.portfolio-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 0;
+}
+.portfolio-placeholder .micro-mono {
+  color: var(--dim);
 }
 .portfolio-grid-tex {
   position: absolute;
@@ -807,6 +925,24 @@
   display: block;
   user-select: none;
 }
+.hero-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: none;
+  border-radius: 0;
+}
+.hero-placeholder-mark {
+  width: 64px;
+  height: 64px;
+  display: block;
+  opacity: 0.92;
+}
+.hero-placeholder .micro-mono { color: var(--dim); }
 .hero-orb {
   position: absolute;
   bottom: -120px;

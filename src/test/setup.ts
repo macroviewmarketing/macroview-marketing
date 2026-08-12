@@ -51,3 +51,12 @@ class MockIntersectionObserver {
   MockIntersectionObserver as unknown as typeof IntersectionObserver;
 
 (globalThis as unknown as { __mockIO: typeof MockIntersectionObserver }).__mockIO = MockIntersectionObserver;
+
+class MockResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+(globalThis as unknown as { ResizeObserver: typeof ResizeObserver }).ResizeObserver =
+  MockResizeObserver as unknown as typeof ResizeObserver;

@@ -20,17 +20,16 @@ import { testimonials } from "@/data/testimonials";
 describe("<HeroSection>", () => {
   it("renders the headline and discovery-call CTA", () => {
     render(<HeroSection />);
-    expect(screen.getByText(/ENGINE\./)).toBeInTheDocument();
+    expect(screen.getByText(/YOUR ADS\./)).toBeInTheDocument();
     const cta = screen.getByRole("link", { name: /book a discovery call/i });
     expect(cta).toHaveAttribute("href", GMAIL_COMPOSE_URL);
   });
 
-  it("uses an efficient video asset in the hero panel", () => {
+  it("uses a glass placeholder (no video) in the hero panel until real footage lands", () => {
     const { container } = render(<HeroSection />);
-    const media = container.querySelector(".hero-media");
-    expect(media).not.toBeNull();
-    expect(media?.tagName).toBe("VIDEO");
-    expect(media).toHaveAttribute("src", expect.stringContaining("brand.mp4"));
+    expect(container.querySelector(".hero-media")).toBeNull();
+    expect(container.querySelector("video")).toBeNull();
+    expect(container.querySelector(".hero-placeholder.glass-panel")).not.toBeNull();
   });
 
   it("does NOT render the studio-open live badge anymore", () => {
@@ -98,15 +97,13 @@ describe("<PortfolioSection>", () => {
     });
   });
 
-  it("uses muted looping videos without eager autoplay", () => {
+  it("uses glass placeholder tiles (no video) until real footage lands", () => {
     const { container } = render(<PortfolioSection />);
-    const videos = container.querySelectorAll<HTMLVideoElement>("video.portfolio-item-bg");
-    expect(videos.length).toBe(6);
-    videos.forEach((v) => {
-      expect(v.autoplay).toBe(false);
-      expect(v.loop).toBe(true);
-      expect(v.muted).toBe(true);
-      expect(v.playsInline).toBe(true);
+    expect(container.querySelectorAll("video")).toHaveLength(0);
+    const placeholders = container.querySelectorAll(".portfolio-placeholder.glass-panel");
+    expect(placeholders.length).toBe(6);
+    placeholders.forEach((p) => {
+      expect(p.querySelector(".glass-icon-chip svg")).not.toBeNull();
     });
   });
 
@@ -168,9 +165,9 @@ describe("<WhySection>", () => {
   it("renders all 5 pillar titles", () => {
     render(<WhySection />);
     expect(screen.getByText("Frame-perfect editing")).toBeInTheDocument();
-    expect(screen.getByText("Built for creator scale")).toBeInTheDocument();
+    expect(screen.getByText("Built for high-ticket coaches")).toBeInTheDocument();
     expect(screen.getByText("Strategy before software")).toBeInTheDocument();
-    expect(screen.getByText("Retention-minded output")).toBeInTheDocument();
+    expect(screen.getByText("Hook-first, conversion-minded edits")).toBeInTheDocument();
     expect(screen.getByText("Clear turnaround times")).toBeInTheDocument();
   });
 });

@@ -1,4 +1,14 @@
-import { portfolioItems } from "@/data/portfolioItems";
+import { Clapperboard, Film, Megaphone, Image as ImageIcon, Sparkles } from "lucide-react";
+import { portfolioItems, type PortfolioCategory } from "@/data/portfolioItems";
+
+const CATEGORY_ICON: Record<PortfolioCategory, typeof Clapperboard> = {
+  "Long-Form": Clapperboard,
+  "Short-Form": Film,
+  "Reels": Film,
+  "Ads": Megaphone,
+  "Thumbnails": ImageIcon,
+  "Brand": Sparkles,
+};
 
 export const PortfolioSection = () => (
   <section id="portfolio" style={{ background: "var(--deep)" }}>
@@ -23,36 +33,18 @@ export const PortfolioSection = () => (
       </header>
 
       <div className="portfolio-grid">
-        {portfolioItems.map((p) => (
+        {portfolioItems.map((p) => {
+          const Icon = CATEGORY_ICON[p.category];
+          return (
           <article
             key={p.id}
             className={`portfolio-item stagger-child${p.span === "tall" ? " tall" : ""}`}
             style={{ background: p.gradientFallback }}
           >
-            {p.videoPath ? (
-              <video
-                className="portfolio-item-bg"
-                src={p.videoPath}
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                onMouseEnter={(event) => void event.currentTarget.play()}
-                onMouseLeave={(event) => {
-                  event.currentTarget.pause();
-                  event.currentTarget.currentTime = 0;
-                }}
-              />
-            ) : (
-              <div
-                className="portfolio-item-bg"
-                style={{
-                  background: p.imagePath
-                    ? `url(${p.imagePath}) center / cover no-repeat`
-                    : p.gradientFallback,
-                }}
-              />
-            )}
+            <div className="portfolio-placeholder glass-panel">
+              <span className="glass-icon-chip"><Icon /></span>
+              <span className="micro-mono">Preview coming soon</span>
+            </div>
             <div className="portfolio-grid-tex" />
             <div className="crosshair" />
             <div className="portfolio-overlay">
@@ -80,7 +72,8 @@ export const PortfolioSection = () => (
               </h3>
             </div>
           </article>
-        ))}
+          );
+        })}
 
         <article className="portfolio-cta stagger-child">
           <div className="portfolio-cta-inner">

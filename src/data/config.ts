@@ -8,6 +8,10 @@ export const PHONE_TEL = "+639494634459";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/company/macroviewdigital/";
 
+export const INSTAGRAM_HANDLE = "@marcelinomarcc";
+export const INSTAGRAM_URL = "https://www.instagram.com/marcelinomarcc/";
+export const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace(/\D/g, "")}`;
+
 export const LOCATION = "Philippines";
 export const TIMEZONE = "Asia/Manila";
 export const UTC_OFFSET = "UTC+8";

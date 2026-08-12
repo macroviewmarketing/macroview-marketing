@@ -37,9 +37,9 @@ export const SolutionSection = () => (
 
       <div className="service-grid">
         {SERVICES.map((s) => (
-          <article key={s.num} className="service-card stagger-child">
+          <article key={s.num} className="service-card glass-panel stagger-child">
             <span className="num">{s.num}</span>
-            <span className="icon"><s.Icon /></span>
+            <span className="icon glass-icon-chip"><s.Icon /></span>
             <h3 className="title">{s.title}</h3>
             <p className="desc">{s.desc}</p>
           </article>

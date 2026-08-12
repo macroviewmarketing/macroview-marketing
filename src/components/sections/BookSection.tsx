@@ -1,6 +1,7 @@
 import { GMAIL_COMPOSE_URL } from "@/data/config";
 import { scrollToSection } from "@/hooks/useScrollDots";
 import { Footer } from "@/components/Footer";
+import { SocialIcons } from "@/components/shared/SocialIcons";
 
 export const BookSection = () => (
   <section
@@ -86,6 +87,10 @@ export const BookSection = () => (
           >
             See Portfolio
           </a>
+        </div>
+
+        <div style={{ marginTop: "28px", display: "flex", justifyContent: "center" }}>
+          <SocialIcons />
         </div>
       </div>
     </div>

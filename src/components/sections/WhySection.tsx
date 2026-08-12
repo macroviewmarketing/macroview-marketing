@@ -2,9 +2,9 @@ import { Tag } from "@/components/shared/Tag";
 
 const PILLARS = [
   { num: "I", title: "Frame-perfect editing" },
-  { num: "II", title: "Built for creator scale" },
+  { num: "II", title: "Built for high-ticket coaches" },
   { num: "III", title: "Strategy before software" },
-  { num: "IV", title: "Retention-minded output" },
+  { num: "IV", title: "Hook-first, conversion-minded edits" },
   { num: "V", title: "Clear turnaround times" },
 ];
 
@@ -15,15 +15,24 @@ export const WhySection = () => (
         <div>
           <Tag>About the studio</Tag>
           <h2 className="display-m about-heading">
-            SMALL TEAM.<br />
-            <span>SERIOUS OUTPUT.</span>
+            DONE-FOR-YOU<br />
+            <span>CONTENT.</span>
           </h2>
           <p className="body-l about-copy">
-            MacroView is a focused production partner for creators and personal brands. We turn
-            rough ideas and raw footage into a consistent body of work.
+            We're a done-for-you content and video editing agency built for coaches and online
+            entrepreneurs who are ready to scale. While most agencies focus on ad strategy, we
+            focus on what actually moves the needle for high-ticket offers: consistent,
+            high-converting creative — at the volume your ad spend demands.
           </p>
           <p className="body-l about-copy">
-            Direct communication, clear timelines, and craft that serves the story.
+            We work with established coaches doing $10K–$50K+/month who have a proven offer but
+            no time (or desire) to sit in an editing suite. You send the raw footage or ideas; we
+            handle scripting, editing, and hook iteration so your content keeps converting and
+            your ad accounts keep scaling.
+          </p>
+          <p className="body-l about-copy">
+            No micromanaging. No one-off gigs. Just a reliable creative partner that plugs into
+            your growth.
           </p>
         </div>
 

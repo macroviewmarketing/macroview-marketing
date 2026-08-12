@@ -20,4 +20,16 @@ export const testimonials: Testimonial[] = [
     author: "Jordan M.",
     role: "Fitness Creator",
   },
+  {
+    id: "t3",
+    quote: "Client testimonial coming soon — swap this slide for a real quote once you have one.",
+    author: "Your Client",
+    role: "Add a case study",
+  },
+  {
+    id: "t4",
+    quote: "Another slide, ready for a second testimonial — add a real quote when it's ready.",
+    author: "Your Next Client",
+    role: "Add a second case study",
+  },
 ];
