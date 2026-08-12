@@ -60,9 +60,10 @@ describe("sections registry", () => {
     expect(SECTIONS.map((s) => s.id)).toEqual([
       "hero",
       "solution",
+      "who",
+      "reviews",
       "portfolio",
       "results",
-      "who",
       "why",
       "book",
     ]);
@@ -206,8 +207,8 @@ describe("faqs", () => {
 });
 
 describe("testimonials", () => {
-  it("has 4 entries", () => {
-    expect(testimonials).toHaveLength(4);
+  it("has 3 entries", () => {
+    expect(testimonials).toHaveLength(3);
   });
 
   it("every testimonial has quote/author/role", () => {

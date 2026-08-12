@@ -26,7 +26,7 @@ const ProductCard = ({ p }: { p: Product }) => {
               letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "var(--cyan)",
-              border: "1px solid rgba(0, 212, 255, 0.3)",
+              border: "1px solid rgba(255, 59, 59, 0.3)",
               borderRadius: "2px",
               padding: "2px 8px",
             }}

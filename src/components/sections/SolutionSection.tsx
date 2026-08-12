@@ -1,20 +1,22 @@
 import { Tag } from "@/components/shared/Tag";
 import {
-  IconShortForm,
-  IconLongForm,
   IconAdCreative,
-  IconBrand,
+  IconLongForm,
+  IconShortForm,
+  IconGhlAutomation,
+  IconMakeAutomation,
   IconThumbnail,
-  IconDistribution,
+  IconBrand,
 } from "@/components/icons/ServiceIcons";
 
 const SERVICES = [
-  { num: "01", Icon: IconShortForm,    title: "Short-Form Content", desc: "Reels, Shorts, TikTok — built for the scroll." },
-  { num: "02", Icon: IconLongForm,     title: "Long-Form Editing",  desc: "YouTube, podcasts, documentaries with retention edits." },
-  { num: "03", Icon: IconAdCreative,   title: "Ad Creative",        desc: "Direct-response video ads engineered to convert." },
-  { num: "04", Icon: IconBrand,        title: "Brand Strategy",     desc: "Content calendar, scripting, hook engineering." },
-  { num: "05", Icon: IconThumbnail,    title: "Thumbnails + GFX",   desc: "Visual identity for every upload, every channel." },
-  { num: "06", Icon: IconDistribution, title: "Distribution",       desc: "Scheduling, cross-posting, publishing — handled." },
+  { num: "01", Icon: IconAdCreative,      title: "Ads",               desc: "Direct-response ad creative built to move cold traffic through your low-ticket to high-ticket funnel." },
+  { num: "02", Icon: IconLongForm,        title: "Long Form",         desc: "Podcasts, YouTube, and webinars edited to build authority with buyers — not just watch time." },
+  { num: "03", Icon: IconShortForm,       title: "Short Form",        desc: "Reels, Shorts, TikTok engineered to feed your funnel, not farm vanity likes." },
+  { num: "04", Icon: IconGhlAutomation,   title: "GHL Automations",   desc: "GoHighLevel pipelines, follow-ups, and funnel logic built so no lead slips through." },
+  { num: "05", Icon: IconMakeAutomation,  title: "Make Automations",  desc: "Backend workflows connecting your funnel, CRM, and content pipeline — no manual busywork." },
+  { num: "06", Icon: IconThumbnail,       title: "Thumbnails",        desc: "Click-worthy visual identity for every upload, every channel." },
+  { num: "07", Icon: IconBrand,           title: "Content Strategy",  desc: "Scripting, hook engineering, and a calendar built around your offer — not vanity metrics." },
 ];
 
 export const SolutionSection = () => (

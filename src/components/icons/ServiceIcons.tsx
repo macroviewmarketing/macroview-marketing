@@ -86,6 +86,32 @@ export const IconThumbnail = ({ className, ...rest }: IconProps) => (
   </svg>
 );
 
+export const IconGhlAutomation = ({ className, ...rest }: IconProps) => (
+  <svg {...baseAttrs} {...rest} className={cn("i-ghl", className)}>
+    <path d="M4 5 H20 L14 13 V19 L10 21 V13 Z" />
+    <circle
+      className="node"
+      cx="12"
+      cy="9.5"
+      r="1.3"
+      fill="currentColor"
+      stroke="none"
+    />
+  </svg>
+);
+
+export const IconMakeAutomation = ({ className, ...rest }: IconProps) => (
+  <svg {...baseAttrs} {...rest} className={cn("i-make", className)}>
+    <circle cx="5" cy="12" r="2.2" />
+    <circle cx="19" cy="6" r="2.2" />
+    <circle cx="19" cy="18" r="2.2" />
+    <g className="flow">
+      <line x1="7" y1="10.8" x2="17" y2="7.2" />
+      <line x1="7" y1="13.2" x2="17" y2="16.8" />
+    </g>
+  </svg>
+);
+
 export const IconDistribution = ({ className, ...rest }: IconProps) => (
   <svg {...baseAttrs} {...rest} className={cn("i-distribution", className)}>
     <circle className="hub" cx="12" cy="12" r="2.2" />

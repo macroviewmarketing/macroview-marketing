@@ -1,5 +1,6 @@
+import { Play } from "lucide-react";
 import { Tag } from "@/components/shared/Tag";
-import { testimonials } from "@/data/testimonials";
+import { testimonials, type Testimonial } from "@/data/testimonials";
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +16,52 @@ const TYPES = [
   { sticker: "/podcast-sticker.svg",            label: "Podcasters" },
 ];
 
+const VideoTestimonialCard = ({ t }: { t: Testimonial }) => (
+  <figure
+    className="surface-card glass-panel"
+    style={{ display: "flex", flexDirection: "column", gap: "16px", margin: 0, height: "100%", padding: "16px" }}
+  >
+    {t.videoPath ? (
+      <video
+        className="testimonial-video-frame"
+        src={t.videoPath}
+        controls
+        playsInline
+        preload="metadata"
+      />
+    ) : (
+      <div className="testimonial-video-frame testimonial-video-placeholder">
+        <span className="glass-icon-chip" style={{ width: "56px", height: "56px" }}>
+          <Play fill="currentColor" style={{ marginLeft: "2px" }} />
+        </span>
+        <span className="micro-mono">Video coming soon</span>
+      </div>
+    )}
+
+    <blockquote className="body-m" style={{ margin: 0, color: "var(--text)" }}>
+      {t.quote}
+    </blockquote>
+    <p
+      className="font-mono"
+      style={{ fontSize: "10.5px", letterSpacing: "0.04em", color: "var(--dim)", margin: 0, lineHeight: 1.5 }}
+    >
+      {t.helpedWith}
+    </p>
+    <figcaption
+      className="font-mono"
+      style={{
+        fontSize: "10px",
+        letterSpacing: "0.2em",
+        textTransform: "uppercase",
+        color: "var(--dim)",
+        marginTop: "auto",
+      }}
+    >
+      {t.author} · {t.role}
+    </figcaption>
+  </figure>
+);
+
 export const WhoSection = () => (
   <section id="who" style={{ background: "var(--black)", overflow: "hidden" }}>
     <img
@@ -25,15 +72,33 @@ export const WhoSection = () => (
     />
     <div className="container-edge section-pad" style={{ position: "relative", zIndex: 1 }}>
       <header className="snap-content" style={{ textAlign: "center", marginBottom: "64px" }}>
-        <Tag>Who We Work With</Tag>
+        <Tag>Client Results</Tag>
         <h2 className="display-m" style={{ color: "var(--white-c)", marginTop: "28px" }}>
-          BUILT FOR<br />
-          CREATORS<br />
-          <span style={{ color: "var(--blue)" }}>LIKE YOU.</span>
+          TRUSTED BY<br />
+          HIGH-TICKET<br />
+          <span style={{ color: "var(--blue)" }}>COACHES.</span>
         </h2>
       </header>
 
-      <div className="who-grid" style={{ marginBottom: "64px" }}>
+      <Carousel opts={{ align: "start", loop: true }} className="snap-content" style={{ marginBottom: "72px" }}>
+        <CarouselContent>
+          {testimonials.map((t) => (
+            <CarouselItem key={t.id} style={{ flexBasis: "min(300px, 100%)" }}>
+              <VideoTestimonialCard t={t} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="social-icon-link" />
+        <CarouselNext className="social-icon-link" />
+      </Carousel>
+
+      <span
+        className="section-label"
+        style={{ display: "flex", justifyContent: "center", marginBottom: "28px" }}
+      >
+        Who We Work With
+      </span>
+      <div className="who-grid">
         {TYPES.map((t) => (
           <div key={t.label} className="who-card glass-panel stagger-child">
             <img src={t.sticker} alt="" aria-hidden className="who-sticker" />
@@ -46,48 +111,6 @@ export const WhoSection = () => (
           </div>
         ))}
       </div>
-
-      <Carousel opts={{ align: "start", loop: true }} className="snap-content">
-        <CarouselContent>
-          {testimonials.map((t) => (
-            <CarouselItem key={t.id} style={{ flexBasis: "min(420px, 100%)" }}>
-              <figure
-                className="surface-card glass-panel"
-                style={{ display: "flex", flexDirection: "column", gap: "20px", margin: 0, height: "100%" }}
-              >
-                <span
-                  className="font-display"
-                  aria-hidden
-                  style={{
-                    fontSize: "80px",
-                    color: "var(--blue)",
-                    lineHeight: 0.7,
-                    opacity: 0.6,
-                  }}
-                >
-                  “
-                </span>
-                <blockquote className="body-l" style={{ margin: 0, color: "var(--text)" }}>
-                  {t.quote}
-                </blockquote>
-                <figcaption
-                  className="font-mono"
-                  style={{
-                    fontSize: "10px",
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "var(--dim)",
-                  }}
-                >
-                  {t.author} · {t.role}
-                </figcaption>
-              </figure>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="social-icon-link" />
-        <CarouselNext className="social-icon-link" />
-      </Carousel>
     </div>
   </section>
 );

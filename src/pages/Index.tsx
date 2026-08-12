@@ -6,6 +6,7 @@ import { SolutionSection } from "@/components/sections/SolutionSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { WhoSection } from "@/components/sections/WhoSection";
+import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { WhySection } from "@/components/sections/WhySection";
 import { BookSection } from "@/components/sections/BookSection";
 import { useScrollDots } from "@/hooks/useScrollDots";
@@ -27,9 +28,10 @@ const Index = () => {
       <main id="snap-root">
         <HeroSection />
         <SolutionSection />
+        <WhoSection />
+        <ReviewsSection />
         <PortfolioSection />
         <ResultsSection />
-        <WhoSection />
         <WhySection />
         <BookSection />
       </main>

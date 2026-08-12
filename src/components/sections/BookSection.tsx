@@ -1,7 +1,8 @@
 import { GMAIL_COMPOSE_URL } from "@/data/config";
 import { scrollToSection } from "@/hooks/useScrollDots";
 import { Footer } from "@/components/Footer";
-import { SocialIcons } from "@/components/shared/SocialIcons";
+import { SocialCtaButtons } from "@/components/shared/SocialIcons";
+import { AvailabilityStrip } from "@/components/shared/AvailabilityStrip";
 
 export const BookSection = () => (
   <section
@@ -61,12 +62,15 @@ export const BookSection = () => (
           Tell us what you are building, where you are stuck, and what a strong result looks like.
         </p>
 
+        <SocialCtaButtons />
+
         <div
           style={{
             display: "flex",
             gap: "12px",
             justifyContent: "center",
             flexWrap: "wrap",
+            marginTop: "20px",
           }}
         >
           <a
@@ -89,8 +93,8 @@ export const BookSection = () => (
           </a>
         </div>
 
-        <div style={{ marginTop: "28px", display: "flex", justifyContent: "center" }}>
-          <SocialIcons />
+        <div style={{ marginTop: "40px" }}>
+          <AvailabilityStrip />
         </div>
       </div>
     </div>

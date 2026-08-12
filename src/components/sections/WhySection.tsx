@@ -2,8 +2,8 @@ import { Tag } from "@/components/shared/Tag";
 
 const PILLARS = [
   { num: "I", title: "Frame-perfect editing" },
-  { num: "II", title: "Built for high-ticket coaches" },
-  { num: "III", title: "Strategy before software" },
+  { num: "II", title: "Strictly high-ticket — no generalists" },
+  { num: "III", title: "Low-ticket to high-ticket funnel specialists" },
   { num: "IV", title: "Hook-first, conversion-minded edits" },
   { num: "V", title: "Clear turnaround times" },
 ];
@@ -19,16 +19,17 @@ export const WhySection = () => (
             <span>CONTENT.</span>
           </h2>
           <p className="body-l about-copy">
-            We're a done-for-you content and video editing agency built for coaches and online
-            entrepreneurs who are ready to scale. While most agencies focus on ad strategy, we
-            focus on what actually moves the needle for high-ticket offers: consistent,
-            high-converting creative — at the volume your ad spend demands.
+            We're a done-for-you content and video editing agency built exclusively for high-ticket
+            coaches, business owners, and CEOs. We are not generalists — our niche is content and
+            automations for the low-ticket to high-ticket funnel, the exact mechanism your offer
+            runs on.
           </p>
           <p className="body-l about-copy">
-            We work with established coaches doing $10K–$50K+/month who have a proven offer but
-            no time (or desire) to sit in an editing suite. You send the raw footage or ideas; we
-            handle scripting, editing, and hook iteration so your content keeps converting and
-            your ad accounts keep scaling.
+            We work with established coaches and operators doing $10K–$50K+/month who have a
+            proven offer but no time (or desire) to sit in an editing suite. You send the raw
+            footage or ideas; we handle scripting, editing, hook iteration, and the GHL/Make
+            automations behind your funnel so your content keeps converting and your ad accounts
+            keep scaling.
           </p>
           <p className="body-l about-copy">
             No micromanaging. No one-off gigs. Just a reliable creative partner that plugs into

@@ -30,7 +30,7 @@ describe("<Index> page assembly", () => {
     expect(container.querySelector(".grain-overlay")).not.toBeNull();
   });
 
-  it("renders the seven portfolio sections in stable order", () => {
+  it("renders the eight portfolio sections in stable order", () => {
     const { container } = renderIndex();
     const ids = Array.from(container.querySelectorAll<HTMLElement>("section"))
       .map((s) => s.id)
@@ -38,9 +38,10 @@ describe("<Index> page assembly", () => {
     expect(ids).toEqual([
       "hero",
       "solution",
+      "who",
+      "reviews",
       "portfolio",
       "results",
-      "who",
       "why",
       "book",
     ]);

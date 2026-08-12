@@ -8,10 +8,11 @@ import { PortfolioSection } from "./PortfolioSection";
 import { ResultsSection } from "./ResultsSection";
 import { WhySection } from "./WhySection";
 import { WhoSection } from "./WhoSection";
+import { ReviewsSection } from "./ReviewsSection";
 import { FaqSection } from "./FaqSection";
 import { BookSection } from "./BookSection";
 
-import { GMAIL_COMPOSE_URL } from "@/data/config";
+import { GMAIL_COMPOSE_URL, WHATSAPP_URL, INSTAGRAM_URL } from "@/data/config";
 import { faqs } from "@/data/faqs";
 import { portfolioItems } from "@/data/portfolioItems";
 import { caseStudies } from "@/data/caseStudies";
@@ -57,15 +58,16 @@ describe("<ProblemSection>", () => {
 
 describe("<SolutionSection>", () => {
   const SERVICE_TITLES = [
-    "Short-Form Content",
-    "Long-Form Editing",
-    "Ad Creative",
-    "Brand Strategy",
-    "Thumbnails + GFX",
-    "Distribution",
+    "Ads",
+    "Long Form",
+    "Short Form",
+    "GHL Automations",
+    "Make Automations",
+    "Thumbnails",
+    "Content Strategy",
   ];
 
-  it("renders all 6 service titles", () => {
+  it("renders all 7 service titles", () => {
     render(<SolutionSection />);
     SERVICE_TITLES.forEach((t) => {
       expect(screen.getByText(t)).toBeInTheDocument();
@@ -82,7 +84,7 @@ describe("<SolutionSection>", () => {
   it("each service card renders an SVG icon (no emoji)", () => {
     const { container } = render(<SolutionSection />);
     const cards = container.querySelectorAll(".service-card");
-    expect(cards.length).toBe(6);
+    expect(cards.length).toBe(7);
     cards.forEach((card) => {
       expect(card.querySelector(".icon svg")).not.toBeNull();
     });
@@ -121,7 +123,7 @@ describe("<PortfolioSection>", () => {
     const { container } = render(<PortfolioSection />);
     const ceo = container.querySelector<HTMLImageElement>(".portfolio-cta-ceo");
     expect(ceo).not.toBeNull();
-    expect(ceo!.src).toContain("CEO.svg");
+    expect(ceo!.src).toContain("CEO.jpg");
     expect(ceo!.alt).toMatch(/Mark Jason/);
   });
 });
@@ -165,8 +167,8 @@ describe("<WhySection>", () => {
   it("renders all 5 pillar titles", () => {
     render(<WhySection />);
     expect(screen.getByText("Frame-perfect editing")).toBeInTheDocument();
-    expect(screen.getByText("Built for high-ticket coaches")).toBeInTheDocument();
-    expect(screen.getByText("Strategy before software")).toBeInTheDocument();
+    expect(screen.getByText("Strictly high-ticket — no generalists")).toBeInTheDocument();
+    expect(screen.getByText("Low-ticket to high-ticket funnel specialists")).toBeInTheDocument();
     expect(screen.getByText("Hook-first, conversion-minded edits")).toBeInTheDocument();
     expect(screen.getByText("Clear turnaround times")).toBeInTheDocument();
   });
@@ -204,6 +206,15 @@ describe("<WhoSection>", () => {
     const glow = container.querySelector<HTMLImageElement>(".who-bg-glow");
     expect(glow).not.toBeNull();
     expect(glow!.src).toContain("blue-glow.png");
+  });
+});
+
+describe("<ReviewsSection>", () => {
+  it("renders the Trustpilot placeholder without a fabricated rating", () => {
+    render(<ReviewsSection />);
+    expect(screen.getByText("Trustpilot Reviews")).toBeInTheDocument();
+    expect(screen.getByText(/reviews coming soon/i)).toBeInTheDocument();
+    expect(screen.queryByText(/\d(\.\d)?\s*\/\s*5/)).not.toBeInTheDocument();
   });
 });
 
@@ -262,6 +273,17 @@ describe("<BookSection>", () => {
     render(<BookSection />);
     const link = screen.getByRole("link", { name: /see portfolio/i });
     expect(link).toHaveAttribute("href", "#portfolio");
+  });
+
+  it("renders large WhatsApp and Instagram CTAs", () => {
+    render(<BookSection />);
+    const whatsapp = screen.getByRole("link", { name: /message on whatsapp/i });
+    expect(whatsapp).toHaveAttribute("href", WHATSAPP_URL);
+    expect(whatsapp).toHaveClass("btn-social-large");
+
+    const instagram = screen.getByRole("link", { name: /dm on instagram/i });
+    expect(instagram).toHaveAttribute("href", INSTAGRAM_URL);
+    expect(instagram).toHaveClass("btn-social-large");
   });
 
   it("renders the Footer underneath the section", () => {

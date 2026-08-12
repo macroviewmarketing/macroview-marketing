@@ -83,13 +83,19 @@ export const PortfolioSection = () => (
             </h3>
           </div>
           <div className="portfolio-cta-ceo-wrap">
-            <span className="portfolio-cta-ceo-name">Mark Jason</span>
             <img
-              src="/CEO.svg"
+              src="/CEO.jpg"
               alt="Mark Jason — Owner of MVD"
               className="portfolio-cta-ceo"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = "/CEO.svg";
+              }}
             />
-            <span className="portfolio-cta-ceo-role">Owner of MVD</span>
+            <span className="portfolio-cta-ceo-info">
+              <span className="portfolio-cta-ceo-name">Mark Jason</span>
+              <span className="portfolio-cta-ceo-role">Owner of MVD</span>
+            </span>
           </div>
         </article>
       </div>

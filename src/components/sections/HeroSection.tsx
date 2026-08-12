@@ -8,7 +8,7 @@ export const HeroSection = () => (
         <div className="hero-copy">
           <div className="hero-eyebrow">
             <span className="hero-eyebrow-line" />
-            <span className="label-mono">Creative production for high-ticket coaches</span>
+            <span className="label-mono">Creative production for high-ticket coaches, business owners &amp; CEOs</span>
           </div>
 
           <h1 className="display-l hero-heading">
@@ -18,9 +18,11 @@ export const HeroSection = () => (
           </h1>
 
           <p className="body-l hero-summary">
-            Macroview Digital Marketing is a creative production agency that scripts and edits
-            short-form content for high-ticket coaches — so you can scale your ads and convert at
-            volume without touching an editing timeline.
+            Macroview Digital Marketing is a creative production agency built exclusively for
+            high-ticket coaches, business owners, and CEOs. We're not generalists — we specialize
+            in low-ticket to high-ticket funnel content, scripting and editing the ads and
+            short-form that scale your offer and convert at volume, without you touching an
+            editing timeline.
           </p>
 
           <div className="hero-actions">
@@ -47,8 +49,8 @@ export const HeroSection = () => (
           <div className="hero-proof" aria-label="Studio capabilities">
             <span>Scripting</span>
             <span>Editing</span>
-            <span>Hook Iteration</span>
-            <span>Ad-Ready Delivery</span>
+            <span>Automations</span>
+            <span>Funnel-Ready</span>
           </div>
         </div>
 
