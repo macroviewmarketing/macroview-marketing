@@ -156,7 +156,7 @@ export const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <span>© {year} MacroView Digital · Macro View Marketing</span>
+        <span>© {year} MacroView Digital · Macroview Marketing</span>
         <span>Built in the dark.</span>
       </div>
     </footer>
