@@ -37,7 +37,14 @@ jobs:
       - name: Add custom domain CNAME
         run: echo "www.macroviewmarketing.com" > dist/CNAME
 
-      - name: SPA fallback for GitHub Pages (client-side routes like /store)
+      - name: Pre-render static entry points for known client-side routes
+        run: |
+          for route in privacy-policy terms-and-conditions refund-policy; do
+            mkdir -p "dist/$route"
+            cp dist/index.html "dist/$route/index.html"
+          done
+
+      - name: SPA fallback for GitHub Pages (unknown client-side routes)
         run: cp dist/index.html dist/404.html
 
       - name: Upload artifact
