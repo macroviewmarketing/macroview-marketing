@@ -21,17 +21,17 @@
     --text:         #c8cad4;
     --white-c:      #eeeef2;
 
-    /* ── Accent (DAMN.-mood: deep blood-red on black) ── */
-    --blue:         #f20d49;
-    --blue-dim:     #c50337;
-    --blue-glow:    rgba(242, 13, 73, 0.18);
-    --blue-fog:     rgba(197, 3, 55, 0.07);
-    --cyan:         #ff174f;
-    --cyan-glow:    rgba(255, 23, 79, 0.15);
+    /* ── Accent (true red / deep maroon, not magenta-red) ── */
+    --blue:         #d81e1e;
+    --blue-dim:     #ac1212;
+    --blue-glow:    rgba(216, 30, 30, 0.18);
+    --blue-fog:     rgba(172, 18, 18, 0.07);
+    --cyan:         #e63939;
+    --cyan-glow:    rgba(230, 57, 57, 0.15);
 
     /* ── Glass UI accent (see macroview-hq/apps/captions) ── */
-    --glass-cyan:   #f20d49;
-    --glass-purple: #8f0028;
+    --glass-cyan:   #d81e1e;
+    --glass-purple: #460707;
 
     /* ── Easings ──────────────────────────────────── */
     --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
@@ -401,12 +401,12 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 /* Reconcile with the existing .service-card .icon sizing/hover rules (higher
    specificity here so the chip keeps its size + gradient regardless of order) */
 .service-card .icon.glass-icon-chip {
-  width: 36px;
-  height: 36px;
-  margin-bottom: 14px;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
   color: #071016;
 }
-.service-card .icon.glass-icon-chip svg { width: 18px; height: 18px; }
+.service-card .icon.glass-icon-chip svg { width: 26px; height: 26px; }
 
 .glass-orb {
   position: absolute;
@@ -719,8 +719,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: 22px;
   letter-spacing: 0.12em;
   color: var(--white-c);
@@ -878,8 +877,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   visibility: hidden;
 }
 .loader-wordmark {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: clamp(64px, 12vw, 160px);
   color: var(--white-c);
   animation: wordGlow 1800ms var(--ease-in-out-expo) forwards;
@@ -971,8 +969,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   max-width: 900px;
 }
 .cta-band-headline {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: clamp(36px, 5vw, 64px);
   letter-spacing: 0.04em;
   line-height: 0.95;
@@ -1058,8 +1055,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   gap: 2px;
 }
 .hero-counter .num {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: 22px;
   color: var(--white-c);
   letter-spacing: 0.04em;
@@ -1102,7 +1098,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 }
 .service-grid > * {
   background: var(--surface);
-  padding: 28px 22px;
+  padding: 44px 30px;
 }
 @media (max-width: 1024px) {
   .service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1124,12 +1120,13 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 .service-card:hover { background: #13151c; }
 .service-card:hover::before { opacity: 1; }
 .service-card .num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 40px;
+  letter-spacing: 0.03em;
   color: var(--blue);
-  margin-bottom: 14px;
+  margin-bottom: 6px;
   display: block;
+  line-height: 1;
 }
 .service-card .icon {
   display: block;
@@ -1151,12 +1148,11 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   color: var(--cyan);
 }
 .service-card .title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.02em;
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: 27px;
+  letter-spacing: 0.03em;
   color: var(--white-c);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .service-card .desc {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1363,8 +1359,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   max-width: 560px;
 }
 .portfolio-cta-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: clamp(32px, 4vw, 56px);
   letter-spacing: 0.04em;
   line-height: 1.0;
@@ -1399,8 +1394,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   text-align: left;
 }
 .portfolio-cta-ceo-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif !important;
   font-size: 16px;
   line-height: 1;
   letter-spacing: 0.1em;

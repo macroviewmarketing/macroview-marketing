@@ -28,7 +28,7 @@ export const SolutionSection = () => (
       className="solution-bg-mark"
     />
     <div className="container-edge section-pad" style={{ position: "relative", zIndex: 1 }}>
-      <header className="snap-content" style={{ textAlign: "center", marginBottom: "40px" }}>
+      <header className="snap-content" style={{ textAlign: "center", marginBottom: "56px" }}>
         <Tag>The System</Tag>
         <h2 className="display-m" style={{ color: "var(--white-c)", marginTop: "28px" }}>
           THE MVD<br />
