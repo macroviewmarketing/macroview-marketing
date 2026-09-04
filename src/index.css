@@ -70,7 +70,7 @@
   html, body {
     background: var(--black);
     color: var(--text);
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -119,18 +119,18 @@
 /* ============================================================
    TYPOGRAPHY UTILITIES
    ============================================================ */
-.font-display { font-family: 'Outfit', system-ui, sans-serif; letter-spacing: -0.02em; font-weight: 650; }
-.font-body    { font-family: 'Outfit', system-ui, sans-serif; }
+.font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; letter-spacing: -0.02em; font-weight: 650; }
+.font-body    { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
 .font-mono    { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 
-.display-xl { font-family: 'Outfit', sans-serif; font-size: clamp(80px, 10vw, 140px); line-height: 0.88; letter-spacing: -0.04em; font-weight:650; }
-.display-l  { font-family: 'Outfit', sans-serif; font-size: clamp(64px, 8vw, 112px);  line-height: 0.90; letter-spacing: -0.035em; font-weight:650; }
-.display-m  { font-family: 'Outfit', sans-serif; font-size: clamp(48px, 6vw, 80px);   line-height: 0.92; letter-spacing: -0.03em; font-weight:650; }
-.display-s  { font-family: 'Outfit', sans-serif; font-size: clamp(32px, 4vw, 48px);   line-height: 0.95; letter-spacing: -0.025em; font-weight:650; }
+.display-xl { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(80px, 10vw, 140px); line-height: 0.88; letter-spacing: -0.04em; font-weight:650; }
+.display-l  { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(64px, 8vw, 112px);  line-height: 0.90; letter-spacing: -0.035em; font-weight:650; }
+.display-m  { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(48px, 6vw, 80px);   line-height: 0.92; letter-spacing: -0.03em; font-weight:650; }
+.display-s  { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 4vw, 48px);   line-height: 0.95; letter-spacing: -0.025em; font-weight:650; }
 
-.body-l { font-family: 'Outfit', sans-serif; font-size: 16px; line-height: 1.75; font-weight: 400; color: var(--text); }
-.body-m { font-family: 'Outfit', sans-serif; font-size: 15px; line-height: 1.70; font-weight: 400; color: var(--text); }
-.body-s { font-family: 'Outfit', sans-serif; font-size: 14px; line-height: 1.65; font-weight: 400; color: var(--text); }
+.body-l { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; line-height: 1.75; font-weight: 400; color: var(--text); }
+.body-m { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; line-height: 1.70; font-weight: 400; color: var(--text); }
+.body-s { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.65; font-weight: 400; color: var(--text); }
 
 .label-mono { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); }
 .tag-mono   { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.20em; text-transform: uppercase; }
@@ -138,7 +138,7 @@
 
 /* Keep every marketing surface on the same product typography as the CEP panels. */
 body :where(h1,h2,h3,h4,h5,h6,p,a,button,input,textarea,select,span,strong,em,li,blockquote) {
-  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
 }
 body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   font-family: 'JetBrains Mono', ui-monospace, monospace !important;
@@ -170,7 +170,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.20em;
   text-transform: uppercase;
@@ -184,7 +184,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -202,7 +202,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   align-items: center;
   gap: 8px;
   padding: 4px 10px;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -227,7 +227,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -347,41 +347,6 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   transform: translateX(4px);
 }
 
-.who-card {
-  background: var(--surface);
-  border: 1px solid var(--border-c);
-  padding: 48px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-align: center;
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-.who-card:hover {
-  background: #13151c;
-  border-color: var(--border-glow);
-}
-.who-sticker {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  display: block;
-  user-select: none;
-  transition: transform 0.4s var(--ease-out-quart);
-}
-.who-sticker[src$="podcast-sticker.svg"] {
-  width: 106px;
-  height: 106px;
-}
-.who-card:hover .who-sticker {
-  transform: scale(1.06) rotate(-3deg);
-}
-@media (max-width: 768px) {
-  .who-sticker { width: 72px; height: 72px; }
-  .who-sticker[src$="podcast-sticker.svg"] { width: 79px; height: 79px; }
-}
-
 /* ============================================================
    GLASS UI — frosted panel treatment
    Reference: macroview-hq/apps/captions (CaptionSplitterClient.jsx
@@ -405,15 +370,13 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 .service-card.glass-panel,
 .metric-card.glass-panel,
 .surface-card.glass-panel,
-.who-card.glass-panel,
 .portfolio-placeholder.glass-panel {
   background: linear-gradient(145deg, rgba(30, 20, 24, 0.8), rgba(14, 8, 10, 0.72));
   border-color: rgba(190, 140, 150, 0.22);
 }
 .service-card.glass-panel:hover,
 .metric-card.glass-panel:hover,
-.surface-card.glass-panel:hover,
-.who-card.glass-panel:hover {
+.surface-card.glass-panel:hover {
   background: linear-gradient(145deg, rgba(38, 24, 28, 0.86), rgba(17, 10, 12, 0.78));
   border-color: rgba(242, 13, 73, 0.35);
 }
@@ -438,12 +401,12 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 /* Reconcile with the existing .service-card .icon sizing/hover rules (higher
    specificity here so the chip keeps its size + gradient regardless of order) */
 .service-card .icon.glass-icon-chip {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 20px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
   color: #071016;
 }
-.service-card .icon.glass-icon-chip svg { width: 22px; height: 22px; }
+.service-card .icon.glass-icon-chip svg { width: 18px; height: 18px; }
 
 .glass-orb {
   position: absolute;
@@ -548,7 +511,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   flex-wrap: wrap;
 }
 .availability-strip-summary {
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -683,7 +646,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   background: none;
   border: none;
   text-align: left;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: var(--white-c);
@@ -717,7 +680,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   padding-bottom: 24px;
 }
 .faq-answer {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   line-height: 1.7;
   color: var(--dim);
@@ -756,7 +719,8 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: 22px;
   letter-spacing: 0.12em;
   color: var(--white-c);
@@ -779,7 +743,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 }
 .nav-link {
   position: relative;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -914,7 +878,8 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   visibility: hidden;
 }
 .loader-wordmark {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: clamp(64px, 12vw, 160px);
   color: var(--white-c);
   animation: wordGlow 1800ms var(--ease-in-out-expo) forwards;
@@ -1006,7 +971,8 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   max-width: 900px;
 }
 .cta-band-headline {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: clamp(36px, 5vw, 64px);
   letter-spacing: 0.04em;
   line-height: 0.95;
@@ -1092,13 +1058,14 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   gap: 2px;
 }
 .hero-counter .num {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: 22px;
   color: var(--white-c);
   letter-spacing: 0.04em;
 }
 .hero-counter .label {
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1109,7 +1076,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   top: 24px;
   right: 24px;
   writing-mode: vertical-rl;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -1135,7 +1102,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 }
 .service-grid > * {
   background: var(--surface);
-  padding: 48px 32px;
+  padding: 28px 22px;
 }
 @media (max-width: 1024px) {
   .service-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1157,11 +1124,11 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 .service-card:hover { background: #13151c; }
 .service-card:hover::before { opacity: 1; }
 .service-card .num {
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--blue);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
   display: block;
 }
 .service-card .icon {
@@ -1184,14 +1151,15 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   color: var(--cyan);
 }
 .service-card .title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
-  letter-spacing: 0.04em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
   color: var(--white-c);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .service-card .desc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   line-height: 1.65;
   color: var(--dim);
@@ -1305,14 +1273,18 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   bottom: 0;
   transform: translate(-50%, 38%);
   width: max(800px, 110vw);
-  height: auto;
+  height: 60%;
   pointer-events: none;
   user-select: none;
   z-index: 0;
   opacity: 0.6;
   mix-blend-mode: screen;
-  /* blue-glow.png is a blue-tinted asset — shift it into the red palette */
-  filter: hue-rotate(150deg) saturate(1.6);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(242, 13, 73, 0.4) 0%,
+    rgba(197, 3, 55, 0.16) 45%,
+    transparent 75%
+  );
 }
 @media (max-width: 768px) {
   .who-bg-glow {
@@ -1344,19 +1316,6 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
     right: -20%;
     opacity: 0.05;
   }
-}
-
-/* ============================================================
-   WHO GRID
-   ============================================================ */
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border-c);
-}
-@media (max-width: 768px) {
-  .who-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================================
@@ -1404,7 +1363,8 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   max-width: 560px;
 }
 .portfolio-cta-text {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: clamp(32px, 4vw, 56px);
   letter-spacing: 0.04em;
   line-height: 1.0;
@@ -1439,7 +1399,8 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   text-align: left;
 }
 .portfolio-cta-ceo-name {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1;
   letter-spacing: 0.1em;
@@ -1448,7 +1409,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   white-space: nowrap;
 }
 .portfolio-cta-ceo-role {
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -1634,7 +1595,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 .hero-proof span {
   position: relative;
   padding: 18px 12px 0 0;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   line-height: 1.4;
   letter-spacing: 0.16em;
@@ -1798,7 +1759,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  font-family: 'Space Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1809,7 +1770,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
    LEGAL PAGE CONTENT
    ============================================================ */
 .legal-body h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
   font-weight: 650;
   color: var(--white-c);
@@ -1819,7 +1780,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 }
 .legal-body h2:first-child { margin-top: 0; }
 .legal-body p {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 15px;
   line-height: 1.75;
   font-weight: 400;
@@ -1833,7 +1794,7 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
   gap: 8px;
 }
 .legal-body li {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 15px;
   line-height: 1.7;
   color: var(--text);

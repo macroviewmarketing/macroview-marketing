@@ -174,24 +174,6 @@ describe("<WhySection>", () => {
 });
 
 describe("<WhoSection>", () => {
-  const TYPES = ["Coaches", "Educators", "Lifestyle Creators", "Podcasters"];
-
-  it("renders all 4 creator-type labels", () => {
-    render(<WhoSection />);
-    TYPES.forEach((label) => {
-      expect(screen.getByText(label)).toBeInTheDocument();
-    });
-  });
-
-  it("uses sticker SVGs (not emojis) for the type icons", () => {
-    const { container } = render(<WhoSection />);
-    const stickers = container.querySelectorAll<HTMLImageElement>(".who-sticker");
-    expect(stickers.length).toBe(4);
-    stickers.forEach((s) => {
-      expect(s.src).toMatch(/-sticker\.svg$/);
-    });
-  });
-
   it("renders all testimonial quotes and authors", () => {
     render(<WhoSection />);
     testimonials.forEach((t) => {
@@ -200,11 +182,9 @@ describe("<WhoSection>", () => {
     });
   });
 
-  it("includes the bottom blue-glow image", () => {
+  it("includes the bottom background glow", () => {
     const { container } = render(<WhoSection />);
-    const glow = container.querySelector<HTMLImageElement>(".who-bg-glow");
-    expect(glow).not.toBeNull();
-    expect(glow!.src).toContain("blue-glow.png");
+    expect(container.querySelector(".who-bg-glow")).not.toBeNull();
   });
 });
 

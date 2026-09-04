@@ -2,7 +2,6 @@ import { GMAIL_COMPOSE_URL } from "@/data/config";
 import { scrollToSection } from "@/hooks/useScrollDots";
 import { Footer } from "@/components/Footer";
 import { SocialCtaButtons } from "@/components/shared/SocialIcons";
-import { AvailabilityStrip } from "@/components/shared/AvailabilityStrip";
 
 export const BookSection = () => (
   <section
@@ -91,10 +90,6 @@ export const BookSection = () => (
           >
             See Portfolio
           </a>
-        </div>
-
-        <div style={{ marginTop: "40px" }}>
-          <AvailabilityStrip />
         </div>
       </div>
     </div>

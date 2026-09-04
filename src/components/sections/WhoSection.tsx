@@ -9,13 +9,6 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-const TYPES = [
-  { sticker: "/coach-sticker.svg",              label: "Coaches" },
-  { sticker: "/educator-sticker.svg",           label: "Educators" },
-  { sticker: "/lifestyle-creators-sticker.svg", label: "Lifestyle Creators" },
-  { sticker: "/podcast-sticker.svg",            label: "Podcasters" },
-];
-
 const VideoTestimonialCard = ({ t }: { t: Testimonial }) => (
   <figure
     className="surface-card glass-panel"
@@ -61,12 +54,7 @@ const VideoTestimonialCard = ({ t }: { t: Testimonial }) => (
 
 export const WhoSection = () => (
   <section id="who" style={{ background: "var(--black)", overflow: "hidden" }}>
-    <img
-      src="/blue-glow.png"
-      alt=""
-      aria-hidden
-      className="who-bg-glow"
-    />
+    <div aria-hidden className="who-bg-glow" />
     <div className="container-edge section-pad" style={{ position: "relative", zIndex: 1 }}>
       <header className="snap-content" style={{ textAlign: "center", marginBottom: "64px" }}>
         <Tag>Client Results</Tag>
@@ -77,7 +65,7 @@ export const WhoSection = () => (
         </h2>
       </header>
 
-      <Carousel opts={{ align: "start", loop: true }} className="snap-content" style={{ marginBottom: "72px" }}>
+      <Carousel opts={{ align: "start", loop: true }} className="snap-content">
         <CarouselContent>
           {testimonials.map((t) => (
             <CarouselItem key={t.id} style={{ flexBasis: "min(300px, 100%)" }}>
@@ -88,26 +76,6 @@ export const WhoSection = () => (
         <CarouselPrevious className="social-icon-link" />
         <CarouselNext className="social-icon-link" />
       </Carousel>
-
-      <span
-        className="section-label"
-        style={{ display: "flex", justifyContent: "center", marginBottom: "28px" }}
-      >
-        Who We Work With
-      </span>
-      <div className="who-grid">
-        {TYPES.map((t) => (
-          <div key={t.label} className="who-card glass-panel stagger-child">
-            <img src={t.sticker} alt="" aria-hidden className="who-sticker" />
-            <span
-              className="font-display"
-              style={{ fontSize: "24px", color: "var(--white-c)", letterSpacing: "0.04em" }}
-            >
-              {t.label}
-            </span>
-          </div>
-        ))}
-      </div>
     </div>
   </section>
 );
