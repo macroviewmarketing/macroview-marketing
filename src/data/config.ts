@@ -16,9 +16,18 @@ export const LOCATION = "Philippines";
 export const TIMEZONE = "Asia/Manila";
 export const UTC_OFFSET = "UTC+8";
 
+/** Registered business address (per DTI/BIR Certificate of Registration). */
+export const BUSINESS_ADDRESS = "Bangga Aton, Zone 2, 6115 City of Talisay, Negros Occidental, Philippines";
+
+/** Registered trade name (DTI Business Name No. 7180861). */
+export const TRADE_NAME = "Macroview Digital Marketing Services";
+
+/** Registered proprietor (BIR Certificate of Registration). */
+export const LEGAL_ENTITY_NAME = "Mark Jason Jamison Marcelino";
+
 export const SITE_META = {
   title: "MacroView Digital — Content Production Studio",
   description:
     "We build scroll-stopping video content for creators and personal brands that want to scale.",
-  url: "https://macroviewdigital.com",
+  url: "https://www.macroviewmarketing.com",
 };

@@ -61,7 +61,6 @@ describe("sections registry", () => {
       "hero",
       "solution",
       "who",
-      "reviews",
       "portfolio",
       "results",
       "why",
@@ -207,8 +206,8 @@ describe("faqs", () => {
 });
 
 describe("testimonials", () => {
-  it("has 3 entries", () => {
-    expect(testimonials).toHaveLength(3);
+  it("has 2 entries", () => {
+    expect(testimonials).toHaveLength(2);
   });
 
   it("every testimonial has quote/author/role", () => {

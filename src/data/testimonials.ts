@@ -28,12 +28,4 @@ export const testimonials: Testimonial[] = [
     helpedWith: "Full ad creative overhaul for a low-ticket to high-ticket funnel relaunch.",
     videoPath: null,
   },
-  {
-    id: "t3",
-    quote: "Video testimonial coming soon — drop the real clip in here once it's ready.",
-    author: "Your Client",
-    role: "Add a case study",
-    helpedWith: "Add what you helped this client achieve.",
-    videoPath: null,
-  },
 ];

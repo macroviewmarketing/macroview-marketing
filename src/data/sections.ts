@@ -4,7 +4,6 @@ export const SECTIONS = [
   { id: "hero",      label: "Home" },
   { id: "solution",  label: "Services" },
   { id: "who",       label: "Testimonials" },
-  { id: "reviews",   label: "Reviews" },
   { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
   { id: "why",       label: "About" },
@@ -16,7 +15,6 @@ export type SectionId = (typeof SECTIONS)[number]["id"];
 export const NAV_LINKS: { id: SectionId; label: string }[] = [
   { id: "solution",  label: "Services" },
   { id: "who",       label: "Testimonials" },
-  { id: "reviews",   label: "Reviews" },
   { id: "portfolio", label: "Work" },
   { id: "results",   label: "Results" },
   { id: "why",       label: "About" },

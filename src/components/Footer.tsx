@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   BOOKING_EMAIL,
   PHONE_DISPLAY,
@@ -7,6 +8,7 @@ import {
   LOCATION,
   TIMEZONE,
   UTC_OFFSET,
+  BUSINESS_ADDRESS,
 } from "@/data/config";
 import { NAV_LINKS } from "@/data/sections";
 import { scrollToSection } from "@/hooks/useScrollDots";
@@ -114,6 +116,27 @@ export const Footer = () => {
           </div>
 
           <div>
+            <span className="font-mono" style={colLabelStyle}>Legal</span>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
+              <li>
+                <Link to="/terms-and-conditions" className="nav-link">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="nav-link">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="nav-link">
+                  Refund Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
             <span className="font-mono" style={colLabelStyle}>Studio</span>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
               <li
@@ -126,6 +149,12 @@ export const Footer = () => {
                 }}
               >
                 {LOCATION}
+              </li>
+              <li
+                className="body-s"
+                style={{ color: "var(--dim)", maxWidth: "220px", lineHeight: 1.5 }}
+              >
+                {BUSINESS_ADDRESS}
               </li>
               <li
                 className="font-mono"

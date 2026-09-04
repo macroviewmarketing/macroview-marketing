@@ -1,8 +1,6 @@
 # MacroView Digital — Launchpad
 
-The official one-page marketing site for **MacroView Digital**, a content production and video editing studio for creators and personal brands.
-
-> **Status:** Test / demo stage. This codebase is **not yet in full production**. Copy, imagery, metrics, and contact details may still be revised before public launch.
+The official marketing site for **Macroview Digital Marketing Services**, a content marketing agency for high-ticket coaches and consultants.
 
 ---
 
@@ -35,8 +33,6 @@ The official one-page marketing site for **MacroView Digital**, a content produc
 
 ## Copyright
 
-© 2026 **MacroView Digital**. All rights reserved.
+© 2026 **Macroview Digital Marketing Services**. All rights reserved.
 
-All source code, design assets, brand imagery, copy, and configuration in this repository are the exclusive property of MacroView Digital. No part of this repository — including but not limited to the design system, copy, illustrations, video assets, sticker artwork, CEO portrait, and brand mark — may be copied, reproduced, modified, distributed, or used in any form without prior written permission from MacroView Digital.
-
-This repository is published in a **test / demo** capacity only and does not constitute a full production release. Final copyright notices, licensing terms, and production contact information will be issued at official launch.
+All source code, design assets, brand imagery, copy, and configuration in this repository are the exclusive property of Macroview Digital Marketing Services. No part of this repository — including but not limited to the design system, copy, illustrations, video assets, sticker artwork, CEO portrait, and brand mark — may be copied, reproduced, modified, distributed, or used in any form without prior written permission.

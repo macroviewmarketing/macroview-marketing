@@ -62,14 +62,16 @@ export const HeroSection = () => (
 
 const HeroPanel = () => (
   <div className="hero-panel">
-    <div className="hero-placeholder glass-panel" aria-hidden>
-      <img
-        src="/Macroview%20-%20Logo.svg"
-        alt=""
-        className="hero-placeholder-mark"
-      />
-      <span className="micro-mono">Studio reel — coming soon</span>
-    </div>
+    <video
+      className="hero-media"
+      src="/video-asset/long-form-editing.mp4"
+      aria-hidden
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+    />
     <div className="hero-grid" />
     <div className="hero-orb" />
     <div className="hero-live">

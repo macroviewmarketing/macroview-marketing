@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+import { Quote } from "lucide-react";
 import { Tag } from "@/components/shared/Tag";
 import { testimonials, type Testimonial } from "@/data/testimonials";
 import {
@@ -30,12 +30,9 @@ const VideoTestimonialCard = ({ t }: { t: Testimonial }) => (
         preload="metadata"
       />
     ) : (
-      <div className="testimonial-video-frame testimonial-video-placeholder">
-        <span className="glass-icon-chip" style={{ width: "56px", height: "56px" }}>
-          <Play fill="currentColor" style={{ marginLeft: "2px" }} />
-        </span>
-        <span className="micro-mono">Video coming soon</span>
-      </div>
+      <span className="glass-icon-chip" style={{ width: "40px", height: "40px" }}>
+        <Quote fill="currentColor" size={16} />
+      </span>
     )}
 
     <blockquote className="body-m" style={{ margin: 0, color: "var(--text)" }}>

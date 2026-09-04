@@ -8,7 +8,6 @@ import { PortfolioSection } from "./PortfolioSection";
 import { ResultsSection } from "./ResultsSection";
 import { WhySection } from "./WhySection";
 import { WhoSection } from "./WhoSection";
-import { ReviewsSection } from "./ReviewsSection";
 import { FaqSection } from "./FaqSection";
 import { BookSection } from "./BookSection";
 
@@ -26,11 +25,12 @@ describe("<HeroSection>", () => {
     expect(cta).toHaveAttribute("href", GMAIL_COMPOSE_URL);
   });
 
-  it("uses a glass placeholder (no video) in the hero panel until real footage lands", () => {
+  it("plays the studio reel video in the hero panel", () => {
     const { container } = render(<HeroSection />);
-    expect(container.querySelector(".hero-media")).toBeNull();
-    expect(container.querySelector("video")).toBeNull();
-    expect(container.querySelector(".hero-placeholder.glass-panel")).not.toBeNull();
+    const video = container.querySelector<HTMLVideoElement>(".hero-media");
+    expect(video).not.toBeNull();
+    expect(video?.tagName).toBe("VIDEO");
+    expect(video).toHaveAttribute("src", "/video-asset/long-form-editing.mp4");
   });
 
   it("does NOT render the studio-open live badge anymore", () => {
@@ -99,13 +99,12 @@ describe("<PortfolioSection>", () => {
     });
   });
 
-  it("uses glass placeholder tiles (no video) until real footage lands", () => {
+  it("plays each item's real footage instead of a placeholder", () => {
     const { container } = render(<PortfolioSection />);
-    expect(container.querySelectorAll("video")).toHaveLength(0);
-    const placeholders = container.querySelectorAll(".portfolio-placeholder.glass-panel");
-    expect(placeholders.length).toBe(6);
-    placeholders.forEach((p) => {
-      expect(p.querySelector(".glass-icon-chip svg")).not.toBeNull();
+    const videos = container.querySelectorAll<HTMLVideoElement>("video.portfolio-item-bg");
+    expect(videos.length).toBe(6);
+    videos.forEach((v) => {
+      expect(v.getAttribute("src")).toMatch(/^\/video-asset\/.+\.mp4$/);
     });
   });
 
@@ -206,15 +205,6 @@ describe("<WhoSection>", () => {
     const glow = container.querySelector<HTMLImageElement>(".who-bg-glow");
     expect(glow).not.toBeNull();
     expect(glow!.src).toContain("blue-glow.png");
-  });
-});
-
-describe("<ReviewsSection>", () => {
-  it("renders the Trustpilot placeholder without a fabricated rating", () => {
-    render(<ReviewsSection />);
-    expect(screen.getByText("Trustpilot Reviews")).toBeInTheDocument();
-    expect(screen.getByText(/reviews coming soon/i)).toBeInTheDocument();
-    expect(screen.queryByText(/\d(\.\d)?\s*\/\s*5/)).not.toBeInTheDocument();
   });
 });
 
