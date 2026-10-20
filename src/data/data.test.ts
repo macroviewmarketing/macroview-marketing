@@ -10,11 +10,11 @@ import {
   UTC_OFFSET,
   SITE_META,
 } from "./config";
-import { SECTIONS, NAV_LINKS, CTA_BANDS } from "./sections";
+import { BOOKING_URL, BOOK_CALL_URL } from "./config";
+import { SECTIONS, NAV_LINKS } from "./sections";
 import { portfolioItems } from "./portfolioItems";
-import { caseStudies } from "./caseStudies";
 import { faqs } from "./faqs";
-import { testimonials } from "./testimonials";
+import { STATS, ENGINE_STEPS, VIDEO_TESTIMONIALS } from "./funnel";
 
 describe("config", () => {
   it("BOOKING_EMAIL matches expected gmail", () => {
@@ -48,6 +48,11 @@ describe("config", () => {
     expect(UTC_OFFSET).toBe("UTC+8");
   });
 
+  it("Book a Call falls back to Gmail compose until a booking link is set", () => {
+    expect(BOOK_CALL_URL).toBe(BOOKING_URL ?? GMAIL_COMPOSE_URL);
+    expect(BOOK_CALL_URL.startsWith("https://")).toBe(true);
+  });
+
   it("site meta has required fields", () => {
     expect(SITE_META.title.length).toBeGreaterThan(0);
     expect(SITE_META.description.length).toBeGreaterThan(0);
@@ -56,22 +61,16 @@ describe("config", () => {
 });
 
 describe("sections registry", () => {
-  it("declares the focused portfolio sections in stable order", () => {
+  it("declares the funnel sections in page order", () => {
     expect(SECTIONS.map((s) => s.id)).toEqual([
       "hero",
-      "solution",
-      "who",
-      "portfolio",
       "results",
-      "why",
+      "engine",
+      "work",
+      "testimonials",
+      "faq",
       "book",
     ]);
-  });
-
-  it("every section has a non-empty label", () => {
-    SECTIONS.forEach((s) => {
-      expect(s.label.length).toBeGreaterThan(0);
-    });
   });
 
   it("nav links only reference real section ids", () => {
@@ -79,41 +78,6 @@ describe("sections registry", () => {
     NAV_LINKS.forEach((link) => {
       expect(ids.has(link.id)).toBe(true);
     });
-  });
-});
-
-describe("CTA bands", () => {
-  const variants = ["intro", "pivot", "portfolio", "why", "faq"] as const;
-
-  it("defines all 5 variants", () => {
-    variants.forEach((v) => {
-      expect(CTA_BANDS[v]).toBeDefined();
-    });
-  });
-
-  it("each variant has a headline and CTA", () => {
-    variants.forEach((v) => {
-      const cfg = CTA_BANDS[v];
-      expect(cfg.headline.length).toBeGreaterThan(0);
-      expect(cfg.cta.length).toBeGreaterThan(0);
-      expect(cfg.href.length).toBeGreaterThan(0);
-    });
-  });
-
-  it("internal hrefs are anchors and external hrefs are URLs", () => {
-    variants.forEach((v) => {
-      const cfg = CTA_BANDS[v];
-      if (cfg.isExternal) {
-        expect(cfg.href.startsWith("https://")).toBe(true);
-      } else {
-        expect(cfg.href.startsWith("#")).toBe(true);
-      }
-    });
-  });
-
-  it("portfolio + faq variants point to the gmail compose URL", () => {
-    expect(CTA_BANDS.portfolio.href).toBe(GMAIL_COMPOSE_URL);
-    expect(CTA_BANDS.faq.href).toBe(GMAIL_COMPOSE_URL);
   });
 });
 
@@ -150,45 +114,21 @@ describe("portfolio items", () => {
   });
 });
 
-describe("case studies", () => {
-  it("contains 3 metrics", () => {
-    expect(caseStudies).toHaveLength(3);
+describe("funnel content", () => {
+  it("has four stats and four engine steps", () => {
+    expect(STATS).toHaveLength(4);
+    expect(ENGINE_STEPS).toHaveLength(4);
+    ENGINE_STEPS.forEach((step) => expect(step.tags.length).toBeGreaterThan(0));
   });
 
-  it("each metric has a numeric target and copy", () => {
-    caseStudies.forEach((cs) => {
-      expect(typeof cs.target).toBe("number");
-      expect(cs.target).toBeGreaterThan(0);
-      expect(cs.description.length).toBeGreaterThan(20);
-      expect(cs.client.length).toBeGreaterThan(0);
-    });
-  });
-
-  it("847K metric carries the trailing '+' mark", () => {
-    const cs1 = caseStudies.find((c) => c.id === "cs1");
-    expect(cs1?.target).toBe(847);
-    expect(cs1?.unit).toBe("K");
-    expect(cs1?.trailingMark).toBe("+");
-  });
-
-  it("4.2x metric uses 1 decimal", () => {
-    const cs2 = caseStudies.find((c) => c.id === "cs2");
-    expect(cs2?.target).toBe(4.2);
-    expect(cs2?.decimals).toBe(1);
-    expect(cs2?.unit).toBe("x");
-  });
-
-  it("0→60K metric uses the '0→' prefix", () => {
-    const cs3 = caseStudies.find((c) => c.id === "cs3");
-    expect(cs3?.target).toBe(60);
-    expect(cs3?.prefix).toBe("0→");
-    expect(cs3?.unit).toBe("K");
+  it("lists the three video testimonials in edit", () => {
+    expect(VIDEO_TESTIMONIALS.map((t) => t.name)).toEqual(["Kate", "Leon", "Candice"]);
   });
 });
 
 describe("faqs", () => {
-  it("has 8 entries", () => {
-    expect(faqs).toHaveLength(8);
+  it("has 9 entries", () => {
+    expect(faqs).toHaveLength(9);
   });
 
   it("every FAQ has a non-trivial question and answer", () => {
@@ -198,23 +138,9 @@ describe("faqs", () => {
     });
   });
 
-  it("ids are unique and follow f1..f8", () => {
+  it("ids are unique and follow f1..f9", () => {
     const ids = faqs.map((f) => f.id);
     expect(new Set(ids).size).toBe(ids.length);
     ids.forEach((id) => expect(id).toMatch(/^f\d$/));
-  });
-});
-
-describe("testimonials", () => {
-  it("has 2 entries", () => {
-    expect(testimonials).toHaveLength(2);
-  });
-
-  it("every testimonial has quote/author/role", () => {
-    testimonials.forEach((t) => {
-      expect(t.quote.length).toBeGreaterThan(40);
-      expect(t.author.length).toBeGreaterThan(0);
-      expect(t.role.length).toBeGreaterThan(0);
-    });
   });
 });

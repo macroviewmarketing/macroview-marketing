@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render as rtlRender, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import { Footer } from "./Footer";
 import {
   BOOKING_EMAIL,
@@ -9,6 +10,8 @@ import {
   LOCATION,
   UTC_OFFSET,
 } from "@/data/config";
+
+const render = (ui: React.ReactElement) => rtlRender(<MemoryRouter>{ui}</MemoryRouter>);
 
 describe("<Footer>", () => {
   it("links the booking email via mailto:", () => {
@@ -49,7 +52,7 @@ describe("<Footer>", () => {
     render(<Footer />);
     const year = new Date().getFullYear();
     expect(
-      screen.getByText(new RegExp(`© ${year} MacroView Digital`)),
+      screen.getByText(new RegExp(`© ${year} Macroview\\.`)),
     ).toBeInTheDocument();
   });
 });

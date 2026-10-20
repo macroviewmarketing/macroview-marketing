@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { Footer } from "@/components/Footer";
-import { GMAIL_COMPOSE_URL } from "@/data/config";
+import { BOOK_CALL_URL } from "@/data/config";
 
 interface LegalLayoutProps {
   title: string;
@@ -22,7 +22,7 @@ export const LegalLayout = ({ title, updated, children }: LegalLayoutProps) => (
         <Link to="/" className="nav-link">Back to site</Link>
       </div>
       <a
-        href={GMAIL_COMPOSE_URL}
+        href={BOOK_CALL_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="btn btn-primary"

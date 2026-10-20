@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Index from "./Index";
+import { BOOK_CALL_URL } from "@/data/config";
+import { faqs } from "@/data/faqs";
 
 const renderIndex = () =>
   render(
@@ -10,57 +12,50 @@ const renderIndex = () =>
     </MemoryRouter>,
   );
 
-describe("<Index> page assembly", () => {
-  it("renders the snap-root scroll container", () => {
-    const { container } = renderIndex();
-    expect(container.querySelector("main#snap-root")).not.toBeNull();
-  });
-
-  it("does NOT render the loading intro overlay", () => {
-    const { container } = renderIndex();
-    expect(container.querySelector(".loader")).toBeNull();
-  });
-
-  it("renders minimal navigation and grain without extra navigation chrome", () => {
-    const { container } = renderIndex();
-    expect(container.querySelector(".navbar")).not.toBeNull();
-    expect(container.querySelector(".scroll-dots")).toBeNull();
-    expect(container.querySelector("#cursor-dot")).toBeNull();
-    expect(container.querySelector("#cursor-ring")).toBeNull();
-    expect(container.querySelector(".grain-overlay")).not.toBeNull();
-  });
-
-  it("renders the seven portfolio sections in stable order", () => {
+describe("<Index> funnel page", () => {
+  it("renders the funnel sections in order", () => {
     const { container } = renderIndex();
     const ids = Array.from(container.querySelectorAll<HTMLElement>("section"))
       .map((s) => s.id)
       .filter(Boolean);
-    expect(ids).toEqual([
-      "hero",
-      "solution",
-      "who",
-      "portfolio",
-      "results",
-      "why",
-      "book",
-    ]);
+    expect(ids).toEqual(["hero", "results", "engine", "work", "testimonials", "faq", "book"]);
   });
 
-  it("does not interrupt the portfolio with CTA bands", () => {
+  it("has one h1 with the headline", () => {
+    renderIndex();
+    const h1 = screen.getAllByRole("heading", { level: 1 });
+    expect(h1).toHaveLength(1);
+    expect(h1[0]).toHaveTextContent(/Booked Calls\./);
+  });
+
+  it("repeats the Book a Call CTA and every one points at the booking URL", () => {
+    renderIndex();
+    const ctas = screen.getAllByRole("link", { name: /book a call/i });
+    expect(ctas.length).toBeGreaterThanOrEqual(6);
+    ctas.forEach((cta) => expect(cta).toHaveAttribute("href", BOOK_CALL_URL));
+  });
+
+  it("shows placeholders for the hero video and testimonial videos", () => {
     const { container } = renderIndex();
-    const bands = Array.from(container.querySelectorAll<HTMLElement>(".cta-band"))
-      .map((b) => b.dataset.variant)
-      .filter(Boolean);
-    expect(bands).toEqual([]);
+    expect(container.querySelector('[data-placeholder="hero-video"]')).not.toBeNull();
+    expect(container.querySelectorAll('[data-placeholder="testimonial-video"]')).toHaveLength(3);
+    expect(screen.getByText("Kate")).toBeInTheDocument();
+    expect(screen.getByText("Leon")).toBeInTheDocument();
+    expect(screen.getByText("Candice")).toBeInTheDocument();
   });
 
-  it("renders the footer once at the bottom", () => {
+  it("renders every FAQ question", () => {
+    renderIndex();
+    faqs.forEach((f) => expect(screen.getByText(f.question)).toBeInTheDocument());
+  });
+
+  it("does not use the old brand names", () => {
+    const { container } = renderIndex();
+    expect(container.textContent).not.toMatch(/MacroView Digital|Macroview Marketing|\bMVD\b|\bMVM\b/);
+  });
+
+  it("renders the footer once", () => {
     const { container } = renderIndex();
     expect(container.querySelectorAll("footer.footer")).toHaveLength(1);
-  });
-
-  it("does not render section dots", () => {
-    const { container } = renderIndex();
-    expect(container.querySelectorAll(".scroll-dots .nav-dot")).toHaveLength(0);
   });
 });

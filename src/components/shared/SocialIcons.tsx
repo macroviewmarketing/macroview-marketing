@@ -24,7 +24,7 @@ export const SocialIcons = ({ className = "" }: { className?: string }) => (
       target="_blank"
       rel="noopener noreferrer"
       className="social-icon-link"
-      aria-label="MacroView on Instagram"
+      aria-label="Macroview on Instagram"
     >
       <Instagram />
     </a>

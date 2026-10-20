@@ -9,6 +9,7 @@ import {
   TIMEZONE,
   UTC_OFFSET,
   BUSINESS_ADDRESS,
+  BRAND_NAME,
 } from "@/data/config";
 import { NAV_LINKS } from "@/data/sections";
 import { scrollToSection } from "@/hooks/useScrollDots";
@@ -61,7 +62,7 @@ export const Footer = () => {
             MACRO<span className="accent">VIEW</span>
           </a>
           <p className="body-s" style={{ marginTop: "16px", color: "var(--dim)" }}>
-            A content production studio for creators and personal brands.
+            Content, ads and automations for high-ticket coaches, business owners and CEOs.
           </p>
         </div>
 
@@ -185,7 +186,7 @@ export const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <span>© {year} MacroView Digital · Macroview Marketing</span>
+        <span>© {year} {BRAND_NAME}. All rights reserved.</span>
         <span>Built in the dark.</span>
       </div>
     </footer>
