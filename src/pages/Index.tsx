@@ -1,37 +1,32 @@
-import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
-import { GrainOverlay } from "@/components/GrainOverlay";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { SolutionSection } from "@/components/sections/SolutionSection";
-import { PortfolioSection } from "@/components/sections/PortfolioSection";
-import { ResultsSection } from "@/components/sections/ResultsSection";
-import { WhoSection } from "@/components/sections/WhoSection";
-import { WhySection } from "@/components/sections/WhySection";
-import { BookSection } from "@/components/sections/BookSection";
+import { Footer } from "@/components/Footer";
+import { FunnelHero } from "@/components/funnel/FunnelHero";
+import { LogoMarquee } from "@/components/funnel/LogoMarquee";
+import { StatsSection } from "@/components/funnel/StatsSection";
+import { EngineSection } from "@/components/funnel/EngineSection";
+import { WorkSection } from "@/components/funnel/WorkSection";
+import { TestimonialsSection } from "@/components/funnel/TestimonialsSection";
+import { FaqSection } from "@/components/funnel/FaqSection";
+import { FinalCta } from "@/components/funnel/FinalCta";
 import { useScrollDots } from "@/hooks/useScrollDots";
-import { useSnapObserver } from "@/hooks/useSnapObserver";
 
 const Index = () => {
   const { scrolled } = useScrollDots();
-  useSnapObserver("#snap-root", true);
-
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }, []);
 
   return (
     <>
-      <GrainOverlay />
       <Navbar scrolled={scrolled} />
 
-      <main id="snap-root">
-        <HeroSection />
-        <SolutionSection />
-        <WhoSection />
-        <PortfolioSection />
-        <ResultsSection />
-        <WhySection />
-        <BookSection />
+      <main id="snap-root" className="funnel">
+        <FunnelHero />
+        <LogoMarquee />
+        <StatsSection />
+        <EngineSection />
+        <WorkSection />
+        <TestimonialsSection />
+        <FaqSection />
+        <FinalCta />
+        <Footer />
       </main>
     </>
   );

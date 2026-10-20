@@ -1,192 +1,65 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import {
   BOOKING_EMAIL,
+  BOOK_CALL_URL,
+  BRAND_NAME,
+  BUSINESS_ADDRESS,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
   PHONE_DISPLAY,
   PHONE_TEL,
-  LINKEDIN_URL,
-  LOCATION,
-  TIMEZONE,
-  UTC_OFFSET,
-  BUSINESS_ADDRESS,
+  WHATSAPP_URL,
 } from "@/data/config";
-import { NAV_LINKS } from "@/data/sections";
-import { scrollToSection } from "@/hooks/useScrollDots";
-import { SocialIcons } from "@/components/shared/SocialIcons";
+import { IconWhatsApp } from "@/components/shared/SocialIcons";
+import { Wordmark } from "@/components/Wordmark";
 
-const formatPHT = (d: Date) =>
-  new Intl.DateTimeFormat("en-US", {
-    timeZone: TIMEZONE,
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).format(d);
-
-const useLiveClock = () => {
-  const [time, setTime] = useState(() => formatPHT(new Date()));
-  useEffect(() => {
-    const tick = () => setTime(formatPHT(new Date()));
-    tick();
-    const id = window.setInterval(tick, 30_000);
-    return () => window.clearInterval(id);
-  }, []);
-  return time;
-};
-
-const colLabelStyle: React.CSSProperties = {
-  fontSize: "10px",
-  letterSpacing: "0.25em",
-  textTransform: "uppercase",
-  color: "var(--dim)",
-  display: "block",
-  marginBottom: "16px",
-};
+const IconLinkedIn = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+  </svg>
+);
 
 export const Footer = () => {
   const year = new Date().getFullYear();
-  const time = useLiveClock();
 
   return (
-    <footer className="footer">
-      <div className="footer-row">
-        <div style={{ maxWidth: "320px" }}>
-          <a
-            href="#hero"
-            className="nav-logo"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("hero");
-            }}
-          >
-            MACRO<span className="accent">VIEW</span>
-          </a>
-          <p className="body-s" style={{ marginTop: "16px", color: "var(--dim)" }}>
-            A content production studio for creators and personal brands.
-          </p>
-        </div>
+    <footer className="footer funnel-footer">
+      <div className="funnel-wrap">
+        <div className="funnel-footer-row">
+          <Link to="/" aria-label={`${BRAND_NAME} home`}>
+            <Wordmark />
+          </Link>
 
-        <div style={{ display: "flex", gap: "48px", flexWrap: "wrap" }}>
-          <div>
-            <span className="font-mono" style={colLabelStyle}>Sections</span>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-              {NAV_LINKS.map((l) => (
-                <li key={l.id}>
-                  <a
-                    href={`#${l.id}`}
-                    className="nav-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(l.id);
-                    }}
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <nav className="funnel-footer-nav" aria-label="Footer">
+            <Link to="/privacy-policy">Privacy</Link>
+            <Link to="/terms-and-conditions">Terms</Link>
+            <Link to="/refund-policy">Refunds</Link>
+            <a href={BOOK_CALL_URL} target="_blank" rel="noopener noreferrer">Book a Call</a>
+          </nav>
 
-          <div>
-            <span className="font-mono" style={colLabelStyle}>Contact</span>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-              <li>
-                <a href={`mailto:${BOOKING_EMAIL}`} className="nav-link">
-                  {BOOKING_EMAIL}
-                </a>
-              </li>
-              <li>
-                <a href={`tel:${PHONE_TEL}`} className="nav-link">
-                  {PHONE_DISPLAY}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-link"
-                >
-                  LinkedIn ↗
-                </a>
-              </li>
-              <li style={{ marginTop: "4px" }}>
-                <SocialIcons />
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <span className="font-mono" style={colLabelStyle}>Legal</span>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-              <li>
-                <Link to="/terms-and-conditions" className="nav-link">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" className="nav-link">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/refund-policy" className="nav-link">
-                  Refund Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <span className="font-mono" style={colLabelStyle}>Studio</span>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "10px" }}>
-              <li
-                className="font-mono"
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: "var(--text)",
-                }}
-              >
-                {LOCATION}
-              </li>
-              <li
-                className="body-s"
-                style={{ color: "var(--dim)", maxWidth: "220px", lineHeight: 1.5 }}
-              >
-                {BUSINESS_ADDRESS}
-              </li>
-              <li
-                className="font-mono"
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: "var(--dim)",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                }}
-              >
-                <span
-                  style={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "50%",
-                    background: "var(--cyan)",
-                    animation: "blink 1.4s ease-in-out infinite",
-                  }}
-                />
-                {UTC_OFFSET} · {time}
-              </li>
-            </ul>
+          <div className="funnel-footer-socials">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">
+              <IconWhatsApp />
+            </a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label={`${BRAND_NAME} on Instagram`}>
+              <Instagram aria-hidden />
+            </a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label={`${BRAND_NAME} on LinkedIn`}>
+              <IconLinkedIn />
+            </a>
           </div>
         </div>
-      </div>
 
-      <div className="footer-bottom">
-        <span>© {year} MacroView Digital · Macroview Marketing</span>
-        <span>Built in the dark.</span>
+        <div className="funnel-footer-base">
+          <span>© {year} {BRAND_NAME}. All rights reserved.</span>
+          <span>
+            <a href={`mailto:${BOOKING_EMAIL}`}>{BOOKING_EMAIL}</a>
+            {" · "}
+            <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+          </span>
+        </div>
+        <p className="mt-3 text-center text-[11px] leading-relaxed text-[var(--f-dim)] sm:text-left">{BUSINESS_ADDRESS}</p>
       </div>
     </footer>
   );

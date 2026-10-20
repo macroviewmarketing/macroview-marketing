@@ -1,15 +1,26 @@
+export const BRAND_NAME = "Macroview";
+
 export const BOOKING_EMAIL = "macroviewdigital@gmail.com";
 
 export const GMAIL_COMPOSE_URL =
-  `https://mail.google.com/mail/?view=cm&to=${BOOKING_EMAIL}&su=Book%20a%20Call%20%E2%80%94%20MacroView%20Digital`;
+  `https://mail.google.com/mail/?view=cm&to=${BOOKING_EMAIL}&su=Book%20a%20Call%20%E2%80%94%20Macroview`;
+
+/**
+ * Calendar link for discovery calls.
+ * If set to null, every "Book a Call" button falls back to the Gmail compose window.
+ */
+export const BOOKING_URL: string | null = "https://calendly.com/macroviewmarketing/30min";
+
+/** Where every "Book a Call" button on the site points. */
+export const BOOK_CALL_URL = BOOKING_URL ?? GMAIL_COMPOSE_URL;
 
 export const PHONE_DISPLAY = "+63 949 463 4459";
 export const PHONE_TEL = "+639494634459";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/company/macroviewdigital/";
 
-export const INSTAGRAM_HANDLE = "@marcelinomarcc";
-export const INSTAGRAM_URL = "https://www.instagram.com/marcelinomarcc/";
+export const INSTAGRAM_HANDLE = "@macroview.marc";
+export const INSTAGRAM_URL = "https://www.instagram.com/macroview.marc/";
 export const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace(/\D/g, "")}`;
 
 export const LOCATION = "Philippines";
@@ -26,8 +37,8 @@ export const TRADE_NAME = "Macroview Digital Marketing Services";
 export const LEGAL_ENTITY_NAME = "Mark Jason Jamison Marcelino";
 
 export const SITE_META = {
-  title: "MacroView Digital — Content Production Studio",
+  title: "Macroview | Content and Ads That Turn Views Into Booked Calls",
   description:
-    "We build scroll-stopping video content for creators and personal brands that want to scale.",
+    "Scripting, editing, ad creative and automations for high-ticket coaches, business owners and CEOs.",
   url: "https://www.macroviewmarketing.com",
 };

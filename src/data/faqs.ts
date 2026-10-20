@@ -53,4 +53,10 @@ export const faqs: FaqItem[] = [
     answer:
       "Every deliverable includes one structured revision round. If after revision the output does not meet brief, we remake it. Every brief is tracked against a written spec to prevent ambiguity.",
   },
+  {
+    id: "f9",
+    question: "What happens after I book a call?",
+    answer:
+      "We talk through your offer, your current content and your funnel, then tell you where we would start. If it is a fit, you get a scoped proposal with deliverables and pricing.",
+  },
 ];
