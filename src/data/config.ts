@@ -6,10 +6,10 @@ export const GMAIL_COMPOSE_URL =
   `https://mail.google.com/mail/?view=cm&to=${BOOKING_EMAIL}&su=Book%20a%20Call%20%E2%80%94%20Macroview`;
 
 /**
- * PLACEHOLDER: paste the real calendar link here (Calendly, Cal.com, GHL).
- * Until it is set, every "Book a Call" button falls back to the Gmail compose window.
+ * Calendar link for discovery calls.
+ * If set to null, every "Book a Call" button falls back to the Gmail compose window.
  */
-export const BOOKING_URL: string | null = null;
+export const BOOKING_URL: string | null = "https://calendly.com/macroviewmarketing/30min";
 
 /** Where every "Book a Call" button on the site points. */
 export const BOOK_CALL_URL = BOOKING_URL ?? GMAIL_COMPOSE_URL;
