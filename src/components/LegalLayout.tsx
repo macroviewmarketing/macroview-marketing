@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { Footer } from "@/components/Footer";
+import { Wordmark } from "@/components/Wordmark";
 import { BOOK_CALL_URL } from "@/data/config";
 
 interface LegalLayoutProps {
@@ -15,8 +16,7 @@ export const LegalLayout = ({ title, updated, children }: LegalLayoutProps) => (
     <GrainOverlay />
     <nav className="navbar scrolled" aria-label="Legal navigation">
       <Link to="/" className="nav-logo">
-        <img src="/Macroview%20-%20Logo.svg" alt="" aria-hidden className="nav-logo-mark" />
-        <span>MACRO<span className="accent">VIEW</span></span>
+        <Wordmark />
       </Link>
       <div className="nav-links">
         <Link to="/" className="nav-link">Back to site</Link>

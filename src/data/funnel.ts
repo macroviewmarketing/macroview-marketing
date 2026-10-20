@@ -4,9 +4,10 @@
  */
 
 export const HERO = {
-  headlineLead: "Content and Ads That Turn Views Into",
+  /** Two lines on desktop; the accent word is drawn in red at the end of line two. */
+  headlineLine1: "Content and Ads That Turn",
+  headlineLine2: "Views Into",
   headlineAccent: "Booked Calls.",
-  sub: "Scripting, editing, ad creative and automations for high-ticket coaches, business owners and CEOs.",
   /** PLACEHOLDER: path or URL to the hero video (e.g. "/video-asset/intro.mp4"). */
   videoPath: null as string | null,
   videoPoster: null as string | null,
@@ -72,6 +73,8 @@ export interface VideoTestimonial {
   name: string;
   /** e.g. "$10K → $30K/mo". Left empty until confirmed by the client. */
   result?: string;
+  /** What `result` measures, e.g. "Revenue growth". */
+  resultLabel?: string;
   videoPath?: string | null;
   placeholder?: boolean;
 }

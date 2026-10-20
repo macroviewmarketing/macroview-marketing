@@ -30,26 +30,3 @@ export const SocialIcons = ({ className = "" }: { className?: string }) => (
     </a>
   </div>
 );
-
-export const SocialCtaButtons = ({ className = "" }: { className?: string }) => (
-  <div className={`social-cta-row ${className}`}>
-    <a
-      href={WHATSAPP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn btn-social-large btn-whatsapp"
-    >
-      <IconWhatsApp />
-      Message on WhatsApp
-    </a>
-    <a
-      href={INSTAGRAM_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn btn-social-large btn-instagram"
-    >
-      <Instagram />
-      DM on Instagram
-    </a>
-  </div>
-);

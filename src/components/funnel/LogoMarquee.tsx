@@ -1,30 +1,30 @@
 import { CLIENT_LOGOS, type ClientLogo } from "@/data/funnel";
 
-const LogoPill = ({ logo }: { logo: ClientLogo }) => (
-  <li className="funnel-logo-pill" data-placeholder={logo.placeholder ? "client-logo" : undefined}>
+const Chip = ({ logo }: { logo: ClientLogo }) => (
+  <li className="funnel-chip" data-placeholder={logo.placeholder ? "client-logo" : undefined}>
     {logo.logoPath ? (
-      <img src={logo.logoPath} alt="" className="h-9 w-9 rounded-full object-cover" />
+      <img src={logo.logoPath} alt="" className="h-12 w-12 shrink-0 rounded-full object-cover" />
     ) : (
-      <span className="funnel-logo-avatar" aria-hidden>
+      <span className="funnel-chip-avatar" aria-hidden>
         {logo.name.charAt(0)}
       </span>
     )}
-    <span className="text-left">
-      <span className="block text-sm font-bold text-white">{logo.name}</span>
-      <span className="block text-[11px] text-[var(--dim)]">{logo.detail}</span>
+    <span>
+      <span className="funnel-chip-name">{logo.name}</span>
+      <span className="funnel-chip-detail">{logo.detail}</span>
     </span>
   </li>
 );
 
 export const LogoMarquee = () => (
-  <section aria-label="Clients" className="border-y border-[var(--border-c)] py-10">
-    <p className="funnel-eyebrow text-center !text-[var(--dim)]">Trusted by coaches and brands</p>
-    <div className="funnel-marquee mt-6">
+  <section aria-label="Clients" className="funnel-trust">
+    <p className="funnel-trust-label">Trusted by coaches, creators &amp; brands</p>
+    <div className="funnel-marquee">
       {/* The list is rendered twice so the loop scrolls seamlessly; the copy is hidden from screen readers. */}
       {[false, true].map((copy) => (
         <ul key={String(copy)} className="funnel-marquee-track" aria-hidden={copy || undefined}>
           {CLIENT_LOGOS.map((logo) => (
-            <LogoPill key={logo.name} logo={logo} />
+            <Chip key={logo.name} logo={logo} />
           ))}
         </ul>
       ))}

@@ -7,10 +7,10 @@ interface SectionIntroProps {
 }
 
 export const SectionIntro = ({ eyebrow, title, children }: SectionIntroProps) => (
-  <header className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+  <header className="funnel-intro">
     <p className="funnel-eyebrow">{eyebrow}</p>
-    <h2 className="funnel-h2 mt-3">{title}</h2>
-    {children && <p className="funnel-lead mt-4">{children}</p>}
+    <h2 className="funnel-title">{title}</h2>
+    {children && <p className="funnel-sub">{children}</p>}
   </header>
 );
 

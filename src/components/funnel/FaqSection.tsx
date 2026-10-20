@@ -7,17 +7,17 @@ export const FaqSection = () => {
   const columns = [faqs.slice(0, half), faqs.slice(half)];
 
   return (
-    <section id="faq" className="funnel-section border-t border-[var(--border-c)] bg-[var(--deep)]">
-      <div className="mx-auto max-w-5xl px-4 md:px-6">
+    <section id="faq" className="funnel-section funnel-section-alt border-t border-[var(--f-border)]">
+      <div className="funnel-wrap">
         <SectionIntro eyebrow="Common Questions" title="Questions? We've got you covered." />
-        <div className="grid gap-x-10 md:grid-cols-2">
+        <div className="funnel-faq-list">
           {columns.map((col, i) => (
-            <div key={i}>
+            <div key={i} className="funnel-faq-col">
               {col.map((f) => (
                 <details key={f.id} className="funnel-faq">
                   <summary>
                     <span>{f.question}</span>
-                    <Plus aria-hidden className="funnel-faq-icon h-4 w-4 shrink-0" />
+                    <Plus aria-hidden className="funnel-faq-icon h-[18px] w-[18px] shrink-0" />
                   </summary>
                   <p>{f.answer}</p>
                 </details>

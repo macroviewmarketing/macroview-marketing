@@ -15,26 +15,34 @@ const HeroVideo = () =>
     />
   ) : (
     <div className="flex h-full w-full flex-col items-center justify-center gap-4" data-placeholder="hero-video">
-      <span className="funnel-play">
-        <Play aria-hidden className="h-6 w-6 translate-x-0.5" fill="currentColor" />
+      <span className="funnel-unmute">
+        <span className="funnel-unmute-icon">
+          <Play aria-hidden className="h-5 w-5 translate-x-0.5" fill="currentColor" />
+        </span>
+        <span>
+          <strong>Watch the intro</strong>
+          <small>Video coming soon</small>
+        </span>
       </span>
-      <PlaceholderTag>Intro video coming soon</PlaceholderTag>
+      <PlaceholderTag>Placeholder</PlaceholderTag>
     </div>
   );
 
 export const FunnelHero = () => (
-  <section id="hero" className="funnel-section funnel-glow-top !pt-32 md:!pt-28">
-    <div className="mx-auto max-w-5xl px-4 text-center md:px-6">
+  <section id="hero" className="funnel-hero">
+    <div className="funnel-wrap">
       <h1 className="funnel-h1">
-        {HERO.headlineLead} <span className="funnel-accent">{HERO.headlineAccent}</span>
+        <span className="funnel-h1-line">{HERO.headlineLine1} </span>
+        <span className="funnel-h1-line">
+          {HERO.headlineLine2} <span className="funnel-accent">{HERO.headlineAccent}</span>
+        </span>
       </h1>
-      <p className="funnel-lead mx-auto mt-5 max-w-xl">{HERO.sub}</p>
 
-      <div className="funnel-card funnel-video mx-auto mt-8 aspect-video w-full max-w-[720px] overflow-hidden">
+      <div className="funnel-video">
         <HeroVideo />
       </div>
 
-      <BookCallButton label="Watch the video, then book a call" className="mt-8" />
+      <BookCallButton label="Watch the video, then book a call" />
     </div>
   </section>
 );

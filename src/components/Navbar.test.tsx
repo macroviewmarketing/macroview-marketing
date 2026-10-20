@@ -12,13 +12,9 @@ const renderNavbar = (scrolled: boolean) =>
   );
 
 describe("<Navbar>", () => {
-  it("renders the Macroview wordmark with brand-mark icon", () => {
+  it("renders the Macroview wordmark", () => {
     const { container } = renderNavbar(false);
-    expect(screen.getByText(/MACRO/)).toBeInTheDocument();
-    expect(screen.getByText("VIEW")).toBeInTheDocument();
-    const mark = container.querySelector(".nav-logo-mark");
-    expect(mark?.tagName).toBe("IMG");
-    expect(mark).toHaveAttribute("src", expect.stringContaining("Logo.svg"));
+    expect(container.querySelector(".funnel-wordmark")).toHaveTextContent("Macroview");
   });
 
   it("has a single Book a Call CTA and no section menu", () => {
@@ -32,7 +28,7 @@ describe("<Navbar>", () => {
 
   it("toggles the .scrolled class based on the prop", () => {
     const { container, rerender } = renderNavbar(false);
-    const nav = container.querySelector(".navbar");
+    const nav = container.querySelector(".funnel-nav");
     expect(nav).not.toHaveClass("scrolled");
     rerender(
       <MemoryRouter>

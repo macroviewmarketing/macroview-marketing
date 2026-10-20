@@ -1,4 +1,5 @@
 import { BookCallButton } from "@/components/funnel/BookCallButton";
+import { Wordmark } from "@/components/Wordmark";
 import { scrollToSection } from "@/hooks/useScrollDots";
 
 interface NavbarProps {
@@ -6,24 +7,19 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ scrolled }: NavbarProps) => (
-  <nav className={`navbar${scrolled ? " scrolled" : ""}`} aria-label="Primary">
-    <a
-      href="#hero"
-      className="nav-logo"
-      onClick={(e) => {
-        e.preventDefault();
-        scrollToSection("hero");
-      }}
-    >
-      <img
-        src="/Macroview%20-%20Logo.svg"
-        alt=""
-        aria-hidden
-        className="nav-logo-mark"
-      />
-      <span>MACRO<span className="accent">VIEW</span></span>
-    </a>
+  <nav className={`funnel-nav${scrolled ? " scrolled" : ""}`} aria-label="Primary">
+    <div className="funnel-wrap funnel-nav-inner">
+      <a
+        href="#hero"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollToSection("hero");
+        }}
+      >
+        <Wordmark />
+      </a>
 
-    <BookCallButton size="sm" />
+      <BookCallButton size="sm" />
+    </div>
   </nav>
 );

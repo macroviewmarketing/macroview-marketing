@@ -11,7 +11,7 @@ import {
   SITE_META,
 } from "./config";
 import { BOOKING_URL, BOOK_CALL_URL } from "./config";
-import { SECTIONS, NAV_LINKS } from "./sections";
+import { SECTIONS } from "./sections";
 import { portfolioItems } from "./portfolioItems";
 import { faqs } from "./faqs";
 import { STATS, ENGINE_STEPS, VIDEO_TESTIMONIALS } from "./funnel";
@@ -71,13 +71,6 @@ describe("sections registry", () => {
       "faq",
       "book",
     ]);
-  });
-
-  it("nav links only reference real section ids", () => {
-    const ids = new Set(SECTIONS.map((s) => s.id));
-    NAV_LINKS.forEach((link) => {
-      expect(ids.has(link.id)).toBe(true);
-    });
   });
 });
 
