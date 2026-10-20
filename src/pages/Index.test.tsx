@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Index from "./Index";
-import { BOOK_CALL_URL } from "@/data/config";
+import { BOOK_CALL_URL, INSTAGRAM_URL, WHATSAPP_URL } from "@/data/config";
 import { faqs } from "@/data/faqs";
 
 const renderIndex = () =>
@@ -42,6 +42,12 @@ describe("<Index> funnel page", () => {
     expect(screen.getByText("Kate")).toBeInTheDocument();
     expect(screen.getByText("Leon")).toBeInTheDocument();
     expect(screen.getByText("Candice")).toBeInTheDocument();
+  });
+
+  it("offers WhatsApp and Instagram next to the final call to action", () => {
+    renderIndex();
+    expect(screen.getByRole("link", { name: "WhatsApp" })).toHaveAttribute("href", WHATSAPP_URL);
+    expect(screen.getByRole("link", { name: "Instagram" })).toHaveAttribute("href", INSTAGRAM_URL);
   });
 
   it("renders every FAQ question", () => {

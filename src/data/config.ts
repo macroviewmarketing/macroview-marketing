@@ -19,8 +19,8 @@ export const PHONE_TEL = "+639494634459";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/company/macroviewdigital/";
 
-export const INSTAGRAM_HANDLE = "@marcelinomarcc";
-export const INSTAGRAM_URL = "https://www.instagram.com/marcelinomarcc/";
+export const INSTAGRAM_HANDLE = "@macroview.marc";
+export const INSTAGRAM_URL = "https://www.instagram.com/macroview.marc/";
 export const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace(/\D/g, "")}`;
 
 export const LOCATION = "Philippines";
