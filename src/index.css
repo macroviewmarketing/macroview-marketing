@@ -2228,6 +2228,8 @@ span.funnel-wordmark {
   background: var(--f-surface);
 }
 .funnel-tcard-media { position: relative; aspect-ratio: 4 / 5; background: #0d0d0d; }
+.funnel-tcard-media iframe { width: 100%; height: 100%; border: 0; display: block; }
+.funnel-tcard-quote { margin: 16px 0 0; font-size: 14px; line-height: 1.6; color: var(--f-muted); }
 .funnel-tcard-media video { width: 100%; height: 100%; object-fit: cover; }
 .funnel-tcard-info { padding: 20px 18px 24px; }
 .funnel-tcard-name { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; color: #fff; margin-bottom: 14px; }

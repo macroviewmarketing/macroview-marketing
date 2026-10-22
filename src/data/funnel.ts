@@ -76,12 +76,26 @@ export interface VideoTestimonial {
   /** What `result` measures, e.g. "Revenue growth". */
   resultLabel?: string;
   videoPath?: string | null;
+  vimeoId?: string;
+  quote?: string;
   placeholder?: boolean;
 }
 
-/** PLACEHOLDER: videos are in edit. Add `videoPath` and `result` as each one is ready. */
+/** Client-reported results and excerpts from their video testimonials. */
 export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
-  { id: "kate", name: "Kate", videoPath: null, placeholder: true },
-  { id: "leon", name: "Leon", videoPath: null, placeholder: true },
-  { id: "candice", name: "Candice", videoPath: null, placeholder: true },
+  {
+    id: "kate", name: "Kate", vimeoId: "1238233784",
+    result: "Best year in business", resultLabel: "Kate on her 2026 results",
+    quote: "In 10 years of business, this is by a mile the best team that I have ever worked with when it comes to efficiency, how professional they are.",
+  },
+  {
+    id: "leon", name: "Leon", vimeoId: "1238233787",
+    result: "$20,000 a day", resultLabel: "Reported coaching business revenue",
+    quote: "After I started working with Marc and seeing how good he made the ads, my conversions went up and completely changed my business.",
+  },
+  {
+    id: "candice", name: "Candice", vimeoId: "1238233785",
+    result: "$30,000+ in clients", resultLabel: "Reported in the first month",
+    quote: "In the first month of working with Marc, with his creative that we made for my coaching business, I was able to sign over $30,000 worth of clients.",
+  },
 ];

@@ -35,10 +35,14 @@ describe("<Index> funnel page", () => {
     ctas.forEach((cta) => expect(cta).toHaveAttribute("href", BOOK_CALL_URL));
   });
 
-  it("shows placeholders for the hero video and testimonial videos", () => {
+  it("embeds the client testimonials and keeps the hero placeholder", () => {
     const { container } = renderIndex();
     expect(container.querySelector('[data-placeholder="hero-video"]')).not.toBeNull();
-    expect(container.querySelectorAll('[data-placeholder="testimonial-video"]')).toHaveLength(3);
+    expect(container.querySelectorAll('[data-placeholder="testimonial-video"]')).toHaveLength(0);
+    expect(screen.getByTitle("Kate testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233784");
+    expect(screen.getByTitle("Leon testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233787");
+    expect(screen.getByTitle("Candice testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233785");
+    expect(screen.queryByText("Result coming soon")).not.toBeInTheDocument();
     expect(screen.getByText("Kate")).toBeInTheDocument();
     expect(screen.getByText("Leon")).toBeInTheDocument();
     expect(screen.getByText("Candice")).toBeInTheDocument();

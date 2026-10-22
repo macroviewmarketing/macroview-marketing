@@ -114,7 +114,7 @@ describe("funnel content", () => {
     ENGINE_STEPS.forEach((step) => expect(step.tags.length).toBeGreaterThan(0));
   });
 
-  it("lists the three video testimonials in edit", () => {
+  it("lists the three client video testimonials", () => {
     expect(VIDEO_TESTIMONIALS.map((t) => t.name)).toEqual(["Kate", "Leon", "Candice"]);
   });
 });

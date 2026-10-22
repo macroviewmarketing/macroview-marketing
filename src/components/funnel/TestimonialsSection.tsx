@@ -6,7 +6,15 @@ import { PlaceholderTag, SectionIntro } from "./SectionIntro";
 const TestimonialCard = ({ t }: { t: VideoTestimonial }) => (
   <figure className="funnel-tcard">
     <div className="funnel-tcard-media">
-      {t.videoPath ? (
+      {t.vimeoId ? (
+        <iframe
+          src={`https://player.vimeo.com/video/${t.vimeoId}`}
+          title={`${t.name} testimonial`}
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allowFullScreen
+        />
+      ) : t.videoPath ? (
         <video src={t.videoPath} controls playsInline preload="metadata" />
       ) : (
         <div className="flex h-full flex-col items-center justify-center gap-4" data-placeholder="testimonial-video">
@@ -16,7 +24,7 @@ const TestimonialCard = ({ t }: { t: VideoTestimonial }) => (
           <PlaceholderTag>Video in edit</PlaceholderTag>
         </div>
       )}
-      <span className="funnel-badge">Video</span>
+
     </div>
     <figcaption className="funnel-tcard-info">
       <span className="funnel-tcard-name block">{t.name}</span>
@@ -31,6 +39,7 @@ const TestimonialCard = ({ t }: { t: VideoTestimonial }) => (
           <span className="funnel-tcard-label pending">Revenue growth</span>
         </>
       )}
+      {t.quote && <blockquote className="funnel-tcard-quote">“{t.quote}”</blockquote>}
     </figcaption>
   </figure>
 );
