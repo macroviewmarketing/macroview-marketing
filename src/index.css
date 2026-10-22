@@ -2067,11 +2067,21 @@ span.funnel-wordmark {
 
 /* Stats */
 .funnel-stats-section { padding: 100px 0; }
-.funnel-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.funnel-stats { display: grid; grid-template-columns: 1fr; gap: 22px; }
 @media (max-width: 900px) {
   .funnel-stats { grid-template-columns: 1fr; gap: 14px; }
 }
+.funnel-result-profile { display: block; min-width: 0; padding-left: 28px; border-left: 1px solid var(--f-border); }
+.funnel-result-profile img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.funnel-result-handle { display: block; margin-top: 14px; font-size: 13px; font-weight: 700; overflow-wrap: anywhere; color: #fff; }
+.funnel-result-social-stats { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 8px; font-size: 12px; color: var(--f-muted); }
+.funnel-result-social-stats strong { color: #fff; }
+.funnel-result-profile:hover .funnel-result-handle { color: var(--f-accent); }
 .funnel-stat {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 30px;
   position: relative;
   padding: 40px 36px;
   border: 1px solid var(--f-border);
@@ -2079,7 +2089,8 @@ span.funnel-wordmark {
   background: var(--f-surface);
 }
 @media (max-width: 640px) {
-  .funnel-stat { padding: 26px 20px; }
+  .funnel-stat { padding: 26px 20px; grid-template-columns: 1fr; gap: 24px; }
+  .funnel-result-profile { border-left: 0; border-top: 1px solid var(--f-border); padding: 24px 0 0; }
 }
 .funnel-stat::before {
   content: '';
