@@ -108,8 +108,8 @@ describe("portfolio items", () => {
 });
 
 describe("funnel content", () => {
-  it("has four stats and four engine steps", () => {
-    expect(STATS).toHaveLength(4);
+  it("has three client results and four engine steps", () => {
+    expect(STATS).toHaveLength(3);
     expect(ENGINE_STEPS).toHaveLength(4);
     ENGINE_STEPS.forEach((step) => expect(step.tags.length).toBeGreaterThan(0));
   });

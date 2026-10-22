@@ -16,7 +16,7 @@ export const Navbar = ({ scrolled }: NavbarProps) => (
           scrollToSection("hero");
         }}
       >
-        <Wordmark />
+        <span className="funnel-brand"><img src="/brand/macroview.png" alt="" width="40" height="40" /><Wordmark /></span>
       </a>
 
       <BookCallButton size="sm" />

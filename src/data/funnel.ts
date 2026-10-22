@@ -7,7 +7,7 @@ export const HERO = {
   /** Two lines on desktop; the accent word is drawn in red at the end of line two. */
   headlineLine1: "Content and Ads That Turn",
   headlineLine2: "Views Into",
-  headlineAccent: "Booked Calls.",
+  headlineAccent: "Qualified Leads.",
   /** PLACEHOLDER: path or URL to the hero video (e.g. "/video-asset/intro.mp4"). */
   videoPath: null as string | null,
   videoPoster: null as string | null,
@@ -20,12 +20,12 @@ export interface ClientLogo {
   placeholder?: boolean;
 }
 
-/** PLACEHOLDER: replace with real client names, logos and follower counts. */
-export const CLIENT_LOGOS: ClientLogo[] = Array.from({ length: 6 }, (_, i) => ({
-  name: `Client ${i + 1}`,
-  detail: "Logo coming soon",
-  placeholder: true,
-}));
+/** Personal brands featured in the video testimonials. */
+export const CLIENT_LOGOS: ClientLogo[] = [
+  { name: "Kate Cummins", detail: "Fitness coach · Team Accomplish", logoPath: "/clients/kate.png" },
+  { name: "Leon Vartanian", detail: "Amazon FBA coach", logoPath: "/clients/leon.png" },
+  { name: "Candice", detail: "Ecommerce brand strategist", logoPath: "/clients/candice.png" },
+];
 
 export interface Stat {
   value: string;
@@ -33,10 +33,9 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "847K+", label: "Organic views in 30 days for one creator" },
-  { value: "4.2x", label: "ROAS on paid video ads for a coaching client" },
-  { value: "0→60K", label: "Subscribers in under 90 days" },
-  { value: "48h", label: "Short-form turnaround, from 48 to 72 hours" },
+  { value: "$30,000+", label: "Candice: clients signed in the first month" },
+  { value: "$20,000/day", label: "Leon: reported coaching business revenue" },
+  { value: "Best year", label: "Kate: 2026 was her best year in business" },
 ];
 
 export interface EngineStep {

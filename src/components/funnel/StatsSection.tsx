@@ -12,6 +12,7 @@ export const StatsSection = () => (
           </div>
         ))}
       </div>
+      <p className="funnel-results-source">Results shared by our clients in their video testimonials.</p>
       <CtaRow />
     </div>
   </section>

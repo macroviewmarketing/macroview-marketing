@@ -25,7 +25,7 @@ describe("<Index> funnel page", () => {
     renderIndex();
     const h1 = screen.getAllByRole("heading", { level: 1 });
     expect(h1).toHaveLength(1);
-    expect(h1[0]).toHaveTextContent(/Booked Calls\./);
+    expect(h1[0]).toHaveTextContent(/Qualified Leads\./);
   });
 
   it("repeats the Book a Call CTA and every one points at the booking URL", () => {
@@ -45,7 +45,7 @@ describe("<Index> funnel page", () => {
     expect(screen.queryByText("Result coming soon")).not.toBeInTheDocument();
     expect(screen.getByText("Kate")).toBeInTheDocument();
     expect(screen.getByText("Leon")).toBeInTheDocument();
-    expect(screen.getByText("Candice")).toBeInTheDocument();
+    expect(container.querySelector("#testimonials")).toHaveTextContent("Candice");
   });
 
   it("offers WhatsApp and Instagram next to the final call to action", () => {
