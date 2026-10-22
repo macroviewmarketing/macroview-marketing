@@ -34,7 +34,7 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "$30,000+", label: "Candice: clients signed in the first month", profile: { name: "Candice", handle: "candicecynthia.t", image: "/clients/candice.png", followers: "4,782", posts: "158", following: "1,285" } },
+  { value: "$30,000+", label: "Candice: clients signed in the first month", profile: { name: "Candice", handle: "candicecynthia.t", image: "/clients/candice.png", followers: "4,782", posts: "158", following: "1,729" } },
   { value: "$20,000/day", label: "Leon: reported coaching business revenue", profile: { name: "Leon Vartanian", handle: "leonvartanian", image: "/clients/leon.png", followers: "125K", posts: "145", following: "1,448" } },
   { value: "Best year", label: "Kate: 2026 was her best year in business", profile: { name: "Kate Cummins", handle: "kate_teamaccomplish", image: "/clients/kate.png", followers: "34.7K", posts: "2,239", following: "742" } },
 ];
