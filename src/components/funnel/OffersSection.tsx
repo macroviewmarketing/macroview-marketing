@@ -14,6 +14,11 @@ export const OffersSection = () => {
         <SectionIntro eyebrow="Organic content" title="Choose a rhythm you can sustain.">
           Three months to establish a workflow, learn from the response, and refine your content. All prices USD. Deliverable quantities below are monthly.
         </SectionIntro>
+        <aside className="offer-availability" aria-label="Current pricing availability">
+          <span className="offer-availability-label">Limited pricing · 3 client slots</span>
+          <strong>1 slot filled. 2 slots remaining.</strong>
+          <span>These retainer prices are available for three client slots in total, across all packages.</span>
+        </aside>
         <div className="offer-billing" role="group" aria-label="Payment schedule">
           <button type="button" aria-pressed={billing === "monthly"} onClick={() => setBilling("monthly")}>Monthly</button>
           <button type="button" aria-pressed={billing === "upfront"} onClick={() => setBilling("upfront")}>3-Month Retainer</button>

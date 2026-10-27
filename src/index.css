@@ -2383,3 +2383,8 @@ span.funnel-wordmark {
 .offer-billing button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .offer-billing-note { text-align: center; font-size: 13px; line-height: 1.6; color: #b5b5ba; margin: 16px 0 30px; }
 @media (max-width: 400px) { .offer-billing button { padding: 12px 15px; font-size: 12px; } }
+
+.offer-availability { display: grid; gap: 9px; max-width: 720px; margin: 0 auto 30px; padding: 22px 26px; text-align: center; border: 1px solid #743027; border-radius: 14px; background: linear-gradient(120deg, #1b0c0a, #0a0a0a); }
+.offer-availability-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f18b80; }
+.offer-availability strong { font-size: clamp(19px, 2.2vw, 25px); color: #fff; line-height: 1.3; }
+.offer-availability > span:last-child { font-size: 13px; color: #b5b5ba; line-height: 1.6; }
