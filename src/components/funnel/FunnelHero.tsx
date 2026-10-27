@@ -42,7 +42,7 @@ export const FunnelHero = () => (
         <HeroVideo />
       </div>
 
-      <BookCallButton label="Watch the video, then book a call" />
+      <BookCallButton label="Book a Strategy Call" />
     </div>
   </section>
 );

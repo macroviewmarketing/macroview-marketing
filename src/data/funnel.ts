@@ -34,9 +34,9 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "$30,000+", label: "Candice: clients signed in the first month", profile: { name: "Candice", handle: "candicecynthia.t", image: "/clients/candice.png", followers: "4,782", posts: "158", following: "1,729" } },
-  { value: "$20,000/day", label: "Leon: reported coaching business revenue", profile: { name: "Leon Vartanian", handle: "leonvartanian", image: "/clients/leon.png", followers: "125K", posts: "145", following: "1,448" } },
-  { value: "Best year", label: "Kate: 2026 was her best year in business", profile: { name: "Kate Cummins", handle: "kate_teamaccomplish", image: "/clients/kate.png", followers: "34.7K", posts: "2,239", following: "742" } },
+  { value: "$30,000+", label: "Clients signed in the first month", profile: { name: "Candice", handle: "candicecynthia.t", image: "/clients/candice.png", followers: "4,782", posts: "158", following: "1,729" } },
+  { value: "$20,000", label: "Biggest day in coaching business revenue", profile: { name: "Leon Vartanian", handle: "leonvartanian", image: "/clients/leon.png", followers: "125K", posts: "145", following: "1,448" } },
+  { value: "Best year", label: "2026 was her best year in business", profile: { name: "Kate Cummins", handle: "kate_teamaccomplish", image: "/clients/kate.png", followers: "34.7K", posts: "2,239", following: "742" } },
 ];
 
 export interface EngineStep {
@@ -90,7 +90,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonial[] = [
   },
   {
     id: "leon", name: "Leon", vimeoId: "1238233787",
-    result: "$20,000 a day", resultLabel: "Reported coaching business revenue",
+    result: "$20,000", resultLabel: "Biggest day in coaching business revenue",
     quote: "After I started working with Marc and seeing how good he made the ads, my conversions went up and completely changed my business.",
   },
   {
