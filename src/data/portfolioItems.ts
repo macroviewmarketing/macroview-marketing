@@ -20,7 +20,7 @@ export interface PortfolioItem {
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "p1",
-    title: "YouTube Series Edit",
+    title: "YouTube Content",
     category: "Long-Form",
     span: "tall",
     videoPath: "/video-asset/long-form.mp4",
@@ -35,29 +35,29 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "p3",
-    title: "Coaching Ad",
+    title: "Meta Ads",
     category: "Ads",
     videoPath: "/video-asset/scrolling.mp4",
     gradientFallback: "linear-gradient(135deg, #180b0d, #0b0506)",
   },
   {
     id: "p4",
-    title: "Lifestyle Documentary",
+    title: "Documentaries",
     category: "Short-Form",
     videoPath: "/video-asset/lifestyle.mp4",
     gradientFallback: "linear-gradient(135deg, #1a0d0d, #120808)",
   },
   {
     id: "p5",
-    title: "Podcast Clips Series",
+    title: "Clipping",
     category: "Short-Form",
     videoPath: "/video-asset/podcast.mp4",
     gradientFallback: "linear-gradient(135deg, #1e0e11, #0e0708)",
   },
   {
     id: "p6",
-    title: "Product Launch Video",
-    category: "Ads",
+    title: "Instagram Reels",
+    category: "Reels",
     videoPath: "/video-asset/product-launch.mp4",
     gradientFallback: "linear-gradient(135deg, #190c0e, #0b0506)",
   },
