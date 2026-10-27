@@ -1,24 +1,32 @@
+import { useState } from "react";
 import { ORGANIC_PACKAGES, ONE_OFFS, inquiryUrl } from "@/data/offers";
 import { SectionIntro } from "./SectionIntro";
 import { BookCallButton } from "./BookCallButton";
 
 const money = (n: number) => `$${n.toLocaleString("en-US")}`;
 
-export const OffersSection = () => (
+export const OffersSection = () => {
+  const [billing, setBilling] = useState<"monthly" | "upfront">("monthly");
+  return (
   <>
     <section id="packages" className="funnel-section border-t border-[var(--f-border)]">
       <div className="funnel-wrap">
         <SectionIntro eyebrow="Organic content" title="Choose a rhythm you can sustain.">
           Three months to establish a workflow, learn from the response, and refine your content. All prices USD. Deliverable quantities below are monthly.
         </SectionIntro>
-        <div className="offer-grid">
+        <div className="offer-billing" role="group" aria-label="Payment schedule">
+          <button type="button" aria-pressed={billing === "monthly"} onClick={() => setBilling("monthly")}>Monthly</button>
+          <button type="button" aria-pressed={billing === "upfront"} onClick={() => setBilling("upfront")}>3-Month Retainer</button>
+        </div>
+        <p className="offer-billing-note">Both options cover a three-month commitment. Deliverables are per month.</p>
+        <div className="offer-grid" aria-live="polite">
           {ORGANIC_PACKAGES.map((p) => (
             <article className={`offer-card${p.name === "Content Growth" ? " offer-featured" : ""}`} key={p.name}>
               <p className="funnel-eyebrow">{p.fit}</p>
               <h3>{p.name}</h3>
-              <p className="offer-price">{money(p.upfront)} <small>for 3 months paid in full</small></p>
-              <p className="offer-payment">Or 3 monthly payments of {money(p.monthly)} ({money(p.monthly * 3)} total).</p>
-              <p className="offer-saving">Save {money(p.monthly * 3 - p.upfront)} with upfront payment.</p>
+              <p className="offer-price">{money(billing === "monthly" ? p.monthly : p.upfront)} <small>{billing === "monthly" ? "per month · 3 monthly payments" : "for 3 months paid in full"}</small></p>
+              <p className="offer-payment">{billing === "monthly" ? `${money(p.monthly * 3)} total over three months.` : `About ${money(Math.round(p.upfront / 3))}/month, paid upfront.`}</p>
+              <p className="offer-saving">{billing === "monthly" ? `Or pay ${money(p.upfront)} upfront and save ${money(p.monthly * 3 - p.upfront)}.` : `Save ${money(p.monthly * 3 - p.upfront)} vs monthly installments.`}</p>
               <ul>
                 <li><strong>{p.reels}</strong> original scripted and edited reels</li>
                 <li><strong>{p.carousels}</strong> written and designed carousels</li>
@@ -73,4 +81,5 @@ export const OffersSection = () => (
       </div>
     </section>
   </>
-);
+  );
+};
