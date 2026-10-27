@@ -8,9 +8,9 @@ export const WorkSection = () => (
         eyebrow="Inside The Work"
         title={
           <>
-            Built to convert,
+            From footage
             <br />
-            not just to look good.
+            to finished creative.
           </>
         }
       >
@@ -28,7 +28,6 @@ export const WorkSection = () => (
             <ul className="funnel-bullets">
               <li>{p.title}</li>
               <li>{p.category} production</li>
-              <li className="pending">Client results coming soon</li>
             </ul>
           </article>
         ))}

@@ -5,9 +5,9 @@
 
 export const HERO = {
   /** Two lines on desktop; the accent word is drawn in red at the end of line two. */
-  headlineLine1: "Content and Ads That Turn",
-  headlineLine2: "Views Into",
-  headlineAccent: "Qualified Leads.",
+  headlineLine1: "Content that makes your",
+  headlineLine2: "expertise",
+  headlineAccent: "easier to see.",
   /** PLACEHOLDER: path or URL to the hero video (e.g. "/video-asset/intro.mp4"). */
   videoPath: null as string | null,
   videoPoster: null as string | null,
@@ -46,26 +46,10 @@ export interface EngineStep {
 }
 
 export const ENGINE_STEPS: EngineStep[] = [
-  {
-    title: "Find What's Leaking",
-    body: "We look at your offer, content and funnel to find where attention is failing to turn into calls, and which fix moves revenue first.",
-    tags: ["Offer Review", "Funnel Audit", "Content Audit"],
-  },
-  {
-    title: "Script the Content",
-    body: "Hooks, scripts and a content calendar built around your offer, so every post has a job to do instead of chasing vanity likes.",
-    tags: ["Content Strategy", "Scripting", "Hook Engineering"],
-  },
-  {
-    title: "Produce and Publish",
-    body: "You send raw footage. We edit the short form, long form and thumbnails, and keep you posting on a schedule without touching a timeline.",
-    tags: ["Short Form", "Long Form", "Thumbnails"],
-  },
-  {
-    title: "Scale and Automate",
-    body: "Direct-response ad creative for cold traffic, plus the GHL and Make automations behind it, so no lead slips through.",
-    tags: ["Ad Creative", "GHL Automations", "Make Automations"],
-  },
+  { title: "Plan", body: "We review your offer, audience and content, then develop topics, hooks, scripts and a calendar around your priorities. You approve the facts and scripts before filming.", tags: ["Research", "Scripts", "Calendar"] },
+  { title: "Record", body: "You batch-record your expertise with our filming guidance, then upload usable footage. We agree requirements and approvals before production begins.", tags: ["Your expertise", "Recording guidance", "Footage handoff"] },
+  { title: "Produce", body: "We edit reels, design carousels, and prepare captions and agreed trial variations. You review the batch and publish on your channels.", tags: ["Reels", "Carousels", "Captions"] },
+  { title: "Review", body: "You share content insights and inquiry feedback. We review available watch-time, shares, profile activity and relevant inquiries to refine the next batch. Trials provide directional feedback, not controlled experiments.", tags: ["Insights", "Trial Reels", "Next batch"] },
 ];
 
 export interface VideoTestimonial {

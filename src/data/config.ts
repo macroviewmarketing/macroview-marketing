@@ -37,8 +37,8 @@ export const TRADE_NAME = "Macroview Digital Marketing Services";
 export const LEGAL_ENTITY_NAME = "Mark Jason Jamison Marcelino";
 
 export const SITE_META = {
-  title: "Macroview | Content and Ads That Turn Views Into Booked Calls",
+  title: "Macroview | Organic Content & Ad Creative",
   description:
-    "Scripting, editing, ad creative and automations for high-ticket coaches, business owners and CEOs.",
+    "Organic content packages, scripting, editing, carousels and ad creative for coaches and service businesses.",
   url: "https://www.macroviewmarketing.com",
 };

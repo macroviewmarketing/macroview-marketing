@@ -63,13 +63,7 @@ describe("config", () => {
 describe("sections registry", () => {
   it("declares the funnel sections in page order", () => {
     expect(SECTIONS.map((s) => s.id)).toEqual([
-      "hero",
-      "results",
-      "engine",
-      "work",
-      "testimonials",
-      "faq",
-      "book",
+      "hero", "work", "results", "testimonials", "engine", "packages", "ads", "one-offs", "faq", "book",
     ]);
   });
 });

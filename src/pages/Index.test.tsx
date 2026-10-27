@@ -18,14 +18,14 @@ describe("<Index> funnel page", () => {
     const ids = Array.from(container.querySelectorAll<HTMLElement>("section"))
       .map((s) => s.id)
       .filter(Boolean);
-    expect(ids).toEqual(["hero", "results", "engine", "work", "testimonials", "faq", "book"]);
+    expect(ids).toEqual(["hero", "work", "results", "testimonials", "engine", "packages", "ads", "one-offs", "faq", "book"]);
   });
 
   it("has one h1 with the headline", () => {
     renderIndex();
     const h1 = screen.getAllByRole("heading", { level: 1 });
     expect(h1).toHaveLength(1);
-    expect(h1[0]).toHaveTextContent(/Qualified Leads\./);
+    expect(h1[0]).toHaveTextContent(/Content that makes your expertise easier to see\./);
   });
 
   it("repeats the Book a Call CTA and every one points at the booking URL", () => {
@@ -35,9 +35,9 @@ describe("<Index> funnel page", () => {
     ctas.forEach((cta) => expect(cta).toHaveAttribute("href", BOOK_CALL_URL));
   });
 
-  it("embeds the client testimonials and keeps the hero placeholder", () => {
+  it("embeds the client testimonials without video placeholders", () => {
     const { container } = renderIndex();
-    expect(container.querySelector('[data-placeholder="hero-video"]')).not.toBeNull();
+    expect(container.querySelector('[data-placeholder="hero-video"]')).toBeNull();
     expect(container.querySelectorAll('[data-placeholder="testimonial-video"]')).toHaveLength(0);
     expect(screen.getByTitle("Kate testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233784");
     expect(screen.getByTitle("Leon testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233787");

@@ -1,62 +1,12 @@
-export interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
+export interface FaqItem { id: string; question: string; answer: string }
 export const faqs: FaqItem[] = [
-  {
-    id: "f1",
-    question: "What types of creators do you work with?",
-    answer:
-      "We work with coaches, consultants, and personal brand creators already generating revenue who want to scale content output without building an in-house team. We are not a fit for beginners or hobbyists.",
-  },
-  {
-    id: "f2",
-    question: "How long does onboarding take?",
-    answer:
-      "Standard onboarding is 5–7 business days. We collect brand assets, run a strategy call, set the content calendar, and have first deliverables in edit within the first week.",
-  },
-  {
-    id: "f3",
-    question: "What is included in each package?",
-    answer:
-      "Raw footage intake, editing, colour grading, motion graphics, captions, thumbnail design, and one revision round. Additional services are scoped separately.",
-  },
-  {
-    id: "f4",
-    question: "Do you handle scripting and strategy?",
-    answer:
-      "Yes. Our full-service tier includes content strategy, scripting, hook engineering, and distribution scheduling — not just editing. Most clients find the strategy layer is where we create the most leverage.",
-  },
-  {
-    id: "f5",
-    question: "How do turnaround times work?",
-    answer:
-      "Short-form (Reels, Shorts, TikTok): 48–72 hours. Long-form YouTube: 5–7 business days. Rush delivery available on request.",
-  },
-  {
-    id: "f6",
-    question: "Do you sign NDAs or exclusivity agreements?",
-    answer:
-      "Yes. NDA protection on all accounts by default. Category exclusivity (one client per niche) available on our premium tier.",
-  },
-  {
-    id: "f7",
-    question: "What does pricing look like?",
-    answer:
-      "Monthly retainers starting from a discovery call. Pricing scales with output volume, complexity, and whether strategy is included. Book a call and we will scope a custom engagement.",
-  },
-  {
-    id: "f8",
-    question: "What if I am not satisfied with a deliverable?",
-    answer:
-      "Every deliverable includes one structured revision round. If after revision the output does not meet brief, we remake it. Every brief is tracked against a written spec to prevent ambiguity.",
-  },
-  {
-    id: "f9",
-    question: "What happens after I book a call?",
-    answer:
-      "We talk through your offer, your current content and your funnel, then tell you where we would start. If it is a fit, you get a scoped proposal with deliverables and pricing.",
-  },
+  { id: "f1", question: "Who is this for?", answer: "Coaches and service businesses with expertise to share and capacity to record footage. We choose a cadence around your audience, offer, budget and actual bottleneck; daily posting is not required." },
+  { id: "f2", question: "What footage do I need to provide?", answer: "You record and upload usable footage using our guidance. We agree scripts before filming and confirm footage requirements during onboarding. Filming and major reshoots are outside the listed packages." },
+  { id: "f3", question: "What is included in an organic package?", answer: "Each includes onboarding, an initial audit, monthly research and calendar, scripted and edited reels, designed carousels, recording guidance, captions and CTA recommendations. Monthly output and review cadence are shown in each package." },
+  { id: "f4", question: "Do you publish or handle my DMs?", answer: "You publish the content, handle comments and DMs, and supply insights. Publishing, account monitoring, community management and ongoing DM handling require a separate written scope." },
+  { id: "f5", question: "How do delivery and revisions work?", answer: "We agree production dates, footage limits, video length, approval deadlines and revision scope before payment. Growth and Scale use two batches per month. Major concept changes, extra formats and complex production are separately quoted." },
+  { id: "f6", question: "How do Trial Reels count toward my package?", answer: "An included reel can be published as a trial first; later sharing it with everyone is still one asset. Listed additional variations reuse source footage for different openings, shorter cuts or structures. Availability is checked on your account, and new concepts or reshoots are separate." },
+  { id: "f7", question: "How do the three-month payments work?", answer: "All organic packages begin with a three-month commitment. Choose the listed paid-in-full total or three monthly installments. All prices are USD. Taxes, cancellation, refund and renewal terms are confirmed in the written proposal before payment." },
+  { id: "f8", question: "Are ad spend and campaign management included?", answer: "No. The $397 Ad Creative Pack covers five scripts and five edited outputs for one offer and audience. Campaign management is custom quoted, and media spend is separate. Landing pages and tracking implementation must be explicitly scoped." },
+  { id: "f9", question: "Do you guarantee results?", answer: "We do not guarantee ROI, leads, booked calls, follower growth or virality. We plan, produce and review content, then refine it using available insights and inquiry feedback. Testimonials describe individual client experiences, not promised outcomes." },
 ];

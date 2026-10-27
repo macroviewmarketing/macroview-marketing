@@ -7,7 +7,7 @@ export const FinalCta = () => (
   <section id="book" className="funnel-final border-t border-[var(--f-border)]">
     <div className="funnel-wrap">
       <h2 className="funnel-final-title">
-        Stop posting content that doesn't convert. <span className="funnel-accent">Book a call today.</span>
+        Bring your expertise. We'll help shape the content. <span className="funnel-accent">Find your next step.</span>
       </h2>
       <p className="funnel-final-sub">
         A 30-minute call to look at your offer, your content and your funnel, and where we'd start.

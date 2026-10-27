@@ -1,48 +1,20 @@
-import { Play } from "lucide-react";
 import { HERO } from "@/data/funnel";
-import { BookCallButton } from "./BookCallButton";
-import { PlaceholderTag } from "./SectionIntro";
-
-const HeroVideo = () =>
-  HERO.videoPath ? (
-    <video
-      className="h-full w-full object-cover"
-      src={HERO.videoPath}
-      poster={HERO.videoPoster ?? undefined}
-      controls
-      playsInline
-      preload="metadata"
-    />
-  ) : (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-4" data-placeholder="hero-video">
-      <span className="funnel-unmute">
-        <span className="funnel-unmute-icon">
-          <Play aria-hidden className="h-5 w-5 translate-x-0.5" fill="currentColor" />
-        </span>
-        <span>
-          <strong>Watch the intro</strong>
-          <small>Video coming soon</small>
-        </span>
-      </span>
-      <PlaceholderTag>Placeholder</PlaceholderTag>
-    </div>
-  );
+import { inquiryUrl } from "@/data/offers";
+import { scrollToSection } from "@/hooks/useScrollDots";
 
 export const FunnelHero = () => (
-  <section id="hero" className="funnel-hero">
+  <section id="hero" className="funnel-hero offer-hero">
     <div className="funnel-wrap">
+      <p className="funnel-eyebrow">Organic content & ad creative</p>
       <h1 className="funnel-h1">
         <span className="funnel-h1-line">{HERO.headlineLine1} </span>
-        <span className="funnel-h1-line">
-          {HERO.headlineLine2} <span className="funnel-accent">{HERO.headlineAccent}</span>
-        </span>
+        <span className="funnel-h1-line">{HERO.headlineLine2} <span className="funnel-accent">{HERO.headlineAccent}</span></span>
       </h1>
-
-      <div className="funnel-video">
-        <HeroVideo />
+      <p className="offer-hero-sub">Macroview helps coaches and service businesses turn their knowledge into consistent organic content and ad creative. We plan, script, and edit—you bring your expertise and record the footage.</p>
+      <div className="funnel-cta-row">
+        <a className="funnel-btn" href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection("packages"); }}>Explore packages</a>
+        <a className="funnel-btn funnel-btn-ghost" href={inquiryUrl("$97 Content & Profile Audit")}>Get a $97 audit</a>
       </div>
-
-      <BookCallButton label="Book a Strategy Call" />
     </div>
   </section>
 );

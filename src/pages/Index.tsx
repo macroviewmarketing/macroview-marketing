@@ -7,6 +7,7 @@ import { EngineSection } from "@/components/funnel/EngineSection";
 import { WorkSection } from "@/components/funnel/WorkSection";
 import { TestimonialsSection } from "@/components/funnel/TestimonialsSection";
 import { FaqSection } from "@/components/funnel/FaqSection";
+import { OffersSection } from "@/components/funnel/OffersSection";
 import { FinalCta } from "@/components/funnel/FinalCta";
 import { useScrollDots } from "@/hooks/useScrollDots";
 
@@ -19,11 +20,12 @@ const Index = () => {
 
       <main id="snap-root" className="funnel">
         <FunnelHero />
+        <WorkSection />
         <LogoMarquee />
         <StatsSection />
-        <EngineSection />
-        <WorkSection />
         <TestimonialsSection />
+        <EngineSection />
+        <OffersSection />
         <FaqSection />
         <FinalCta />
         <Footer />

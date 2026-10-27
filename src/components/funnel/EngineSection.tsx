@@ -14,7 +14,7 @@ export const EngineSection = () => (
           </>
         }
       >
-        We find where your content stops turning into revenue, then build the four systems that fix it.
+        A clear handoff from your expertise to finished content, with a review cycle that informs the next batch.
       </SectionIntro>
 
       <ol className="funnel-steps">
