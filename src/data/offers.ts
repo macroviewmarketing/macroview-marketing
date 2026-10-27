@@ -4,9 +4,15 @@ export const inquiryUrl = (service: string) =>
   `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(`Inquiry: ${service}`)}`;
 
 export const ORGANIC_PACKAGES = [
-  { name: "Foundation", fit: "Establish a content routine", monthly: 600, upfront: 1700, reels: 6, carousels: 2, variations: 0, calls: 1, review: "Monthly review", batches: "A monthly production plan" },
-  { name: "Content Growth", fit: "Recommended for consistent content and testing", monthly: 1000, upfront: 2800, reels: 12, carousels: 4, variations: 2, calls: 1, review: "Monthly review plus a midmonth testing check", batches: "Two production batches per month" },
-  { name: "Content Scale", fit: "A fuller, near-daily content calendar", monthly: 1600, upfront: 4500, reels: 20, carousels: 8, variations: 4, calls: 2, review: "Twice-monthly review", batches: "Two production batches per month" },
+  { name: "Foundation", fit: "Establish a content routine", monthly: 600, upfront: 1700, listMonthly: 900, listUpfront: 2550, reels: 6, carousels: 2, variations: 0, calls: 1, review: "Monthly review", batches: "A monthly production plan" },
+  { name: "Content Growth", fit: "Recommended for consistent content and testing", monthly: 1000, upfront: 2800, listMonthly: 1500, listUpfront: 4250, reels: 12, carousels: 4, variations: 2, calls: 1, review: "Monthly review plus a midmonth testing check", batches: "Two production batches per month" },
+  { name: "Content Scale", fit: "A fuller, near-daily content calendar", monthly: 1600, upfront: 4500, listMonthly: 2400, listUpfront: 6800, reels: 20, carousels: 8, variations: 4, calls: 2, review: "Twice-monthly review", batches: "Two production batches per month" },
+];
+
+export const EDITING_PACKAGES = [
+  { name: "Edit 10", videos: 10, monthly: 750, upfront: 2100 },
+  { name: "Edit 15", videos: 15, monthly: 1050, upfront: 2950 },
+  { name: "Edit 20", videos: 20, monthly: 1350, upfront: 3800 },
 ];
 
 export const ONE_OFFS = [

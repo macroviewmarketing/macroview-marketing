@@ -2388,3 +2388,10 @@ span.funnel-wordmark {
 .offer-availability-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f18b80; }
 .offer-availability strong { font-size: clamp(19px, 2.2vw, 25px); color: #fff; line-height: 1.3; }
 .offer-availability > span:last-child { font-size: 13px; color: #b5b5ba; line-height: 1.6; }
+
+.offer-card .offer-list-price { color: #b5b5ba; font-size: 14px; }
+.offer-list-price s { text-decoration-thickness: 1px; }
+.offer-limited-label { color: #f18b80; font-size: 12px; font-weight: 700; }
+.offer-editing-intro { max-width: 720px; margin: 64px auto 28px; text-align: center; }
+.offer-editing-intro h3 { font-size: 28px; font-weight: 800; color: #fff; }
+.offer-editing-intro p { margin-top: 15px; font-size: 15px; line-height: 1.7; color: #b5b5ba; }
