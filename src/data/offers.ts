@@ -10,10 +10,10 @@ export const ORGANIC_PACKAGES = [
 ];
 
 export const ONE_OFFS = [
-  { name: "Content & Profile Audit", price: 97, scope: "A focused review of your Instagram profile and recent content, with prioritized recommendations." },
-  { name: "DM-to-Booked-Call Audit", price: 97, scope: "A review of anonymized inquiry conversations and your booking journey. Implementation is quoted separately." },
-  { name: "Content Strategy Sprint", price: 297, scope: "One offer and audience: content pillars, a 30-day plan, 12 ideas with hooks, and one strategy call." },
-  { name: "Organic Script Pack", price: 247, scope: "10 short-form scripts with hooks, talking points and CTAs." },
-  { name: "Carousel Pack", price: 247, scope: "Five written and designed carousels. We agree slide counts and complexity before starting." },
-  { name: "Video Editing Pack", price: 300, scope: "Five ad or organic edits from your footage. Editing only; scripting is separate." },
+  { name: "Content & Profile Audit", scope: "A focused review of your Instagram profile and recent content, with prioritized recommendations." },
+  { name: "DM-to-Booked-Call Audit", scope: "A review of anonymized inquiry conversations and your booking journey. Implementation is quoted separately." },
+  { name: "Content Strategy Sprint", scope: "One offer and audience: content pillars, a 30-day plan, 12 ideas with hooks, and one strategy call." },
+  { name: "Organic Script Pack", scope: "10 short-form scripts with hooks, talking points and CTAs." },
+  { name: "Carousel Pack", scope: "Five written and designed carousels. We agree slide counts and complexity before starting." },
+  { name: "Video Editing Pack", scope: "Five ad or organic edits from your footage. Editing only; scripting is separate." },
 ];

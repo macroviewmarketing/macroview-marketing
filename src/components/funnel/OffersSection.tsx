@@ -1,3 +1,4 @@
+import { WHATSAPP_URL } from "@/data/config";
 import { useState } from "react";
 import { ORGANIC_PACKAGES, ONE_OFFS, inquiryUrl } from "@/data/offers";
 import { SectionIntro } from "./SectionIntro";
@@ -30,7 +31,7 @@ export const OffersSection = () => {
               <p className="funnel-eyebrow">{p.fit}</p>
               <h3>{p.name}</h3>
               <p className="offer-list-price">List price <s>{money(billing === "monthly" ? p.listMonthly : p.listUpfront)}</s> {billing === "monthly" ? "/ month" : "/ 3 months"}</p>
-              <span className="offer-limited-label">Limited offer · 2 slots remaining</span>
+              <span className="offer-limited-label">Save {money(billing === "monthly" ? p.listMonthly - p.monthly : p.listUpfront - p.upfront)} {billing === "monthly" ? "per month" : "over 3 months"} vs list · 2 slots remaining</span>
               <p className="offer-price">{money(billing === "monthly" ? p.monthly : p.upfront)} <small>{billing === "monthly" ? "per month · 3 monthly payments" : "for 3 months paid in full"}</small></p>
               <p className="offer-payment">{billing === "monthly" ? `${money(p.monthly * 3)} total over three months.` : `About ${money(Math.round(p.upfront / 3))}/month, paid upfront.`}</p>
               <p className="offer-saving">{billing === "monthly" ? `Or pay ${money(p.upfront)} upfront and save ${money(p.monthly * 3 - p.upfront)}.` : `Save ${money(p.monthly * 3 - p.upfront)} vs monthly installments.`}</p>
@@ -58,14 +59,14 @@ export const OffersSection = () => {
     </section>
     <section id="ads" className="funnel-section border-t border-[var(--f-border)]">
       <div className="funnel-wrap">
-        <SectionIntro eyebrow="Paid creative & campaigns" title="Creative production. Campaign management. Separate scopes." />
+        <SectionIntro eyebrow="Content & campaigns" title="Creative production. Campaign management. Separate scopes." />
         <div className="offer-grid offer-grid-two">
           <article className="offer-card">
-            <h3>Ad Creative Pack</h3><p className="offer-price">$397 <small>one-off</small></p>
-            <p>Five scripts and five edited vertical ads for one offer and audience, using footage you supply.</p>
+            <h3>Content Pack</h3><p className="offer-price">$497 <small>one-off</small></p>
+            <p>Five scripts and five edited vertical videos for organic content or ads, built around one offer and audience using footage you supply.</p>
             <ul><li>Focused briefing and recording guidance</li><li>Five final outputs up to 60 seconds</li><li>Natural cuts and basic captions/text</li><li>One consolidated script revision and one edit revision round</li></ul>
             <p>Outputs may be concepts or variations suited to the brief. Extra versions, formats, filming, extensive stock sourcing, complex animation and rush work are quoted separately.</p>
-            <a className="funnel-btn" href={inquiryUrl("$397 Ad Creative Pack")}>Discuss ad creative</a>
+            <a className="funnel-btn" href={inquiryUrl("$497 Content Pack")}>Discuss the Content Pack</a>
           </article>
           <article className="offer-card">
             <h3>Paid Ads Management</h3><p className="offer-price">Custom quote</p>
@@ -79,11 +80,11 @@ export const OffersSection = () => {
     </section>
     <section id="one-offs" className="funnel-section border-t border-[var(--f-border)]">
       <div className="funnel-wrap">
-        <SectionIntro eyebrow="One focused next step" title="Start with the bottleneck.">Need clarity or a specific deliverable? Start here. All prices USD; scope and delivery dates are agreed before payment.</SectionIntro>
+        <SectionIntro eyebrow="One focused next step" title="Start with the bottleneck.">Explore the focused services we offer. Message us or book a call to discuss your needs, scope and pricing.</SectionIntro>
         <div className="offer-grid">
-          {ONE_OFFS.map((o) => <article key={o.name} className="offer-card"><h3>{o.name}</h3><p className="offer-price">{money(o.price)}</p><p>{o.scope}</p><a className="offer-link" href={inquiryUrl(o.name)}>Request details ↗</a></article>)}
+          {ONE_OFFS.map((o) => <article key={o.name} className="offer-card"><h3>{o.name}</h3><p>{o.scope}</p><a className="offer-link" href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Hi Macroview, I would like to discuss ${o.name}.`)}`} target="_blank" rel="noopener noreferrer">Message us ↗</a></article>)}
         </div>
-        <div className="offer-note"><h3>Already getting inquiries but struggling to book calls?</h3><p>Start with our $97 DM-to-Booked-Call Audit. We diagnose the issue before recommending qualification questions, follow-up changes or booking-page improvements. Ongoing DM handling is separate.</p><a className="offer-link" href={inquiryUrl("$97 DM-to-Booked-Call Audit")}>Request the $97 audit ↗</a></div>
+        <div className="offer-note"><h3>Already getting inquiries but struggling to book calls?</h3><p>We offer a DM-to-Booked-Call Audit. We diagnose the issue before recommending qualification questions, follow-up changes or booking-page improvements. Ongoing DM handling is separate.</p><div className="funnel-cta-row"><a className="funnel-btn funnel-btn-ghost" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Message us</a><BookCallButton label="Book a Strategy Call" /></div></div>
         <div className="offer-note"><h3>Before we start</h3><p>Organic retainers have a three-month initial commitment, including when paid monthly. Video length, footage limits, revision scope, delivery dates, approval deadlines, taxes, cancellation, refunds and renewal terms are confirmed in your written proposal before payment. Posting, community management, DM handling, sales calls and ad spend are excluded unless separately agreed.</p><p>We do not guarantee leads, booked calls, revenue, follower growth or virality. Client testimonials describe individual experiences.</p></div>
       </div>
     </section>

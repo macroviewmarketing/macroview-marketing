@@ -1,5 +1,5 @@
 import { HERO } from "@/data/funnel";
-import { inquiryUrl } from "@/data/offers";
+import { WHATSAPP_URL } from "@/data/config";
 import { scrollToSection } from "@/hooks/useScrollDots";
 
 export const FunnelHero = () => (
@@ -13,7 +13,7 @@ export const FunnelHero = () => (
       <p className="offer-hero-sub">Macroview helps coaches and service businesses turn their knowledge into consistent organic content and ad creative. We plan, script, and edit—you bring your expertise and record the footage.</p>
       <div className="funnel-cta-row">
         <a className="funnel-btn" href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection("packages"); }}>Explore packages</a>
-        <a className="funnel-btn funnel-btn-ghost" href={inquiryUrl("$97 Content & Profile Audit")}>Get a $97 audit</a>
+        <a className="funnel-btn funnel-btn-ghost" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Message us</a>
       </div>
     </div>
   </section>
