@@ -26,13 +26,16 @@ export const OffersSection = () => {
         </div>
         <p className="offer-billing-note">Both options cover a three-month commitment. Deliverables are per month.</p>
         <div className="offer-grid" aria-live="polite">
-          {ORGANIC_PACKAGES.map((p) => (
-            <article className={`offer-card${p.name === "Content Growth" ? " offer-featured" : ""}`} key={p.name}>
+          {ORGANIC_PACKAGES.map((p, index) => (
+            <article className={`offer-card offer-tier-${index + 1}${p.name === "Content Growth" ? " offer-featured" : ""}`} key={p.name}>
               <p className="funnel-eyebrow">{p.fit}</p>
               <h3>{p.name}</h3>
-              <p className="offer-list-price">List price <s>{money(billing === "monthly" ? p.listMonthly : p.listUpfront)}</s> {billing === "monthly" ? "/ month" : "/ 3 months"}</p>
-              <span className="offer-limited-label">Save {money(billing === "monthly" ? p.listMonthly - p.monthly : p.listUpfront - p.upfront)} {billing === "monthly" ? "per month" : "over 3 months"} vs list · 2 slots remaining</span>
-              <p className="offer-price">{money(billing === "monthly" ? p.monthly : p.upfront)} <small>{billing === "monthly" ? "per month · 3 monthly payments" : "for 3 months paid in full"}</small></p>
+              <span className="offer-tier-marker">{["01 · Foundation", "02 · Recommended", "03 · Scale"][index]}</span>
+              <p className="offer-price offer-price-comparison">
+                <span className="offer-price-values"><span>{money(billing === "monthly" ? p.monthly : p.upfront)}</span><s aria-label={`Regular price ${money(billing === "monthly" ? p.listMonthly : p.listUpfront)}`}>{money(billing === "monthly" ? p.listMonthly : p.listUpfront)}</s></span>
+                <small>{billing === "monthly" ? "per month · 3 monthly payments" : "for 3 months paid in full"}</small>
+              </p>
+              <span className="offer-limited-label">Save {money(billing === "monthly" ? p.listMonthly - p.monthly : p.listUpfront - p.upfront)} {billing === "monthly" ? "per month" : "over 3 months"} · 2 slots remaining</span>
               <p className="offer-payment">{billing === "monthly" ? `${money(p.monthly * 3)} total over three months.` : `About ${money(Math.round(p.upfront / 3))}/month, paid upfront.`}</p>
               <p className="offer-saving">{billing === "monthly" ? `Or pay ${money(p.upfront)} upfront and save ${money(p.monthly * 3 - p.upfront)}.` : `Save ${money(p.monthly * 3 - p.upfront)} vs monthly installments.`}</p>
               <ul>
