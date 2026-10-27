@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ORGANIC_PACKAGES, EDITING_PACKAGES, ONE_OFFS, inquiryUrl } from "@/data/offers";
+import { ORGANIC_PACKAGES, ONE_OFFS, inquiryUrl } from "@/data/offers";
 import { SectionIntro } from "./SectionIntro";
 import { BookCallButton } from "./BookCallButton";
 
@@ -43,22 +43,6 @@ export const OffersSection = () => {
                 <li>{p.review}</li>
                 <li>{p.batches}</li>
               </ul>
-              <a className="funnel-btn" href={inquiryUrl(p.name)}>Ask about {p.name}</a>
-            </article>
-          ))}
-        </div>
-        <div className="offer-editing-intro">
-          <h3>Editing-only retainers</h3>
-          <p>Already have your content planned? Supply the footage and we edit 10, 15 or 20 videos per month. Scripting and strategy are excluded. These plans use list pricing and the payment schedule selected above.</p>
-        </div>
-        <div className="offer-grid" aria-live="polite">
-          {EDITING_PACKAGES.map((p) => (
-            <article className="offer-card" key={p.name}>
-              <p className="funnel-eyebrow">Editing only · list pricing</p>
-              <h3>{p.name}</h3>
-              <p className="offer-price">{money(billing === "monthly" ? p.monthly : p.upfront)} <small>{billing === "monthly" ? "per month · 3 monthly payments" : "for 3 months paid in full"}</small></p>
-              <p>{billing === "monthly" ? `${money(p.monthly * 3)} total over three months.` : `Save ${money(p.monthly * 3 - p.upfront)} vs monthly installments.`}</p>
-              <ul><li>{p.videos} edited videos per month</li><li>Client-supplied footage</li><li>Scripting and strategy excluded</li><li>Video length, complexity, revisions and delivery schedule agreed before payment</li></ul>
               <a className="funnel-btn" href={inquiryUrl(p.name)}>Ask about {p.name}</a>
             </article>
           ))}

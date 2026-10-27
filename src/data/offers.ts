@@ -9,12 +9,6 @@ export const ORGANIC_PACKAGES = [
   { name: "Content Scale", fit: "A fuller, near-daily content calendar", monthly: 1600, upfront: 4500, listMonthly: 2400, listUpfront: 6800, reels: 20, carousels: 8, variations: 4, calls: 2, review: "Twice-monthly review", batches: "Two production batches per month" },
 ];
 
-export const EDITING_PACKAGES = [
-  { name: "Edit 10", videos: 10, monthly: 750, upfront: 2100 },
-  { name: "Edit 15", videos: 15, monthly: 1050, upfront: 2950 },
-  { name: "Edit 20", videos: 20, monthly: 1350, upfront: 3800 },
-];
-
 export const ONE_OFFS = [
   { name: "Content & Profile Audit", price: 97, scope: "A focused review of your Instagram profile and recent content, with prioritized recommendations." },
   { name: "DM-to-Booked-Call Audit", price: 97, scope: "A review of anonymized inquiry conversations and your booking journey. Implementation is quoted separately." },
