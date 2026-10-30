@@ -30,12 +30,34 @@ describe("portfolio browsing", () => {
     tick(2400);
     expect(screen.getByRole("button", { name: "Tier lists", pressed: true })).toBeInTheDocument();
   });
-  it("pauses automatic advancement during interaction", () => {
+  it("continues automatic advancement during hover, focus, swipe and wheel interaction", () => {
     const { tick } = startVisibleRail();
-    fireEvent.pointerDown(screen.getByRole("region", { name: "This vs That examples" }));
+    const rail = screen.getByRole("region", { name: "This vs That examples" });
+    fireEvent.mouseEnter(rail);
+    fireEvent.focus(rail);
+    fireEvent.pointerDown(rail);
+    fireEvent.wheel(rail);
+    tick(100);
+    tick(2400);
+    expect(screen.getByRole("button", { name: "Tier lists", pressed: true })).toBeInTheDocument();
+  });
+  it("still allows an explicit pause", () => {
+    const { tick } = startVisibleRail();
+    fireEvent.click(screen.getByRole("button", { name: "Pause This vs That previews" }));
     tick(100);
     tick(2400);
     expect(screen.getByRole("button", { name: "This vs That", pressed: true })).toBeInTheDocument();
+  });
+  it("continues from a manually changed scroll position", () => {
+    const { tick } = startVisibleRail();
+    const rail = screen.getByRole("region", { name: "This vs That examples" });
+    Object.defineProperties(rail, { scrollWidth: { value: 1200 }, clientWidth: { value: 400 } });
+    tick(100);
+    rail.scrollLeft = 400;
+    fireEvent.scroll(rail);
+    tick(150);
+    expect(rail.scrollLeft).toBeGreaterThan(400);
+    expect(rail.scrollLeft).toBeLessThan(410);
   });
   it("stops at the last format and shows the portfolio button below the reel", () => {
     const { container, tick } = startVisibleRail();
