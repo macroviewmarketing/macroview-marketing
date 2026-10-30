@@ -2513,7 +2513,7 @@ span.funnel-wordmark {
   .founder-cta { width: 100%; padding-inline: 16px; font-size: 12px; }
 }
 
-.experience-number.experience-revenue { font-size: clamp(28px, 3.8vw, 46px); min-height: 1.9em; display: flex; align-items: center; justify-content: center; }
-@media (max-width: 640px) { .experience-stats { grid-template-columns: 1fr; gap: 28px; } .experience-number.experience-revenue { min-height: 0; font-size: 40px; } }
+.experience-number.experience-revenue { font-size: clamp(24px, 3.2vw, 40px); min-height: 1.9em; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 640px) { .experience-stats { grid-template-columns: 1fr; gap: 28px; } .experience-number.experience-revenue { min-height: 0; font-size: clamp(28px, 8vw, 40px); } }
 
 .experience-number.experience-years { white-space: nowrap; font-size: clamp(32px, 4.7vw, 56px); line-height: 1.1; }
