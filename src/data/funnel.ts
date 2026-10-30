@@ -19,6 +19,7 @@ export interface ClientLogo {
   logoPath?: string;
   placeholder?: boolean;
   handle?: string;
+  squarePortrait?: boolean;
 }
 
 /** Personal brands featured in the video testimonials. */
@@ -26,10 +27,12 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: "Kate Cummins", detail: "Fitness coach · Team Accomplish", logoPath: "/clients/kate.png", handle: "kate_teamaccomplish" },
   { name: "Leon Vartanian", detail: "Amazon FBA coach", logoPath: "/clients/leon.png", handle: "leonvartanian" },
   { name: "Candice", detail: "Ecommerce brand strategist", logoPath: "/clients/candice.png", handle: "candicecynthia.t" },
-  { name: "Kaylie Mercanti", detail: "Fitness coach", handle: "kaylie.teambombshell", logoPath: "/video-asset/selected/kaylie-story.jpg" },
-  { name: "Mehdi Syed", detail: "Business scaling coach", handle: "mehdimullionz", logoPath: "/video-asset/selected/mehdi-tierlist.jpg" },
-  { name: "Noriko Shindo", detail: "Business mindset coach", handle: "nori.shindo", logoPath: "/video-asset/selected/noriko-promo.jpg" },
-  { name: "Isa", detail: "Fitness coach", handle: "isafitlife", logoPath: "/video-asset/selected/isa.jpg" },
+  { name: "Kaylie Mercanti", detail: "Fitness coach", handle: "kaylie.teambombshell", logoPath: "/clients/portraits/kaylie.jpg", squarePortrait: true },
+  { name: "Mehdi Syed", detail: "Business scaling coach", handle: "mehdimullionz", logoPath: "/clients/portraits/mehdi.jpg", squarePortrait: true },
+  { name: "Noriko Shindo", detail: "Business mindset coach", handle: "nori.shindo", logoPath: "/clients/portraits/noriko.jpg", squarePortrait: true },
+  { name: "Isabel Gothard", detail: "Fitness coach", handle: "isafitlife", logoPath: "/clients/portraits/isabel.jpg", squarePortrait: true },
+  { name: "Sam", detail: "Interview performance coach", handle: "interviewpro.sdr", logoPath: "/clients/portraits/sam.jpg", squarePortrait: true },
+  { name: "Vadym", detail: "Business systems", handle: "refugee2rich", logoPath: "/clients/portraits/vadym.jpg", squarePortrait: true },
   { name: "NEXE", detail: "Fitness education", handle: "nexeclub", logoPath: "/video-asset/selected/nexe.jpg" },
 ];
 

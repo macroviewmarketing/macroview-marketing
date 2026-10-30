@@ -81,7 +81,7 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
               <article className="selected-work-card" key={work.slug}>
                 <a href={work.url} target="_blank" rel="noopener noreferrer" tabIndex={copy > 0 ? -1 : 0} aria-label={`Watch ${work.client}: ${work.title} on Frame.io`}>
                   <div className="selected-work-video">
-                    <video src={`/video-asset/selected/${work.slug}.mp4`} poster={`/video-asset/selected/${work.slug}.jpg`} muted loop playsInline preload="none" aria-hidden="true" />
+                    {work.hasPreview ? <video src={`/video-asset/selected/${work.slug}.mp4`} poster={`/video-asset/selected/${work.slug}.jpg`} muted loop playsInline preload="none" aria-hidden="true" /> : <div className="work-link-preview"><Play size={36} aria-hidden="true" /><span>{work.title}</span><small>Watch on Frame.io</small></div>}
                     <span className="selected-work-client">{work.client}</span>
                     <span className="selected-work-watch">Watch full video <ArrowUpRight size={16} aria-hidden="true" /></span>
                   </div>
@@ -114,10 +114,10 @@ export const WorkSection = () => {
       </div>
       <WorkRail key={group.name} name={group.name} items={group.items} />
       <p className="selected-work-hint">Scroll to explore. Select a video to watch with sound.</p>
-      <details className="more-work">
+      {moreWork.length > 0 && <details className="more-work">
         <summary>More client work</summary>
         <div className="more-work-grid">{moreWork.map(work => <a key={work.url} href={work.url} target="_blank" rel="noopener noreferrer"><strong>{work.client === "Unsorted" ? "More formats" : work.client}</strong><span>{work.title}</span><ArrowUpRight size={16} aria-hidden="true" /></a>)}</div>
-      </details>
+      </details>}
     </div>
   </section>
 );

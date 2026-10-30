@@ -3,17 +3,14 @@ import { existsSync } from "node:fs";
 import { workGroups, moreWork } from "./selectedWork";
 
 describe("selected work", () => {
-  it("groups keeps examples from distinct clients where available", () => {
-    workGroups.forEach(group => {
-      expect(group.items.length).toBeGreaterThanOrEqual(group.name === "Clone vids" ? 2 : 3);
-      expect(new Set(group.items.map(item => item.client)).size).toBeGreaterThanOrEqual(group.name === "Clone vids" || group.name === "This vs That" ? 2 : 3);
-      group.items.forEach(item => {
-        expect(existsSync(`public/video-asset/selected/${item.slug}.mp4`)).toBe(true);
-        expect(existsSync(`public/video-asset/selected/${item.slug}.jpg`)).toBe(true);
-      });
+  it("uses the supplied categories and available local previews", () => {
+    expect(workGroups.map(g => g.name)).toEqual(["This vs That", "Tier lists", "Visual Explainers", "Talking head", "Educational reels", "Stories & brand films"]);
+    workGroups.flatMap(g => g.items).filter(item => item.hasPreview).forEach(item => {
+      expect(existsSync(`public/video-asset/selected/${item.slug}.mp4`)).toBe(true);
+      expect(existsSync(`public/video-asset/selected/${item.slug}.jpg`)).toBe(true);
     });
   });
-  it("preserves all 29 supplied links plus the original three", () => {
-    expect(new Set([...workGroups.flatMap(g => g.items), ...moreWork].map(item => item.url)).size).toBe(32);
+  it("preserves all 35 updated links", () => {
+    expect(new Set([...workGroups.flatMap(g => g.items), ...moreWork].map(item => item.url)).size).toBe(35);
   });
 });

@@ -1,60 +1,54 @@
 export const workGroups = [
   {
-    "name": "Clone vids",
+    "name": "This vs That",
     "items": [
       {
-        "slug": "leon-comparison",
-        "client": "Leon",
-        "title": "10k Seller vs 100k Seller",
-        "url": "https://f.io/soQsgY7a",
-        "handle": "leonvartanian"
+        "slug": "work-06",
+        "client": "Kate",
+        "title": "Calorie Surplus Red Flags Vs Green Flags",
+        "url": "https://f.io/JblAIzZK",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-07",
+        "client": "Kate",
+        "title": "Wrong Way vs Right Way Hourglass Training",
+        "url": "https://f.io/ZW3fsjx8",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-08",
+        "client": "Kate",
+        "title": "Smash or Pass Hourglass Physique",
+        "url": "https://f.io/APGQARDE",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
       },
       {
         "slug": "mehdi-comparison",
         "client": "Mehdi",
         "title": "Broke Coach vs 7 Figure Coach",
-        "url": "https://f.io/DBfnDhYp",
-        "handle": "mehdimullionz"
-      }
-    ]
-  },
-  {
-    "name": "This vs That",
-    "items": [
-      {
-        "slug": "kate-comparison",
-        "client": "Kate",
-        "title": "Wrong Way vs Right Way",
-        "url": "https://f.io/neL_U9mW",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-ad3",
-        "client": "Kate",
-        "title": "Instagram Ad 3",
-        "url": "https://f.io/5ZS-1IEn",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-smash-pass",
-        "client": "Kate",
-        "title": "Hourglass Physique",
-        "url": "https://f.io/g0T9F1jj",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-flags",
-        "client": "Kate",
-        "title": "Red Flag vs Green Flag",
-        "url": "https://f.io/y0hdo103",
-        "handle": "kate_teamaccomplish"
+        "url": "https://f.io/yR9gJUqO",
+        "handle": "mehdimullionz",
+        "hasPreview": true
       },
       {
         "slug": "true-false4",
         "client": "NEXE",
-        "title": "True or False 4",
-        "url": "https://f.io/Hia7NFV6",
-        "handle": "nexeclub"
+        "title": "True or False What Your Coach Won't Tell You",
+        "url": "https://f.io/tvLlPfx7",
+        "handle": "nexeclub",
+        "hasPreview": true
+      },
+      {
+        "slug": "nexe",
+        "client": "NEXE",
+        "title": "Fat Loss Myths",
+        "url": "https://f.io/3bCTAA5k",
+        "handle": "nexeclub",
+        "hasPreview": true
       }
     ]
   },
@@ -62,39 +56,44 @@ export const workGroups = [
     "name": "Tier lists",
     "items": [
       {
-        "slug": "leon-tierlist",
-        "client": "Leon",
-        "title": "Tierlist",
-        "url": "https://f.io/4Bp07GA2",
-        "handle": "leonvartanian"
+        "slug": "work-05",
+        "client": "Kate",
+        "title": "Tier List How to Grow Glutes",
+        "url": "https://f.io/C4ONGHv5",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
       },
       {
-        "slug": "kate-tierlist",
-        "client": "Kate",
-        "title": "How to Grow Glutes",
-        "url": "https://f.io/rL4RmAex",
-        "handle": "kate_teamaccomplish"
+        "slug": "leon-tierlist",
+        "client": "Leon",
+        "title": "Making Money on Amazon Tier List",
+        "url": "https://f.io/mnXCtH3P",
+        "handle": "leonvartanian",
+        "hasPreview": true
       },
       {
         "slug": "mehdi-tierlist",
         "client": "Mehdi",
-        "title": "How Coaches Try to Book Calls",
-        "url": "https://f.io/Zyho30RA",
-        "handle": "mehdimullionz"
+        "title": "Tier List of How Coaches Try to Book Calls",
+        "url": "https://f.io/MLYfE4GX",
+        "handle": "mehdimullionz",
+        "hasPreview": true
       },
       {
         "slug": "nexe-supplements",
         "client": "NEXE",
-        "title": "Tier List Supplements",
-        "url": "https://f.io/aWvGDrVc",
-        "handle": "nexeclub"
+        "title": "Supplement Tier List Pill Myth",
+        "url": "https://f.io/CfFiMmaX",
+        "handle": "nexeclub",
+        "hasPreview": true
       },
       {
         "slug": "sam-tierlist",
         "client": "Sam",
-        "title": "Tierlist",
-        "url": "https://f.io/sFn0GRri",
-        "handle": null
+        "title": "Tier List Ranking Tools",
+        "url": "https://f.io/efhW43Af",
+        "handle": "interviewpro.sdr",
+        "hasPreview": true
       }
     ]
   },
@@ -102,32 +101,36 @@ export const workGroups = [
     "name": "Visual Explainers",
     "items": [
       {
-        "slug": "nexe-effort",
-        "client": "NEXE",
-        "title": "The Effort Gap",
-        "url": "https://f.io/o1dyKDxY",
-        "handle": "nexeclub"
-      },
-      {
-        "slug": "mehdi-dra1",
-        "client": "Mehdi",
-        "title": "DRA 1",
-        "url": "https://f.io/KO3Kmshx",
-        "handle": "mehdimullionz"
-      },
-      {
-        "slug": "candice-ad2",
+        "slug": "work-01",
         "client": "Candice",
-        "title": "Ad 2",
-        "url": "https://f.io/mM_qv-oQ",
-        "handle": "candicecynthia.t"
+        "title": "Website Upsell App Offer",
+        "url": "https://f.io/2dxxA-Cz",
+        "handle": "candicecynthia.t",
+        "hasPreview": true
       },
       {
         "slug": "mehdi-ad3",
         "client": "Mehdi",
-        "title": "Ad 3",
-        "url": "https://f.io/jzRV3nAj",
-        "handle": "mehdimullionz"
+        "title": "Pre-Sold Clients Coaching Ad",
+        "url": "https://f.io/Et9r8AF4",
+        "handle": "mehdimullionz",
+        "hasPreview": true
+      },
+      {
+        "slug": "nexe-effort",
+        "client": "NEXE",
+        "title": "Why Effort Alone Stalls Progress",
+        "url": "https://f.io/dlDqsTh1",
+        "handle": "nexeclub",
+        "hasPreview": true
+      },
+      {
+        "slug": "vadym-ad1",
+        "client": "Vadym",
+        "title": "Building a Business System",
+        "url": "https://f.io/sPL1gGLA",
+        "handle": "refugee2rich",
+        "hasPreview": true
       }
     ]
   },
@@ -138,57 +141,9 @@ export const workGroups = [
         "slug": "saff-math",
         "client": "Saff",
         "title": "The Math Behind a Blown Account",
-        "url": "https://f.io/EMP1WzTY",
-        "handle": null
-      },
-      {
-        "slug": "kate-ad1",
-        "client": "Kate",
-        "title": "Instagram Ad 1",
-        "url": "https://f.io/z26ioG-7",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "leon-ad4",
-        "client": "Leon",
-        "title": "AD 4",
-        "url": "https://f.io/Wv__6bPg",
-        "handle": "leonvartanian"
-      },
-      {
-        "slug": "kate-ad2",
-        "client": "Kate",
-        "title": "Instagram Ad 2",
-        "url": "https://f.io/cJb4PO9H",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "leon-ad2",
-        "client": "Leon",
-        "title": "AD 2",
-        "url": "https://f.io/39AXn3Ev",
-        "handle": "leonvartanian"
-      },
-      {
-        "slug": "sion-ad1",
-        "client": "Sion",
-        "title": "Ad 1 Batch 1",
-        "url": "https://f.io/yfvamnhI",
-        "handle": null
-      },
-      {
-        "slug": "vadym-ad1",
-        "client": "Vadym",
-        "title": "Ad 1 2",
-        "url": "https://f.io/CSs60HLy",
-        "handle": null
-      },
-      {
-        "client": "Kate",
-        "title": "Stop Leaving Your Results on the Table",
-        "slug": "kate",
-        "url": "https://f.io/Oh2mP_GV",
-        "handle": "kate_teamaccomplish"
+        "url": "https://f.io/uveplTIJ",
+        "handle": null,
+        "hasPreview": true
       }
     ]
   },
@@ -196,25 +151,28 @@ export const workGroups = [
     "name": "Educational reels",
     "items": [
       {
-        "client": "NEXE",
-        "title": "Fat Loss Myths",
-        "slug": "nexe",
-        "url": "https://f.io/3bCTAA5k",
-        "handle": "nexeclub"
-      },
-      {
-        "client": "Isa",
-        "title": "Which Program",
-        "slug": "isa",
-        "url": "https://f.io/nKXmQUDf",
-        "handle": "isafitlife"
-      },
-      {
         "slug": "sheena-tips",
         "client": "Sheena",
         "title": "Instagram Growth Tips",
-        "url": "https://f.io/YNmUjFRN",
-        "handle": null
+        "url": "https://f.io/BMk1vxev",
+        "handle": null,
+        "hasPreview": true
+      },
+      {
+        "slug": "work-31",
+        "client": "Sheena",
+        "title": "Instagram Growth Tips (2)",
+        "url": "https://f.io/C_pRj8Ib",
+        "handle": null,
+        "hasPreview": false
+      },
+      {
+        "slug": "isa",
+        "client": "Isabel Gothard",
+        "title": "Which Program",
+        "url": "https://f.io/nKXmQUDf",
+        "handle": "isafitlife",
+        "hasPreview": true
       }
     ]
   },
@@ -222,42 +180,134 @@ export const workGroups = [
     "name": "Stories & brand films",
     "items": [
       {
+        "slug": "work-02",
+        "client": "Kate",
+        "title": "Fitness Transformation Formula Guide",
+        "url": "https://f.io/4DpaMkf3",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-03",
+        "client": "Kate",
+        "title": "Seven Lesson Strategy Formula",
+        "url": "https://f.io/14yxiJfC",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-04",
+        "client": "Kate",
+        "title": "Desired Physique Effort Formula",
+        "url": "https://f.io/5u1uRErH",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-09",
+        "client": "Kate",
+        "title": "Stop Leaving Your Results on the Table",
+        "url": "https://f.io/Oh2mP_GV",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
         "slug": "kaylie-story",
         "client": "Kaylie",
-        "title": "My Story",
-        "url": "https://f.io/D-DNRipO",
-        "handle": "kaylie.teambombshell"
+        "title": "Personal Story After Loss",
+        "url": "https://f.io/hvqltQj1",
+        "handle": "kaylie.teambombshell",
+        "hasPreview": true
+      },
+      {
+        "slug": "leon-comparison",
+        "client": "Leon",
+        "title": "Broke Amazon Seller Story",
+        "url": "https://f.io/Lpr8KZrV",
+        "handle": "leonvartanian",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-13",
+        "client": "Leon",
+        "title": "Amazon Storefront Income Results",
+        "url": "https://f.io/rMo_lTTj",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-14",
+        "client": "Leon",
+        "title": "Amazon Market Saturation Pitch",
+        "url": "https://f.io/eOnz9A8u",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-15",
+        "client": "Leon",
+        "title": "Scaling Past 150 Amazon Products",
+        "url": "https://f.io/_fZO6zBC",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-16",
+        "client": "Leon",
+        "title": "Amazon Ad",
+        "url": "https://f.io/aOss7UaH",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-20",
+        "client": "Mehdi",
+        "title": "Unlimited Clients Masterclass Promo",
+        "url": "https://f.io/DM6fcSEH",
+        "handle": "mehdimullionz",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-21",
+        "client": "Mehdi",
+        "title": "High-Ticket Client Acquisition Webinar",
+        "url": "https://f.io/DyKlbFtE",
+        "handle": "mehdimullionz",
+        "hasPreview": false
       },
       {
         "slug": "noriko-promo",
         "client": "Noriko",
-        "title": "Mind Reset Mastery Promo",
-        "url": "https://f.io/X2PLSDGu",
-        "handle": "nori.shindo"
+        "title": "Mind Reset Mastery",
+        "url": "https://f.io/fqvi_Zu2",
+        "handle": "nori.shindo",
+        "hasPreview": true
       },
       {
-        "slug": "leon-september",
-        "client": "Leon",
-        "title": "September AD 3 2",
-        "url": "https://f.io/SP69UAtI",
-        "handle": "leonvartanian"
+        "slug": "noriko-pinned",
+        "client": "Noriko",
+        "title": "Mind Reset Mastery (2)",
+        "url": "https://f.io/xf3q3dk2",
+        "handle": "nori.shindo",
+        "hasPreview": true
+      },
+      {
+        "slug": "sion-ad1",
+        "client": "Sion",
+        "title": "Effortless Focus Supplement Ad",
+        "url": "https://f.io/RcMD_xq8",
+        "handle": null,
+        "hasPreview": true
+      },
+      {
+        "slug": "work-35",
+        "client": "Isabel Gothard",
+        "title": "Hourglass Ultimate Coaching",
+        "url": "https://f.io/Rqb9ft3a",
+        "handle": "isafitlife",
+        "hasPreview": false
       }
     ]
   }
 ];
-export const moreWork = [
-  {
-    "slug": "noriko-pinned",
-    "client": "Noriko",
-    "title": "Pinned Video",
-    "url": "https://f.io/5cHxNAm4",
-    "handle": "nori.shindo"
-  },
-  {
-    "slug": "compare-ad3",
-    "client": "Kate",
-    "title": "Compare Format Ad 3",
-    "url": "https://f.io/VqXkk_3G",
-    "handle": "kate_teamaccomplish"
-  }
-];
+export const moreWork: {client: string; title: string; url: string}[] = [];
