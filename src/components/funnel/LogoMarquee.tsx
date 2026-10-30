@@ -4,7 +4,7 @@ const Chip = ({ logo, copy }: { logo: ClientLogo; copy: boolean }) => (
   <li className="funnel-chip" data-placeholder={logo.placeholder ? "client-logo" : undefined}>
     <a className="client-profile-link" href={`https://www.instagram.com/${logo.handle}/`} target="_blank" rel="noopener noreferrer" tabIndex={copy ? -1 : 0}>
     {logo.logoPath ? (
-      <span className="funnel-client-portrait"><img src={logo.logoPath} alt="" loading="lazy" /></span>
+      <span className={`funnel-client-portrait${logo.squarePortrait ? " square-portrait" : ""}`}><img src={logo.logoPath} alt={`${logo.name} profile picture`} loading="lazy" /></span>
     ) : (
       <span className="funnel-chip-avatar" aria-hidden>
         {logo.name.charAt(0)}

@@ -2468,3 +2468,7 @@ span.funnel-wordmark {
 #work .selected-work-card { width: clamp(210px, 22vw, 270px); }
 #work .complete-portfolio-cta { margin-bottom: 32px; }
 @media (max-width:640px) { #work .selected-work-card { width: 64vw; max-width: 260px; } }
+.funnel-client-portrait.square-portrait img { position: static; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: cover; }
+.work-link-preview { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 28px; text-align: center; background: radial-gradient(ellipse at top, #452025, #160e11); color: #fff; }
+.work-link-preview span { font-size: 19px; line-height: 1.5; }
+.work-link-preview small { color: #c6b9bf; }
