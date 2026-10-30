@@ -2485,7 +2485,7 @@ span.funnel-wordmark {
 .founder-cta { margin-top: 12px; }
 @media (max-width: 767px) { .founder-layout { grid-template-columns: 1fr; } .founder-portrait { max-width: 460px; } }
 
-.experience-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 0 48px; margin-bottom: 48px; border-bottom: 1px solid var(--f-border); text-align: center; }
+.experience-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 0 0 48px; margin-bottom: 48px; border-bottom: 1px solid var(--f-border); text-align: center; }
 .experience-number { font-size: clamp(44px, 7vw, 88px); line-height: 1.1; font-weight: 700; letter-spacing: -.045em; color: #fff; font-variant-numeric: tabular-nums; margin-bottom: 12px; }
 .estimate-tag { display: inline-block; font-size: 11px; padding: 3px 7px; border: 1px solid #65333c; border-radius: 4px; margin-left: 5px; color: #d9adb4; vertical-align: middle; }
 .experience-stats .experience-source { grid-column: 1 / -1; max-width: 700px; margin: 0 auto; font-size: 12px; line-height: 1.7; color: #96969e; }
@@ -2512,3 +2512,6 @@ span.funnel-wordmark {
   .founder-portrait { margin-inline: auto; }
   .founder-cta { width: 100%; padding-inline: 16px; font-size: 12px; }
 }
+
+.experience-number.experience-revenue { font-size: clamp(28px, 3.8vw, 46px); min-height: 1.9em; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 640px) { .experience-stats { grid-template-columns: 1fr; gap: 28px; } .experience-number.experience-revenue { min-height: 0; font-size: 40px; } }

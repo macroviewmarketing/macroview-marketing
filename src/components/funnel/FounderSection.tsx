@@ -11,8 +11,8 @@ export const FounderSection = () => (
         <p className="funnel-eyebrow">Meet the person behind Macroview</p>
         <h2 id="founder-title" className="funnel-title">Creative shaped<br />by sales.</h2>
         <p className="founder-lead">I’m Marc, founder of Macroview. I bring editing, creative direction and an understanding of sales together to create content with a reason to convert.</p>
-        <p>I started editing in my first year of college, four years ago. Macroview grew with me into a collective of creators and editors, learning how to connect our craft with the businesses we support.</p>
-        <p>My work with DOBO overlapped with my work alongside Mehdi Syed, bringing together e-commerce and high-ticket coaching. Across VSLs, sales videos and ads, I learned to think about how each piece fits into the wider sales ecosystem.</p>
+        <p>I started editing four years ago. What began with shaping footage grew into a deeper interest in what makes someone pay attention, trust a business and decide to buy. Macroview grew from that curiosity into a collective of creators and editors.</p>
+        <p>Over those four years, I’ve worked across e-commerce and high-ticket coaching, including coaches reporting $10K–$100K in monthly business revenue. Creating VSLs, sales videos and ads taught me to think about the whole sales ecosystem: how the content, the offer and the buying journey connect.</p>
         <p>That starts with the buyer: who the offer is for, what they want, the problems they need solved, and what they need to believe before buying. The message should meet them where they are, from first discovering you to considering your offer and deciding to act.</p>
         <p>That mix is my unfair advantage. I bring the visual craft, the creative direction and the sales thinking together, so the hook, story, proof and call to action work toward the same goal.</p>
         <a className="funnel-btn founder-cta" href="https://calendly.com/macroviewmarketing/30min" target="_blank" rel="noopener noreferrer">Let’s talk about your content <ArrowUpRight size={18} aria-hidden="true" /></a>
