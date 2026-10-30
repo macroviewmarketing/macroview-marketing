@@ -29,33 +29,30 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
       if (moving) void video.play().catch(() => {});
       else if (!video.paused) video.pause();
     });
-    if (!moving) return;
-    let frame = 0;
-    let previous = 0;
-    let position = rail.current?.scrollLeft ?? 0;
-    const advance = (now: number) => {
-      const node = rail.current;
-      if (node) {
-        const group = node.querySelector<HTMLElement>(".selected-work-group");
-        const cycle = group ? group.offsetWidth + 24 : 0;
-        if (previous) position += Math.min(now - previous, 50) * 0.025;
-        if (cycle && position >= cycle) position -= cycle;
-        node.scrollLeft = position;
-      }
-      previous = now;
-      frame = requestAnimationFrame(advance);
-    };
-    frame = requestAnimationFrame(advance);
-    return () => cancelAnimationFrame(frame);
   }, [moving]);
+
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+  const updateEdges = () => {
+    const node = rail.current;
+    if (node) {
+      setAtStart(node.scrollLeft <= 1);
+      setAtEnd(node.scrollLeft >= node.scrollWidth - node.clientWidth - 1);
+    }
+  };
+  useEffect(() => {
+    const node = rail.current;
+    if (!node) return;
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(node);
+    updateEdges();
+    return () => observer.disconnect();
+  }, []);
 
   const step = (direction: number) => {
     setPaused(true);
     const node = rail.current;
     if (node) {
-      const cycle = node.querySelector<HTMLElement>(".selected-work-group")!.offsetWidth + 24;
-      if (direction < 0 && node.scrollLeft < 1) node.scrollLeft = cycle;
-      if (direction > 0 && node.scrollLeft >= cycle) node.scrollLeft -= cycle;
       node.scrollBy({ left: direction * (node.querySelector("article")!.clientWidth + 24), behavior: reducedMotion ? "instant" : "smooth" });
     }
   };
@@ -65,21 +62,20 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
       <div className="selected-work-toolbar">
         <h3 className="work-format-heading">{name}</h3>
         <div className="selected-work-controls" aria-label={`${name} controls`}>
-          <button type="button" aria-label={`Previous ${name} video`} onClick={() => step(-1)}><ArrowLeft size={18} /></button>
+          <button type="button" disabled={atStart} aria-label={`Previous ${name} video`} onClick={() => step(-1)}><ArrowLeft size={18} /></button>
           <button type="button" aria-label={paused ? `Resume ${name} previews` : `Pause ${name} previews`} aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? <Play size={16} /> : <Pause size={16} />}</button>
-          <button type="button" aria-label={`Next ${name} video`} onClick={() => step(1)}><ArrowRight size={18} /></button>
+          <button type="button" disabled={atEnd} aria-label={`Next ${name} video`} onClick={() => step(1)}><ArrowRight size={18} /></button>
         </div>
       </div>
-      <div ref={rail} className="selected-work-rail" role="region" aria-label={`${name} examples`} tabIndex={0}
+      <div ref={rail} onScroll={updateEdges} className="selected-work-rail" role="region" aria-label={`${name} examples`} tabIndex={0}
         onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
         onFocus={() => setFocused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
         onPointerDown={() => setPaused(true)} onWheel={() => setPaused(true)}
         onKeyDown={(event) => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); step(event.key === "ArrowRight" ? 1 : -1); } }}>
-        {[0, 1, 2].map((copy) => (
-          <div className="selected-work-group" key={copy} aria-hidden={copy > 0 ? true : undefined}>
+        <div className="selected-work-group">
             {items.map((work) => (
               <article className="selected-work-card" key={work.slug}>
-                <a href={work.url} target="_blank" rel="noopener noreferrer" tabIndex={copy > 0 ? -1 : 0} aria-label={`Watch ${work.client}: ${work.title} on Frame.io`}>
+                <a href={work.url} target="_blank" rel="noopener noreferrer"  aria-label={`Watch ${work.client}: ${work.title} on Frame.io`}>
                   <div className="selected-work-video">
                     {work.hasPreview ? <video src={`/video-asset/selected/${work.slug}.mp4`} poster={`/video-asset/selected/${work.slug}.jpg`} muted loop playsInline preload="none" aria-hidden="true" /> : <div className="work-link-preview"><Play size={36} aria-hidden="true" /><span>{work.title}</span><small>Watch on Frame.io</small></div>}
                     <span className="selected-work-client">{work.client}</span>
@@ -87,11 +83,10 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
                   </div>
                   <h4>{work.title}</h4>
                 </a>
-                {work.handle && <a className="work-instagram" href={`https://www.instagram.com/${work.handle}/`} target="_blank" rel="noopener noreferrer" tabIndex={copy > 0 ? -1 : 0}>@{work.handle}</a>}
+                {work.handle && <a className="work-instagram" href={`https://www.instagram.com/${work.handle}/`} target="_blank" rel="noopener noreferrer" >@{work.handle}</a>}
               </article>
             ))}
           </div>
-        ))}
       </div>
     </div>
   );
