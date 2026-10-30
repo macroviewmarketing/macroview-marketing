@@ -24,9 +24,8 @@ export const ExperienceStats = () => {
   return (
     <div ref={root} className="experience-stats">
       <div><p className="experience-number" aria-label="10,000 plus, estimated"><span aria-hidden="true">{count.toLocaleString("en-US")}+</span></p><p>Videos edited <span className="estimate-tag">Estimated</span></p></div>
-      <div><p className="experience-number">4+</p><p>Years in content & creative</p></div>
-      <div><p className="experience-number experience-revenue">$10K–$100K</p><p>Monthly revenue reported by coaching clients</p></div>
-      <p className="experience-source">Video total is a rough four-year estimate based on Marc’s reported 4,200+ Frame.io items this year, allowing for quieter periods. It is not an audited count of unique videos. Client revenue is self-reported business revenue, not revenue attributed solely to our creative.</p>
+      <div><p className="experience-number experience-years">4+ Years</p><p>In content & creative</p></div>
+      <div><p className="experience-number experience-revenue">$10K to $100K</p><p>Monthly revenue reported by clients</p></div>
     </div>
   );
 };
