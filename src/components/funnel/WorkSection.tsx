@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import { SectionIntro } from "./SectionIntro";
 
-import { workGroups, moreWork } from "@/data/selectedWork";
+import { visibleWorkGroups as workGroups } from "@/data/selectedWork";
 
 type WorkItem = (typeof workGroups)[number]["items"][number];
-const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
+const WorkRail = ({ items, name, onComplete }: { items: WorkItem[]; name: string; onComplete?: () => void }) => {
   const rail = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -49,6 +49,29 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!moving) return;
+    let frame = 0;
+    let previous = 0;
+    let endSince = 0;
+    let position = rail.current?.scrollLeft ?? 0;
+    const advance = (now: number) => {
+      const node = rail.current;
+      if (!node) return;
+      const maximum = node.scrollWidth - node.clientWidth;
+      if (previous) position = Math.min(maximum, position + Math.min(now - previous, 50) * .045);
+      node.scrollLeft = position;
+      if (position >= maximum - 1) {
+        if (!endSince) endSince = now;
+        if (now - endSince >= 2200) { onComplete?.(); return; }
+      }
+      previous = now;
+      frame = requestAnimationFrame(advance);
+    };
+    frame = requestAnimationFrame(advance);
+    return () => cancelAnimationFrame(frame);
+  }, [moving, onComplete]);
+
   const step = (direction: number) => {
     setPaused(true);
     const node = rail.current;
@@ -83,7 +106,7 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
                   </div>
                   <h4>{work.title}</h4>
                 </a>
-                {work.handle && <a className="work-instagram" href={`https://www.instagram.com/${work.handle}/`} target="_blank" rel="noopener noreferrer" >@{work.handle}</a>}
+                {work.handle ? <a className="work-instagram" href={`https://www.instagram.com/${work.handle}/`} target="_blank" rel="noopener noreferrer" >@{work.handle}</a> : <span className="work-instagram">{work.client}</span>}
               </article>
             ))}
           </div>
@@ -94,6 +117,12 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
 
 export const WorkSection = () => {
   const [active, setActive] = useState(workGroups[0].name);
+  const advanceFormat = useCallback(() => {
+    setActive(current => {
+      const next = workGroups.findIndex(item => item.name === current) + 1;
+      return workGroups[next]?.name ?? current;
+    });
+  }, []);
   const group = workGroups.find(item => item.name === active)!;
   return (
   <section id="work" className="funnel-section border-t border-[var(--f-border)]">
@@ -101,18 +130,15 @@ export const WorkSection = () => {
       <SectionIntro eyebrow="Selected Work" title={<>Different voices.<br />Formats that connect.</>}>
         Choose a format and scroll through the examples.
       </SectionIntro>
-      <div className="complete-portfolio-cta">
-        <a className="funnel-btn" href="https://f.io/cwqeAn15" target="_blank" rel="noopener noreferrer">Explore the complete portfolio <ArrowUpRight size={22} aria-hidden="true" /></a>
-      </div>
       <div className="work-format-selector" role="group" aria-label="Video formats">
         {workGroups.map(item => <button key={item.name} type="button" aria-pressed={active === item.name} onClick={() => setActive(item.name)}>{item.name}</button>)}
       </div>
-      <WorkRail key={group.name} name={group.name} items={group.items} />
-      <p className="selected-work-hint">Scroll to explore. Select a video to watch with sound.</p>
-      {moreWork.length > 0 && <details className="more-work">
-        <summary>More client work</summary>
-        <div className="more-work-grid">{moreWork.map(work => <a key={work.url} href={work.url} target="_blank" rel="noopener noreferrer"><strong>{work.client === "Unsorted" ? "More formats" : work.client}</strong><span>{work.title}</span><ArrowUpRight size={16} aria-hidden="true" /></a>)}</div>
-      </details>}
+      <WorkRail key={group.name} name={group.name} items={group.items} onComplete={advanceFormat} />
+      <p className="selected-work-hint">Automatically explores each format, then stops. Interact to pause. Select a video to watch with sound.</p>
+      <div className="complete-portfolio-cta">
+        <a className="funnel-btn" href="https://f.io/cwqeAn15" target="_blank" rel="noopener noreferrer">Explore the complete portfolio <ArrowUpRight size={22} aria-hidden="true" /></a>
+      </div>
+
     </div>
   </section>
 );
