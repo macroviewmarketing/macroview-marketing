@@ -21,7 +21,7 @@ export const workGroups = [
         "client": "Mehdi",
         "title": "How Coaches Try to Book Calls",
         "url": "https://f.io/Zyho30RA",
-        "handle": null
+        "handle": "mehdimullionz"
       },
       {
         "slug": "nexe-supplements",
@@ -54,7 +54,7 @@ export const workGroups = [
         "client": "Mehdi",
         "title": "Broke Coach vs 7 Figure Coach",
         "url": "https://f.io/DBfnDhYp",
-        "handle": null
+        "handle": "mehdimullionz"
       },
       {
         "slug": "kate-comparison",
@@ -83,6 +83,13 @@ export const workGroups = [
         "title": "Red Flag vs Green Flag",
         "url": "https://f.io/y0hdo103",
         "handle": "kate_teamaccomplish"
+      },
+      {
+        "slug": "true-false4",
+        "client": "NEXE",
+        "title": "True or False 4",
+        "url": "https://f.io/Hia7NFV6",
+        "handle": "nexeclub"
       }
     ]
   },
@@ -101,7 +108,7 @@ export const workGroups = [
         "client": "Mehdi",
         "title": "DRA 1",
         "url": "https://f.io/KO3Kmshx",
-        "handle": null
+        "handle": "mehdimullionz"
       },
       {
         "slug": "saff-math",
@@ -109,19 +116,19 @@ export const workGroups = [
         "title": "The Math Behind a Blown Account",
         "url": "https://f.io/EMP1WzTY",
         "handle": null
+      },
+      {
+        "slug": "candice-ad2",
+        "client": "Candice",
+        "title": "Ad 2",
+        "url": "https://f.io/mM_qv-oQ",
+        "handle": "candicecynthia.t"
       }
     ]
   },
   {
     "name": "Coaching ads",
     "items": [
-      {
-        "slug": "leon-september",
-        "client": "Leon",
-        "title": "September AD 3 2",
-        "url": "https://f.io/SP69UAtI",
-        "handle": "leonvartanian"
-      },
       {
         "slug": "kate-ad1",
         "client": "Kate",
@@ -134,7 +141,7 @@ export const workGroups = [
         "client": "Mehdi",
         "title": "Ad 3",
         "url": "https://f.io/jzRV3nAj",
-        "handle": null
+        "handle": "mehdimullionz"
       },
       {
         "slug": "leon-ad4",
@@ -156,6 +163,27 @@ export const workGroups = [
         "title": "AD 2",
         "url": "https://f.io/39AXn3Ev",
         "handle": "leonvartanian"
+      },
+      {
+        "slug": "sion-ad1",
+        "client": "Sion",
+        "title": "Ad 1 Batch 1",
+        "url": "https://f.io/yfvamnhI",
+        "handle": null
+      },
+      {
+        "slug": "vadym-ad1",
+        "client": "Vadym",
+        "title": "Ad 1 2",
+        "url": "https://f.io/CSs60HLy",
+        "handle": null
+      },
+      {
+        "client": "Kate",
+        "title": "Stop Leaving Your Results on the Table",
+        "slug": "kate",
+        "url": "https://f.io/Oh2mP_GV",
+        "handle": "kate_teamaccomplish"
       }
     ]
   },
@@ -177,68 +205,54 @@ export const workGroups = [
         "handle": "isafitlife"
       },
       {
-        "client": "Kate",
-        "title": "Stop Leaving Your Results on the Table",
-        "slug": "kate",
-        "url": "https://f.io/Oh2mP_GV",
-        "handle": "kate_teamaccomplish"
+        "slug": "sheena-tips",
+        "client": "Sheena",
+        "title": "Instagram Growth Tips",
+        "url": "https://f.io/YNmUjFRN",
+        "handle": null
+      }
+    ]
+  },
+  {
+    "name": "Stories & brand films",
+    "items": [
+      {
+        "slug": "kaylie-story",
+        "client": "Kaylie",
+        "title": "My Story",
+        "url": "https://f.io/D-DNRipO",
+        "handle": "kaylie.teambombshell"
+      },
+      {
+        "slug": "noriko-promo",
+        "client": "Noriko",
+        "title": "Mind Reset Mastery Promo",
+        "url": "https://f.io/X2PLSDGu",
+        "handle": "nori.shindo"
+      },
+      {
+        "slug": "leon-september",
+        "client": "Leon",
+        "title": "September AD 3 2",
+        "url": "https://f.io/SP69UAtI",
+        "handle": "leonvartanian"
       }
     ]
   }
 ];
 export const moreWork = [
   {
-    "client": "Sion",
-    "title": "Ad 1 Batch 1",
-    "url": "https://f.io/yfvamnhI",
-    "handle": null
-  },
-  {
-    "client": "Vadym",
-    "title": "Ad 1 2",
-    "url": "https://f.io/CSs60HLy",
-    "handle": null
-  },
-  {
-    "client": "Candice",
-    "title": "Ad 2",
-    "url": "https://f.io/mM_qv-oQ",
-    "handle": "candicecynthia.t"
-  },
-  {
-    "client": "Kaylie",
-    "title": "My Story",
-    "url": "https://f.io/D-DNRipO",
-    "handle": null
-  },
-  {
-    "client": "Noriko",
-    "title": "Mind Reset Mastery Promo",
-    "url": "https://f.io/X2PLSDGu",
-    "handle": null
-  },
-  {
+    "slug": "noriko-pinned",
     "client": "Noriko",
     "title": "Pinned Video",
     "url": "https://f.io/5cHxNAm4",
-    "handle": null
+    "handle": "nori.shindo"
   },
   {
-    "client": "Sheena",
-    "title": "Instagram Growth Tips Reel",
-    "url": "https://f.io/YNmUjFRN",
-    "handle": null
-  },
-  {
-    "client": "Unsorted",
-    "title": "True or False 4",
-    "url": "https://f.io/Hia7NFV6",
-    "handle": null
-  },
-  {
-    "client": "Unsorted",
+    "slug": "compare-ad3",
+    "client": "Kate",
     "title": "Compare Format Ad 3",
     "url": "https://f.io/VqXkk_3G",
-    "handle": null
+    "handle": "kate_teamaccomplish"
   }
 ];

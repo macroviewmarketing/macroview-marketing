@@ -2455,3 +2455,5 @@ span.funnel-wordmark {
 .more-work-grid span { grid-column: 1; color: #bfb5bd; font-size: 13px; }
 .more-work-grid svg { grid-column: 2; grid-row: 1 / 3; }
 @media (max-width: 640px) { .more-work-grid { grid-template-columns: 1fr; } .complete-portfolio-cta .funnel-btn { font-size: 12px; width: 100%; padding: 20px; } }
+.client-profile-link { display: flex; gap: 12px; align-items: center; color: inherit; }
+.funnel-marquee:focus-within .funnel-marquee-track, .funnel-marquee:hover .funnel-marquee-track { animation-play-state: paused; }

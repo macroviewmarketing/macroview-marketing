@@ -18,13 +18,19 @@ export interface ClientLogo {
   detail: string;
   logoPath?: string;
   placeholder?: boolean;
+  handle?: string;
 }
 
 /** Personal brands featured in the video testimonials. */
 export const CLIENT_LOGOS: ClientLogo[] = [
-  { name: "Kate Cummins", detail: "Fitness coach · Team Accomplish", logoPath: "/clients/kate.png" },
-  { name: "Leon Vartanian", detail: "Amazon FBA coach", logoPath: "/clients/leon.png" },
-  { name: "Candice", detail: "Ecommerce brand strategist", logoPath: "/clients/candice.png" },
+  { name: "Kate Cummins", detail: "Fitness coach · Team Accomplish", logoPath: "/clients/kate.png", handle: "kate_teamaccomplish" },
+  { name: "Leon Vartanian", detail: "Amazon FBA coach", logoPath: "/clients/leon.png", handle: "leonvartanian" },
+  { name: "Candice", detail: "Ecommerce brand strategist", logoPath: "/clients/candice.png", handle: "candicecynthia.t" },
+  { name: "Kaylie Mercanti", detail: "Fitness coach", handle: "kaylie.teambombshell", logoPath: "/video-asset/selected/kaylie-story.jpg" },
+  { name: "Mehdi Syed", detail: "Business scaling coach", handle: "mehdimullionz", logoPath: "/video-asset/selected/mehdi-tierlist.jpg" },
+  { name: "Noriko Shindo", detail: "Business mindset coach", handle: "nori.shindo", logoPath: "/video-asset/selected/noriko-promo.jpg" },
+  { name: "Isa", detail: "Fitness coach", handle: "isafitlife", logoPath: "/video-asset/selected/isa.jpg" },
+  { name: "NEXE", detail: "Fitness education", handle: "nexeclub", logoPath: "/video-asset/selected/nexe.jpg" },
 ];
 
 export interface Stat {
