@@ -10,6 +10,15 @@ describe("selected work", () => {
       expect(existsSync(`public/video-asset/selected/${item.slug}.jpg`)).toBe(true);
     });
   });
+  it("never repeats a carousel video or places the same creator beside themselves", () => {
+    const items = workGroups.flatMap(g => g.items);
+    expect(new Set(items.map(i => i.slug)).size).toBe(items.length);
+    expect(new Set(items.map(i => i.url)).size).toBe(items.length);
+    workGroups.forEach(group => group.items.slice(1).forEach((item, index) => {
+      expect(item.client).not.toBe(group.items[index].client);
+    }));
+    expect(items.some(i => i.slug === "noriko-pinned")).toBe(false);
+  });
   it("preserves all 35 updated links", () => {
     expect(new Set([...workGroups.flatMap(g => g.items), ...moreWork].map(item => item.url)).size).toBe(35);
   });

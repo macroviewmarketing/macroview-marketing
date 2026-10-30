@@ -11,18 +11,18 @@ export const workGroups = [
         "hasPreview": true
       },
       {
+        "slug": "true-false4",
+        "client": "NEXE",
+        "title": "True or False What Your Coach Won't Tell You",
+        "url": "https://f.io/tvLlPfx7",
+        "handle": "nexeclub",
+        "hasPreview": true
+      },
+      {
         "slug": "work-07",
         "client": "Kate",
         "title": "Wrong Way vs Right Way Hourglass Training",
         "url": "https://f.io/ZW3fsjx8",
-        "handle": "kate_teamaccomplish",
-        "hasPreview": true
-      },
-      {
-        "slug": "work-08",
-        "client": "Kate",
-        "title": "Smash or Pass Hourglass Physique",
-        "url": "https://f.io/APGQARDE",
         "handle": "kate_teamaccomplish",
         "hasPreview": true
       },
@@ -35,11 +35,11 @@ export const workGroups = [
         "hasPreview": true
       },
       {
-        "slug": "true-false4",
-        "client": "NEXE",
-        "title": "True or False What Your Coach Won't Tell You",
-        "url": "https://f.io/tvLlPfx7",
-        "handle": "nexeclub",
+        "slug": "work-08",
+        "client": "Kate",
+        "title": "Smash or Pass Hourglass Physique",
+        "url": "https://f.io/APGQARDE",
+        "handle": "kate_teamaccomplish",
         "hasPreview": true
       },
       {
@@ -138,10 +138,90 @@ export const workGroups = [
     "name": "Talking head",
     "items": [
       {
+        "slug": "work-13",
+        "client": "Leon",
+        "title": "Amazon Storefront Income Results",
+        "url": "https://f.io/rMo_lTTj",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-02",
+        "client": "Kate",
+        "title": "Fitness Transformation Formula Guide",
+        "url": "https://f.io/4DpaMkf3",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-14",
+        "client": "Leon",
+        "title": "Amazon Market Saturation Pitch",
+        "url": "https://f.io/eOnz9A8u",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-03",
+        "client": "Kate",
+        "title": "Seven Lesson Strategy Formula",
+        "url": "https://f.io/14yxiJfC",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-15",
+        "client": "Leon",
+        "title": "Scaling Past 150 Amazon Products",
+        "url": "https://f.io/_fZO6zBC",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-20",
+        "client": "Mehdi",
+        "title": "Unlimited Clients Masterclass Promo",
+        "url": "https://f.io/DM6fcSEH",
+        "handle": "mehdimullionz",
+        "hasPreview": false
+      },
+      {
         "slug": "saff-math",
         "client": "Saff",
         "title": "The Math Behind a Blown Account",
         "url": "https://f.io/uveplTIJ",
+        "handle": null,
+        "hasPreview": true
+      },
+      {
+        "slug": "work-04",
+        "client": "Kate",
+        "title": "Desired Physique Effort Formula",
+        "url": "https://f.io/5u1uRErH",
+        "handle": "kate_teamaccomplish",
+        "hasPreview": true
+      },
+      {
+        "slug": "work-16",
+        "client": "Leon",
+        "title": "Amazon Ad",
+        "url": "https://f.io/aOss7UaH",
+        "handle": "leonvartanian",
+        "hasPreview": false
+      },
+      {
+        "slug": "work-21",
+        "client": "Mehdi",
+        "title": "High-Ticket Client Acquisition Webinar",
+        "url": "https://f.io/DyKlbFtE",
+        "handle": "mehdimullionz",
+        "hasPreview": false
+      },
+      {
+        "slug": "sion-ad1",
+        "client": "Sion",
+        "title": "Effortless Focus Supplement Ad",
+        "url": "https://f.io/RcMD_xq8",
         "handle": null,
         "hasPreview": true
       }
@@ -159,50 +239,26 @@ export const workGroups = [
         "hasPreview": true
       },
       {
-        "slug": "work-31",
-        "client": "Sheena",
-        "title": "Instagram Growth Tips (2)",
-        "url": "https://f.io/C_pRj8Ib",
-        "handle": null,
-        "hasPreview": false
-      },
-      {
         "slug": "isa",
         "client": "Isabel Gothard",
         "title": "Which Program",
         "url": "https://f.io/nKXmQUDf",
         "handle": "isafitlife",
         "hasPreview": true
+      },
+      {
+        "slug": "work-31",
+        "client": "Sheena",
+        "title": "Instagram Growth Tips (2)",
+        "url": "https://f.io/C_pRj8Ib",
+        "handle": null,
+        "hasPreview": false
       }
     ]
   },
   {
     "name": "Stories & brand films",
     "items": [
-      {
-        "slug": "work-02",
-        "client": "Kate",
-        "title": "Fitness Transformation Formula Guide",
-        "url": "https://f.io/4DpaMkf3",
-        "handle": "kate_teamaccomplish",
-        "hasPreview": true
-      },
-      {
-        "slug": "work-03",
-        "client": "Kate",
-        "title": "Seven Lesson Strategy Formula",
-        "url": "https://f.io/14yxiJfC",
-        "handle": "kate_teamaccomplish",
-        "hasPreview": true
-      },
-      {
-        "slug": "work-04",
-        "client": "Kate",
-        "title": "Desired Physique Effort Formula",
-        "url": "https://f.io/5u1uRErH",
-        "handle": "kate_teamaccomplish",
-        "hasPreview": true
-      },
       {
         "slug": "work-09",
         "client": "Kate",
@@ -228,75 +284,11 @@ export const workGroups = [
         "hasPreview": true
       },
       {
-        "slug": "work-13",
-        "client": "Leon",
-        "title": "Amazon Storefront Income Results",
-        "url": "https://f.io/rMo_lTTj",
-        "handle": "leonvartanian",
-        "hasPreview": false
-      },
-      {
-        "slug": "work-14",
-        "client": "Leon",
-        "title": "Amazon Market Saturation Pitch",
-        "url": "https://f.io/eOnz9A8u",
-        "handle": "leonvartanian",
-        "hasPreview": false
-      },
-      {
-        "slug": "work-15",
-        "client": "Leon",
-        "title": "Scaling Past 150 Amazon Products",
-        "url": "https://f.io/_fZO6zBC",
-        "handle": "leonvartanian",
-        "hasPreview": false
-      },
-      {
-        "slug": "work-16",
-        "client": "Leon",
-        "title": "Amazon Ad",
-        "url": "https://f.io/aOss7UaH",
-        "handle": "leonvartanian",
-        "hasPreview": false
-      },
-      {
-        "slug": "work-20",
-        "client": "Mehdi",
-        "title": "Unlimited Clients Masterclass Promo",
-        "url": "https://f.io/DM6fcSEH",
-        "handle": "mehdimullionz",
-        "hasPreview": false
-      },
-      {
-        "slug": "work-21",
-        "client": "Mehdi",
-        "title": "High-Ticket Client Acquisition Webinar",
-        "url": "https://f.io/DyKlbFtE",
-        "handle": "mehdimullionz",
-        "hasPreview": false
-      },
-      {
         "slug": "noriko-promo",
         "client": "Noriko",
         "title": "Mind Reset Mastery",
         "url": "https://f.io/fqvi_Zu2",
         "handle": "nori.shindo",
-        "hasPreview": true
-      },
-      {
-        "slug": "noriko-pinned",
-        "client": "Noriko",
-        "title": "Mind Reset Mastery (2)",
-        "url": "https://f.io/xf3q3dk2",
-        "handle": "nori.shindo",
-        "hasPreview": true
-      },
-      {
-        "slug": "sion-ad1",
-        "client": "Sion",
-        "title": "Effortless Focus Supplement Ad",
-        "url": "https://f.io/RcMD_xq8",
-        "handle": null,
         "hasPreview": true
       },
       {
@@ -310,4 +302,10 @@ export const workGroups = [
     ]
   }
 ];
-export const moreWork: {client: string; title: string; url: string}[] = [];
+export const moreWork: {client: string; title: string; url: string}[] = [
+  {
+    "client": "Noriko",
+    "title": "Mind Reset Mastery (2)",
+    "url": "https://f.io/xf3q3dk2"
+  }
+];
