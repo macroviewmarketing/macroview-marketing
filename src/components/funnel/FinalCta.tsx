@@ -16,7 +16,7 @@ export const FinalCta = () => (
         <BookCallButton />
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="funnel-btn funnel-btn-ghost">
           <IconWhatsApp />
-          WhatsApp
+          Contact me on WhatsApp
         </a>
         <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="funnel-btn funnel-btn-ghost">
           <Instagram aria-hidden />
