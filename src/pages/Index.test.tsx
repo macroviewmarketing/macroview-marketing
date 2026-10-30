@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Index from "./Index";
 import { BOOK_CALL_URL, INSTAGRAM_URL, WHATSAPP_URL } from "@/data/config";
@@ -18,7 +18,7 @@ describe("<Index> funnel page", () => {
     const ids = Array.from(container.querySelectorAll<HTMLElement>("section"))
       .map((s) => s.id)
       .filter(Boolean);
-    expect(ids).toEqual(["hero", "work", "results", "testimonials", "engine", "packages", "ads", "one-offs", "faq", "book"]);
+    expect(ids).toEqual(["hero", "work", "results", "testimonials", "engine", "services", "faq", "book"]);
   });
 
   it("has one h1 with the headline", () => {
@@ -43,7 +43,7 @@ describe("<Index> funnel page", () => {
     expect(screen.getByTitle("Leon testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233787");
     expect(screen.getByTitle("Candice testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233785");
     expect(screen.queryByText("Result coming soon")).not.toBeInTheDocument();
-    expect(screen.getByText("Kate")).toBeInTheDocument();
+    expect(within(container.querySelector("#testimonials")!).getByText("Kate")).toBeInTheDocument();
     expect(screen.getByText("Leon")).toBeInTheDocument();
     expect(container.querySelector("#testimonials")).toHaveTextContent("Candice");
   });
