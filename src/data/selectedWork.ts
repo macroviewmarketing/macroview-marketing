@@ -1,5 +1,64 @@
 export const workGroups = [
   {
+    "name": "Clone vids",
+    "items": [
+      {
+        "slug": "leon-comparison",
+        "client": "Leon",
+        "title": "10k Seller vs 100k Seller",
+        "url": "https://f.io/soQsgY7a",
+        "handle": "leonvartanian"
+      },
+      {
+        "slug": "mehdi-comparison",
+        "client": "Mehdi",
+        "title": "Broke Coach vs 7 Figure Coach",
+        "url": "https://f.io/DBfnDhYp",
+        "handle": "mehdimullionz"
+      }
+    ]
+  },
+  {
+    "name": "This vs That",
+    "items": [
+      {
+        "slug": "kate-comparison",
+        "client": "Kate",
+        "title": "Wrong Way vs Right Way",
+        "url": "https://f.io/neL_U9mW",
+        "handle": "kate_teamaccomplish"
+      },
+      {
+        "slug": "kate-ad3",
+        "client": "Kate",
+        "title": "Instagram Ad 3",
+        "url": "https://f.io/5ZS-1IEn",
+        "handle": "kate_teamaccomplish"
+      },
+      {
+        "slug": "kate-smash-pass",
+        "client": "Kate",
+        "title": "Hourglass Physique",
+        "url": "https://f.io/g0T9F1jj",
+        "handle": "kate_teamaccomplish"
+      },
+      {
+        "slug": "kate-flags",
+        "client": "Kate",
+        "title": "Red Flag vs Green Flag",
+        "url": "https://f.io/y0hdo103",
+        "handle": "kate_teamaccomplish"
+      },
+      {
+        "slug": "true-false4",
+        "client": "NEXE",
+        "title": "True or False 4",
+        "url": "https://f.io/Hia7NFV6",
+        "handle": "nexeclub"
+      }
+    ]
+  },
+  {
     "name": "Tier lists",
     "items": [
       {
@@ -40,61 +99,7 @@ export const workGroups = [
     ]
   },
   {
-    "name": "Comparisons & verdicts",
-    "items": [
-      {
-        "slug": "leon-comparison",
-        "client": "Leon",
-        "title": "10k Seller vs 100k Seller",
-        "url": "https://f.io/soQsgY7a",
-        "handle": "leonvartanian"
-      },
-      {
-        "slug": "mehdi-comparison",
-        "client": "Mehdi",
-        "title": "Broke Coach vs 7 Figure Coach",
-        "url": "https://f.io/DBfnDhYp",
-        "handle": "mehdimullionz"
-      },
-      {
-        "slug": "kate-comparison",
-        "client": "Kate",
-        "title": "Wrong Way vs Right Way",
-        "url": "https://f.io/neL_U9mW",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-ad3",
-        "client": "Kate",
-        "title": "Instagram Ad 3",
-        "url": "https://f.io/5ZS-1IEn",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-smash-pass",
-        "client": "Kate",
-        "title": "Hourglass Physique",
-        "url": "https://f.io/g0T9F1jj",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "kate-flags",
-        "client": "Kate",
-        "title": "Red Flag vs Green Flag",
-        "url": "https://f.io/y0hdo103",
-        "handle": "kate_teamaccomplish"
-      },
-      {
-        "slug": "true-false4",
-        "client": "NEXE",
-        "title": "True or False 4",
-        "url": "https://f.io/Hia7NFV6",
-        "handle": "nexeclub"
-      }
-    ]
-  },
-  {
-    "name": "Visual explainers",
+    "name": "Visual Explainers",
     "items": [
       {
         "slug": "nexe-effort",
@@ -111,30 +116,11 @@ export const workGroups = [
         "handle": "mehdimullionz"
       },
       {
-        "slug": "saff-math",
-        "client": "Saff",
-        "title": "The Math Behind a Blown Account",
-        "url": "https://f.io/EMP1WzTY",
-        "handle": null
-      },
-      {
         "slug": "candice-ad2",
         "client": "Candice",
         "title": "Ad 2",
         "url": "https://f.io/mM_qv-oQ",
         "handle": "candicecynthia.t"
-      }
-    ]
-  },
-  {
-    "name": "Coaching ads",
-    "items": [
-      {
-        "slug": "kate-ad1",
-        "client": "Kate",
-        "title": "Instagram Ad 1",
-        "url": "https://f.io/z26ioG-7",
-        "handle": "kate_teamaccomplish"
       },
       {
         "slug": "mehdi-ad3",
@@ -142,6 +128,25 @@ export const workGroups = [
         "title": "Ad 3",
         "url": "https://f.io/jzRV3nAj",
         "handle": "mehdimullionz"
+      }
+    ]
+  },
+  {
+    "name": "Talking head",
+    "items": [
+      {
+        "slug": "saff-math",
+        "client": "Saff",
+        "title": "The Math Behind a Blown Account",
+        "url": "https://f.io/EMP1WzTY",
+        "handle": null
+      },
+      {
+        "slug": "kate-ad1",
+        "client": "Kate",
+        "title": "Instagram Ad 1",
+        "url": "https://f.io/z26ioG-7",
+        "handle": "kate_teamaccomplish"
       },
       {
         "slug": "leon-ad4",

@@ -1,7 +1,5 @@
 import { HERO } from "@/data/funnel";
-import { WHATSAPP_URL } from "@/data/config";
 import { BookCallButton } from "./BookCallButton";
-import { IconWhatsApp } from "@/components/shared/SocialIcons";
 import { scrollToSection } from "@/hooks/useScrollDots";
 
 export const FunnelHero = ({ showPricing = false }: { showPricing?: boolean }) => (
@@ -15,7 +13,7 @@ export const FunnelHero = ({ showPricing = false }: { showPricing?: boolean }) =
       <p className="offer-hero-sub">Macroview helps coaches and service businesses turn their knowledge into consistent organic content and ad creative. We plan, script, and edit, while you bring your expertise and record the footage.</p>
       <div className="funnel-cta-row">
         <a className="funnel-btn" href={showPricing ? "#packages" : "#work"} onClick={(e) => { e.preventDefault(); scrollToSection(showPricing ? "packages" : "work"); }}>{showPricing ? "Explore packages" : "Explore our work"}</a>
-        <BookCallButton /><a className="funnel-btn funnel-btn-ghost whatsapp-contact" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><IconWhatsApp />Contact me on WhatsApp</a>
+        <BookCallButton />
       </div>
     </div>
   </section>

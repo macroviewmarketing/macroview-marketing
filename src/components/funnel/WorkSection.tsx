@@ -97,16 +97,22 @@ const WorkRail = ({ items, name }: { items: WorkItem[]; name: string }) => {
   );
 };
 
-export const WorkSection = () => (
+export const WorkSection = () => {
+  const [active, setActive] = useState(workGroups[0].name);
+  const group = workGroups.find(item => item.name === active)!;
+  return (
   <section id="work" className="funnel-section border-t border-[var(--f-border)]">
     <div className="funnel-wrap">
       <SectionIntro eyebrow="Selected Work" title={<>Different voices.<br />Formats that connect.</>}>
-        Explore tier lists, comparisons, visual explainers and coaching ads across different clients.
+        Choose a format and scroll through the examples.
       </SectionIntro>
       <div className="complete-portfolio-cta">
         <a className="funnel-btn" href="https://f.io/cwqeAn15" target="_blank" rel="noopener noreferrer">Explore the complete portfolio <ArrowUpRight size={22} aria-hidden="true" /></a>
       </div>
-      {workGroups.map(group => <WorkRail key={group.name} name={group.name} items={group.items} />)}
+      <div className="work-format-selector" role="group" aria-label="Video formats">
+        {workGroups.map(item => <button key={item.name} type="button" aria-pressed={active === item.name} onClick={() => setActive(item.name)}>{item.name}</button>)}
+      </div>
+      <WorkRail key={group.name} name={group.name} items={group.items} />
       <p className="selected-work-hint">Scroll to explore. Select a video to watch with sound.</p>
       <details className="more-work">
         <summary>More client work</summary>
@@ -115,3 +121,4 @@ export const WorkSection = () => (
     </div>
   </section>
 );
+};

@@ -2457,3 +2457,14 @@ span.funnel-wordmark {
 @media (max-width: 640px) { .more-work-grid { grid-template-columns: 1fr; } .complete-portfolio-cta .funnel-btn { font-size: 12px; width: 100%; padding: 20px; } }
 .client-profile-link { display: flex; gap: 12px; align-items: center; color: inherit; }
 .funnel-marquee:focus-within .funnel-marquee-track, .funnel-marquee:hover .funnel-marquee-track { animation-play-state: paused; }
+
+/* One compact format selector and one scrolling reel. */
+.work-format-selector { display: flex; gap: 10px; overflow-x: auto; padding: 8px 2px 16px; scrollbar-width: thin; scrollbar-color: #6b3038 transparent; }
+.work-format-selector button { flex: 0 0 auto; padding: 11px 18px; border: 1px solid var(--f-border2); border-radius: 999px; color: #bfb5bd; background: #141114; font-size: 13px; font-weight: 600; }
+.work-format-selector button[aria-pressed="true"] { color: #fff; background: var(--f-accent); border-color: var(--f-accent); }
+.work-format-selector button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+#work .work-format { margin-top: 20px; }
+#work .work-format-heading { font-size: 18px; }
+#work .selected-work-card { width: clamp(210px, 22vw, 270px); }
+#work .complete-portfolio-cta { margin-bottom: 32px; }
+@media (max-width:640px) { #work .selected-work-card { width: 64vw; max-width: 260px; } }
