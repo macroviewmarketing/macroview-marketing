@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { Navbar } from "./Navbar";
-import { BOOK_CALL_URL } from "@/data/config";
+import { BOOK_CALL_URL, WHATSAPP_URL } from "@/data/config";
 
 const renderNavbar = (scrolled: boolean) =>
   render(
@@ -17,10 +17,11 @@ describe("<Navbar>", () => {
     expect(container.querySelector(".funnel-wordmark")).toHaveTextContent("Macroview");
   });
 
-  it("has a single Book a Call CTA and no section menu", () => {
+  it("offers WhatsApp next to Book a Call", () => {
     renderNavbar(false);
     const links = screen.getAllByRole("link");
-    expect(links).toHaveLength(2);
+    expect(links).toHaveLength(3);
+    expect(screen.getByRole("link", { name: "Contact me on WhatsApp" })).toHaveAttribute("href", WHATSAPP_URL);
     const cta = screen.getByRole("link", { name: /book a call/i });
     expect(cta).toHaveAttribute("href", BOOK_CALL_URL);
     expect(cta).toHaveAttribute("target", "_blank");

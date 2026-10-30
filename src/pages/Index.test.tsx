@@ -44,13 +44,13 @@ describe("<Index> funnel page", () => {
     expect(screen.getByTitle("Candice testimonial")).toHaveAttribute("src", "https://player.vimeo.com/video/1238233785");
     expect(screen.queryByText("Result coming soon")).not.toBeInTheDocument();
     expect(within(container.querySelector("#testimonials")!).getByText("Kate")).toBeInTheDocument();
-    expect(screen.getByText("Leon")).toBeInTheDocument();
+    expect(within(container.querySelector("#testimonials")!).getByText("Leon")).toBeInTheDocument();
     expect(container.querySelector("#testimonials")).toHaveTextContent("Candice");
   });
 
   it("offers WhatsApp and Instagram next to the final call to action", () => {
     renderIndex();
-    expect(screen.getByRole("link", { name: "WhatsApp" })).toHaveAttribute("href", WHATSAPP_URL);
+    expect(screen.getAllByRole("link", { name: "Contact me on WhatsApp" })[0]).toHaveAttribute("href", WHATSAPP_URL);
     expect(screen.getByRole("link", { name: "Instagram" })).toHaveAttribute("href", INSTAGRAM_URL);
   });
 
