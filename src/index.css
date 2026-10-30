@@ -2515,3 +2515,5 @@ span.funnel-wordmark {
 
 .experience-number.experience-revenue { font-size: clamp(28px, 3.8vw, 46px); min-height: 1.9em; display: flex; align-items: center; justify-content: center; }
 @media (max-width: 640px) { .experience-stats { grid-template-columns: 1fr; gap: 28px; } .experience-number.experience-revenue { min-height: 0; font-size: 40px; } }
+
+.experience-number.experience-years { white-space: nowrap; font-size: clamp(32px, 4.7vw, 56px); line-height: 1.1; }
