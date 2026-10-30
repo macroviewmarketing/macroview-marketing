@@ -7,11 +7,12 @@ import { EngineSection } from "@/components/funnel/EngineSection";
 import { WorkSection } from "@/components/funnel/WorkSection";
 import { TestimonialsSection } from "@/components/funnel/TestimonialsSection";
 import { FaqSection } from "@/components/funnel/FaqSection";
-import { OffersSection } from "@/components/funnel/OffersSection";
+import { ServicesSection } from "@/components/funnel/ServicesSection";
+import type { ReactNode } from "react";
 import { FinalCta } from "@/components/funnel/FinalCta";
 import { useScrollDots } from "@/hooks/useScrollDots";
 
-const Index = () => {
+const Index = ({ pricingContent }: { pricingContent?: ReactNode }) => {
   const { scrolled } = useScrollDots();
 
   return (
@@ -19,13 +20,13 @@ const Index = () => {
       <Navbar scrolled={scrolled} />
 
       <main id="snap-root" className="funnel">
-        <FunnelHero />
+        <FunnelHero showPricing={Boolean(pricingContent)} />
         <WorkSection />
         <LogoMarquee />
         <StatsSection />
         <TestimonialsSection />
         <EngineSection />
-        <OffersSection />
+        {pricingContent ?? <ServicesSection />}
         <FaqSection />
         <FinalCta />
         <Footer />

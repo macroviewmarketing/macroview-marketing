@@ -18,7 +18,7 @@ describe("<Index> funnel page", () => {
     const ids = Array.from(container.querySelectorAll<HTMLElement>("section"))
       .map((s) => s.id)
       .filter(Boolean);
-    expect(ids).toEqual(["hero", "work", "results", "testimonials", "engine", "packages", "ads", "one-offs", "faq", "book"]);
+    expect(ids).toEqual(["hero", "work", "results", "testimonials", "engine", "services", "faq", "book"]);
   });
 
   it("has one h1 with the headline", () => {
