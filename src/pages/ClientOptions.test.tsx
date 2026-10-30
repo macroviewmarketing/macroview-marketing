@@ -17,6 +17,10 @@ describe("public and warm-client pages", () => {
   });
 
   it("retains pricing on the warm-client page and clears noindex after leaving", () => {
+    const staticRobots = document.createElement("meta");
+    staticRobots.name = "robots";
+    staticRobots.content = "noindex, nofollow, noarchive";
+    document.head.appendChild(staticRobots);
     const { container, unmount } = render(<MemoryRouter><ClientOptions /></MemoryRouter>);
     expect(container.querySelector("#packages")).not.toBeNull();
     expect(screen.getByRole("group", { name: "Payment schedule" })).toBeInTheDocument();
