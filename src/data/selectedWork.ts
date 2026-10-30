@@ -98,7 +98,7 @@ export const workGroups = [
     ]
   },
   {
-    "name": "Visual Explainers",
+    "name": "Miro board vids",
     "items": [
       {
         "slug": "work-01",
@@ -123,19 +123,11 @@ export const workGroups = [
         "url": "https://f.io/dlDqsTh1",
         "handle": "nexeclub",
         "hasPreview": true
-      },
-      {
-        "slug": "vadym-ad1",
-        "client": "Vadym",
-        "title": "Building a Business System",
-        "url": "https://f.io/sPL1gGLA",
-        "handle": "refugee2rich",
-        "hasPreview": true
       }
     ]
   },
   {
-    "name": "Talking head",
+    "name": "Talking Head / Meta Ads",
     "items": [
       {
         "slug": "work-13",
@@ -222,7 +214,7 @@ export const workGroups = [
         "client": "Sion",
         "title": "Effortless Focus Supplement Ad",
         "url": "https://f.io/RcMD_xq8",
-        "handle": null,
+        "handle": "sionmonty",
         "hasPreview": true
       }
     ]
@@ -253,6 +245,14 @@ export const workGroups = [
         "url": "https://f.io/C_pRj8Ib",
         "handle": null,
         "hasPreview": false
+      },
+      {
+        "slug": "vadym-ad1",
+        "client": "Vadym",
+        "title": "Building a Business System",
+        "url": "https://f.io/sPL1gGLA",
+        "handle": "refugee2rich",
+        "hasPreview": true
       }
     ]
   },
@@ -302,10 +302,18 @@ export const workGroups = [
     ]
   }
 ];
-export const moreWork: {client: string; title: string; url: string}[] = [
-  {
-    "client": "Noriko",
-    "title": "Mind Reset Mastery (2)",
-    "url": "https://f.io/xf3q3dk2"
+export const moreWork: {client: string; title: string; url: string}[] = [];
+
+// Only playable previews belong in the reel. Keep creators separated after filtering.
+export const visibleWorkGroups = workGroups.map(group => {
+  const remaining = group.items.filter(item => item.hasPreview);
+  const items: typeof remaining = [];
+  while (remaining.length) {
+    const candidates = remaining.filter(item => item.client !== items.at(-1)?.client);
+    const next = (candidates.length ? candidates : remaining).reduce((best, item) =>
+      remaining.filter(other => other.client === item.client).length > remaining.filter(other => other.client === best.client).length ? item : best);
+    items.push(next);
+    remaining.splice(remaining.indexOf(next), 1);
   }
-];
+  return { ...group, items };
+});

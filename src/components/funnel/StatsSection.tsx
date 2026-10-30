@@ -1,9 +1,11 @@
+import { ExperienceStats } from "./ExperienceStats";
 import { STATS } from "@/data/funnel";
 import { CtaRow } from "./BookCallButton";
 
 export const StatsSection = () => (
   <section id="results" className="funnel-stats-section">
     <div className="funnel-wrap">
+      <ExperienceStats />
       <div className="funnel-stats">
         {STATS.map((s) => (
           <div key={s.value} className="funnel-stat">

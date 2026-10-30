@@ -9,11 +9,12 @@ export const FounderSection = () => (
       </figure>
       <div className="founder-story">
         <p className="funnel-eyebrow">Meet the person behind Macroview</p>
-        <h2 id="founder-title" className="funnel-title">A filmmaker’s eye.<br />A purpose for every frame.</h2>
-        <p className="founder-lead">I’m Marc, a video editor, colorist and filmmaker based in the Philippines. I run Macroview.</p>
-        <p>My work spans film and the everyday content that helps a business show up online. Across both, I pay attention to the same things: the story, the pacing, and what the viewer takes away.</p>
-        <p>At Macroview, I bring that approach to content for coaches, educators and business owners. From an educational reel to an ad, the goal is to make your expertise clear and give your message room to connect.</p>
-        <p>That means thinking beyond the edit: shaping the idea, planning what to record, and bringing the visuals and sound together into something that feels like you.</p>
+        <h2 id="founder-title" className="funnel-title">Understand the buyer.<br />Create with intent.</h2>
+        <p className="founder-lead">I’m Marc, founder of Macroview and a creative director focused on content that helps people take the next step.</p>
+        <p>I started editing in my first year of college, four years ago. Macroview grew alongside that work into a collective of creators and editors, sharing what we learn about craft, content and marketing.</p>
+        <p>Three years editing e-commerce and direct-response ads with DOBO shaped how I think about creative. Today, that work includes creative direction for coaching businesses, including Mehdi Syed, alongside ads, reels and sales videos.</p>
+        <p>I start with the buyer: who they are, what they want, what is holding them back, and where they are in the decision. The hook, story and offer should speak to that moment, whether someone is discovering you or deciding to work with you.</p>
+        <p>That is what I bring to Macroview: an understanding of your audience and their buying journey, translated into content with a clear message and a reason to act.</p>
         <a className="funnel-btn founder-cta" href="https://calendly.com/macroviewmarketing/30min" target="_blank" rel="noopener noreferrer">Let’s talk about your content <ArrowUpRight size={18} aria-hidden="true" /></a>
       </div>
     </div>

@@ -2484,3 +2484,14 @@ span.funnel-wordmark {
 .founder-story > p.founder-lead { color: #eee; font-size: 19px; }
 .founder-cta { margin-top: 12px; }
 @media (max-width: 767px) { .founder-layout { grid-template-columns: 1fr; } .founder-portrait { max-width: 460px; } }
+
+.experience-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 0 48px; margin-bottom: 48px; border-bottom: 1px solid var(--f-border); text-align: center; }
+.experience-number { font-size: clamp(44px, 7vw, 88px); line-height: 1.1; font-weight: 700; letter-spacing: -.045em; color: #fff; font-variant-numeric: tabular-nums; margin-bottom: 12px; }
+.estimate-tag { display: inline-block; font-size: 11px; padding: 3px 7px; border: 1px solid #65333c; border-radius: 4px; margin-left: 5px; color: #d9adb4; vertical-align: middle; }
+.experience-stats .experience-source { grid-column: 1 / -1; max-width: 700px; margin: 0 auto; font-size: 12px; line-height: 1.7; color: #96969e; }
+.service-icon { color: var(--f-accent); margin-bottom: 22px; }
+.work-format { animation: format-reveal .32s ease-out both; }
+.work-format-selector button { transition: color .2s, background-color .2s, border-color .2s, transform .2s; }
+.work-format-selector button:active { transform: scale(.96); }
+@keyframes format-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .work-format { animation: none; } .work-format-selector button { transition: none; } }

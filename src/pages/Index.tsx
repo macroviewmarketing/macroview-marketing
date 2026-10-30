@@ -28,7 +28,8 @@ const Index = ({ pricingContent }: { pricingContent?: ReactNode }) => {
         <TestimonialsSection />
         <FounderSection />
         <EngineSection />
-        {pricingContent ?? <ServicesSection />}
+        <ServicesSection />
+        {pricingContent}
         <FaqSection />
         <FinalCta />
         <Footer />
