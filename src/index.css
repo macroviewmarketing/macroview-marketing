@@ -1845,11 +1845,11 @@ body :where(.font-mono,.label-mono,.tag-mono,.micro-mono,code,kbd,pre) {
 }
 .funnel { background: #000; }
 .funnel-wrap { width: 100%; max-width: 1092px; margin: 0 auto; padding: 0 24px; }
-.funnel-section { padding: 120px 0; }
+.funnel-section { padding: 96px 0; }
 .funnel-section-alt { background: #050505; }
 .funnel-glow-top { background-image: radial-gradient(60% 420px at 50% 0, rgba(201, 56, 42, 0.09), transparent); }
 @media (max-width: 768px) {
-  .funnel-section { padding: 80px 0; }
+  .funnel-section { padding: 64px 0; }
 }
 
 /* Wordmark */
@@ -1942,7 +1942,7 @@ span.funnel-wordmark {
   margin: 18px auto 0;
   text-wrap: balance;
 }
-.funnel-intro { text-align: center; margin-bottom: 64px; }
+.funnel-intro { text-align: center; margin-bottom: 48px; }
 
 /* Hero */
 .funnel-hero {
@@ -2066,7 +2066,7 @@ span.funnel-wordmark {
 .funnel-chip-detail { display: block; font-size: 11px; font-weight: 500; color: var(--f-dim); }
 
 /* Stats */
-.funnel-stats-section { padding: 100px 0; }
+.funnel-stats-section { padding: 80px 0; }
 .funnel-stats { display: grid; grid-template-columns: 1fr; gap: 22px; }
 @media (max-width: 900px) {
   .funnel-stats { grid-template-columns: 1fr; gap: 14px; }
@@ -2466,7 +2466,7 @@ span.funnel-wordmark {
 #work .work-format { margin-top: 20px; }
 #work .work-format-heading { font-size: 18px; }
 #work .selected-work-card { width: clamp(210px, 22vw, 270px); }
-#work .complete-portfolio-cta { margin-bottom: 32px; }
+#work .complete-portfolio-cta { margin: 28px auto 0; }
 @media (max-width:640px) { #work .selected-work-card { width: 64vw; max-width: 260px; } }
 .funnel-client-portrait.square-portrait img { position: static; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: cover; }
 .work-link-preview { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 28px; text-align: center; background: radial-gradient(ellipse at top, #452025, #160e11); color: #fff; }
@@ -2489,9 +2489,26 @@ span.funnel-wordmark {
 .experience-number { font-size: clamp(44px, 7vw, 88px); line-height: 1.1; font-weight: 700; letter-spacing: -.045em; color: #fff; font-variant-numeric: tabular-nums; margin-bottom: 12px; }
 .estimate-tag { display: inline-block; font-size: 11px; padding: 3px 7px; border: 1px solid #65333c; border-radius: 4px; margin-left: 5px; color: #d9adb4; vertical-align: middle; }
 .experience-stats .experience-source { grid-column: 1 / -1; max-width: 700px; margin: 0 auto; font-size: 12px; line-height: 1.7; color: #96969e; }
-.service-icon { color: var(--f-accent); margin-bottom: 22px; }
+.service-icon { color: var(--f-accent); flex-shrink: 0; }
 .work-format { animation: format-reveal .32s ease-out both; }
 .work-format-selector button { transition: color .2s, background-color .2s, border-color .2s, transform .2s; }
 .work-format-selector button:active { transform: scale(.96); }
 @keyframes format-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .work-format { animation: none; } .work-format-selector button { transition: none; } }
+
+/* Shared gutters and spacing for the portfolio and founder additions. */
+.founder-story, .founder-portrait, .experience-stats > div { min-width: 0; }
+.selected-work-controls { flex-shrink: 0; }
+#work .selected-work-toolbar { margin-bottom: 20px; }
+.founder-cta { max-width: 100%; text-align: center; }
+@media (max-width: 768px) {
+  .funnel-stats-section { padding: 64px 0; }
+  .funnel-intro { margin-bottom: 32px; }
+  .experience-stats { gap: 20px 16px; padding-bottom: 32px; margin-bottom: 32px; }
+  .founder-layout { gap: 32px; }
+}
+@media (max-width: 640px) {
+  .funnel-wrap { padding-inline: 20px; }
+  .founder-portrait { margin-inline: auto; }
+  .founder-cta { width: 100%; padding-inline: 16px; font-size: 12px; }
+}

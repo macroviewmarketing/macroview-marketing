@@ -8,11 +8,9 @@ type WorkItem = (typeof workGroups)[number]["items"][number];
 const WorkRail = ({ items, name, onComplete }: { items: WorkItem[]; name: string; onComplete?: () => void }) => {
   const rail = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(true);
   const [visible, setVisible] = useState(false);
-  const moving = !paused && !hovered && !focused && !reducedMotion && visible;
+  const moving = !paused && !reducedMotion && visible;
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -55,15 +53,24 @@ const WorkRail = ({ items, name, onComplete }: { items: WorkItem[]; name: string
     let previous = 0;
     let endSince = 0;
     let position = rail.current?.scrollLeft ?? 0;
+    let lastWritten = position;
     const advance = (now: number) => {
       const node = rail.current;
       if (!node) return;
-      const maximum = node.scrollWidth - node.clientWidth;
+      const maximum = Math.max(0, node.scrollWidth - node.clientWidth);
+      // Continue from a swipe, wheel or arrow movement without snapping back.
+      if (Math.abs(node.scrollLeft - lastWritten) > 1) {
+        position = node.scrollLeft;
+        endSince = 0;
+      }
       if (previous) position = Math.min(maximum, position + Math.min(now - previous, 50) * .045);
       node.scrollLeft = position;
+      lastWritten = node.scrollLeft;
       if (position >= maximum - 1) {
         if (!endSince) endSince = now;
         if (now - endSince >= 2200) { onComplete?.(); return; }
+      } else {
+        endSince = 0;
       }
       previous = now;
       frame = requestAnimationFrame(advance);
@@ -73,10 +80,9 @@ const WorkRail = ({ items, name, onComplete }: { items: WorkItem[]; name: string
   }, [moving, onComplete]);
 
   const step = (direction: number) => {
-    setPaused(true);
     const node = rail.current;
     if (node) {
-      node.scrollBy({ left: direction * (node.querySelector("article")!.clientWidth + 24), behavior: reducedMotion ? "instant" : "smooth" });
+      node.scrollBy({ left: direction * (node.querySelector("article")!.clientWidth + 24), behavior: "instant" });
     }
   };
 
@@ -91,9 +97,6 @@ const WorkRail = ({ items, name, onComplete }: { items: WorkItem[]; name: string
         </div>
       </div>
       <div ref={rail} onScroll={updateEdges} className="selected-work-rail" role="region" aria-label={`${name} examples`} tabIndex={0}
-        onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-        onFocus={() => setFocused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
-        onPointerDown={() => setPaused(true)} onWheel={() => setPaused(true)}
         onKeyDown={(event) => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); step(event.key === "ArrowRight" ? 1 : -1); } }}>
         <div className="selected-work-group">
             {items.map((work) => (
@@ -134,7 +137,7 @@ export const WorkSection = () => {
         {workGroups.map(item => <button key={item.name} type="button" aria-pressed={active === item.name} onClick={() => setActive(item.name)}>{item.name}</button>)}
       </div>
       <WorkRail key={group.name} name={group.name} items={group.items} onComplete={advanceFormat} />
-      <p className="selected-work-hint">Automatically explores each format, then stops. Interact to pause. Select a video to watch with sound.</p>
+      <p className="selected-work-hint">Automatically explores each format, then stops. Use the pause button to pause. Select a video to watch with sound.</p>
       <div className="complete-portfolio-cta">
         <a className="funnel-btn" href="https://f.io/cwqeAn15" target="_blank" rel="noopener noreferrer">Explore the complete portfolio <ArrowUpRight size={22} aria-hidden="true" /></a>
       </div>
